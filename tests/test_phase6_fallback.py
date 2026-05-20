@@ -9,7 +9,7 @@ from ejves_judge.phase6_fallback import (
 
 def _context() -> Phase6FallbackContext:
     return Phase6FallbackContext(
-        comparator_response_count=32,
+        comparator_response_count=48,
         claude_model="claude-opus-4-7",
         openai_model="gpt-5",
         ensemble_accuracy_kappa=0.1282051282,
@@ -36,7 +36,7 @@ def _context() -> Phase6FallbackContext:
 
 def test_phase6_comparator_methodology_includes_scope_and_metrics() -> None:
     text = build_phase6_comparator_methodology(_context())
-    assert "32 comparator responses" in text
+    assert "48 comparator responses" in text
     assert "0.128" in text
     assert "-0.222" in text
     assert "tone`, `complementarity`, `gilbert_urgency`, and `discern_q7`" in text
@@ -48,5 +48,5 @@ def test_methods_addendum_is_manuscript_facing() -> None:
     assert "claude-opus-4-7" in text
     assert "gpt-5" in text
     assert "weighted kappa for accuracy was 0.128" in text
-    assert "Mario as a focused human spot-check on 32 comparator responses" in text
+    assert "Mario as a focused human spot-check on 48 comparator responses" in text
     assert "No further rubric iteration was performed for accuracy" in text

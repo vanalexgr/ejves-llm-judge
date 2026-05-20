@@ -12,14 +12,14 @@ Comprehensiveness and clarity also remain unsuitable as validated comparator end
 
 1. Use the same two-judge ensemble for the validated domains only: `tone`, `complementarity`, `gilbert_urgency`, and `discern_q7` for treatment responses.
 2. Keep the same operational scoring pipeline for those domains: three runs per judge, per-response aggregation within judge, then judge-ensemble averaging downstream.
-3. Do not use judge-produced accuracy values as the comparator endpoint. Accuracy for the comparator arm is instead assessed by Mario as a human spot-check on the 32 comparator responses.
+3. Do not use judge-produced accuracy values as the comparator endpoint. Accuracy for the comparator arm is instead assessed by Mario as a human spot-check on the 48 comparator responses.
 4. Keep `comprehensiveness` and `clarity` only as descriptive supplementary outputs with an explicit reliability caveat. They should not be used as validated primary comparator outcomes.
 5. Do not perform another rubric-anchoring pass for accuracy on this same calibration set. The completed rerun already showed opposite judge movement on the tightened accuracy construct, so further anchor tuning would become judge-specific and circular.
 
 ## Operational Deliverables For The Comparator Arm
 
 - Judge-derived comparator results may be reported directly for `gilbert_urgency`, `tone`, `complementarity`, and `discern_q7`.
-- Mario's single-reviewer spot-check supplies the comparator-arm accuracy assessment on the 32 responses.
+- Mario's single-reviewer spot-check supplies the comparator-arm accuracy assessment on the 48 responses.
 - `comprehensiveness` and `clarity` may be retained in tables or supplements, but each table should state that both human and judge reliability were low in calibration and that these fields are descriptive only.
 - The calibration report at `outputs/calibration/agreement_report.md` remains the audit trail justifying this restricted Phase 6 scope.
 

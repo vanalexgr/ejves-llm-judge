@@ -37,7 +37,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--accuracy-spotcheck-count",
-        default=32,
+        default=48,
         type=int,
         help="Number of comparator responses assigned to Mario's accuracy spot-check.",
     )
@@ -65,4 +65,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -44,7 +44,7 @@ def _format_float(value: float, digits: int = 3) -> str:
 def build_phase6_fallback_context(
     *,
     analysis: dict[str, Any],
-    comparator_response_count: int = 32,
+    comparator_response_count: int = 48,
 ) -> Phase6FallbackContext:
     ensemble = analysis["ensemble_vs_consensus"].set_index("item")
     judge = analysis["judge_vs_consensus"].set_index(["judge_name", "item"])
@@ -135,7 +135,7 @@ def write_phase6_fallback_documents(
     human_long_path: Path,
     judge_raw_path: Path,
     output_dir: Path,
-    comparator_response_count: int = 32,
+    comparator_response_count: int = 48,
 ) -> dict[str, Path]:
     human_long = pd.read_parquet(human_long_path)
     judge_raw = pd.read_parquet(judge_raw_path)

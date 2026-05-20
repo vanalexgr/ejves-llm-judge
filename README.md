@@ -24,7 +24,15 @@ The project has two linked goals:
 - `outputs/calibration/`
   Calibration reports, agreement plots, aggregated judge outputs, and manuscript-facing fallback documentation.
 - `outputs/comparator/`
-  Comparator-arm outputs for 48 newer responses: 16 vascular questions answered by `ChatGPT Free`, `Gemini Free`, and `Claude Free`.
+  Comparator-arm outputs for 48 newer responses: 16 vascular questions answered by `GPT-5.5`, `Gemini 3.5 Flash`, and `Claude Sonnet 4.6`.
+
+## Comparator Model Naming
+
+The public-facing comparator labels are:
+
+- `chatgpt_free` = `GPT-5.5`
+- `gemini_free` = `Gemini 3.5 Flash`
+- `claude_free` = `Claude Sonnet 4.6`
 
 ## Current Status
 
