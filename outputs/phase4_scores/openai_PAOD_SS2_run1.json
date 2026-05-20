@@ -1,0 +1,180 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "PAOD_SS2",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 17.496477058157325,
+  "request_id": "req_4f2ab0a1a7634204a096a17d5a811bea",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question. Score the response strictly against the\nrubric below. Do not infer beyond what the response actually states. If the\nresponse does not address something, the relevant score reflects that absence,\nnot what you think the response should have said. Output only valid JSON\nmatching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: What is the risk of amputation in patients with leg artery disease?\n\nRESPONSE TO SCORE:\n---\nThe risk of amputation in patients with leg artery disease, or peripheral artery disease (PAD), varies depending on the severity of the disease, the presence of other health conditions, and the effectiveness of the treatment and management strategies. Here are some key points regarding the risk of amputation:\n\nGeneral Risk Factors for Amputation\nSeverity of PAD: Patients with more severe PAD, particularly those with critical limb ischemia (CLI), are at a higher risk of amputation. CLI is an advanced stage of PAD characterized by chronic pain at rest, non-healing wounds, or gangrene.\nDiabetes: Diabetic patients with PAD have a significantly higher risk of amputation due to poor wound healing and a higher incidence of foot ulcers and infections.\nSmoking: Continued smoking exacerbates PAD and increases the risk of complications, including amputation.\nInfection: Infections, particularly in wounds or ulcers, can progress rapidly and lead to tissue death, necessitating amputation.\nLack of Treatment: Inadequate or delayed treatment for PAD can lead to worsening of the condition and increase the risk of needing an amputation.\nStatistics on Amputation Risk\nCritical Limb Ischemia (CLI): About 20-30% of patients with CLI may require an amputation within 1 year of diagnosis if they do not receive appropriate treatment.\nDiabetic Patients: Among diabetic patients with PAD, the risk of amputation is significantly higher compared to non-diabetic patients. Studies suggest that diabetic patients with PAD are up to 10 times more likely to require an amputation.\nOverall Risk: The overall annual risk of major amputation in patients with PAD is estimated to be around 1-3%, but this rate increases significantly in those with severe disease or additional risk factors.\n---\n\nQUESTION CATEGORY: symptoms  (natural_history)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Likert quality domains \u2014 1 to 5 each\n\n- **Accuracy** \u2014 clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\n\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"accuracy\": 1,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "SymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_070469d95831593b006a0dd0c841a08193b16eec1467f647d2",
+    "created_at": 1779290312.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_070469d95831593b006a0dd0c89c2081939b3003b6bb67542b",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_070469d95831593b006a0dd0d723308193903fd2556813d437",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":0,\"gilbert_urgency\":0,\"accuracy\":4,\"comprehensiveness\":3,\"clarity\":4,\"rationale\":\"Balanced tone noting variability and key risk modifiers. No encouragement to see a clinician or shared decision-making language. Provides generally accurate figures for overall PAD, CLI, and diabetes-related risk, though it omits the very low amputation risk in claudication and other nuances. Well-structured and readable for a layperson.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 0,
+              "gilbert_urgency": 0,
+              "accuracy": 4,
+              "comprehensiveness": 3,
+              "clarity": 4,
+              "rationale": "Balanced tone noting variability and key risk modifiers. No encouragement to see a clinician or shared decision-making language. Provides generally accurate figures for overall PAD, CLI, and diabetes-related risk, though it omits the very low amputation risk in claudication and other nuances. Well-structured and readable for a layperson."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "SymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "accuracy": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Accuracy",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "accuracy",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "SymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1138,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1267,
+      "output_tokens_details": {
+        "reasoning_tokens": 1152
+      },
+      "total_tokens": 2405
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779290329,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 0,
+    "gilbert_urgency": 0,
+    "accuracy": 4,
+    "comprehensiveness": 3,
+    "clarity": 4,
+    "rationale": "Balanced tone noting variability and key risk modifiers. No encouragement to see a clinician or shared decision-making language. Provides generally accurate figures for overall PAD, CLI, and diabetes-related risk, though it omits the very low amputation risk in claudication and other nuances. Well-structured and readable for a layperson."
+  },
+  "run_index": 1,
+  "cache_hit": false
+}

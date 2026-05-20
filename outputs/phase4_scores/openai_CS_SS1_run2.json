@@ -1,0 +1,180 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "CS_SS1",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 19.175886132055894,
+  "request_id": "req_ecc6b526c81a4cf7b65d96853fb33bae",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question. Score the response strictly against the\nrubric below. Do not infer beyond what the response actually states. If the\nresponse does not address something, the relevant score reflects that absence,\nnot what you think the response should have said. Output only valid JSON\nmatching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which are the symptoms of carotid stenoses?\n\nRESPONSE TO SCORE:\n---\nCarotid stenosis, also known as carotid artery disease, occurs when the carotid arteries, the main blood vessels that supply blood to the brain, become narrowed or blocked. This condition can lead to serious complications such as stroke. Symptoms of carotid stenosis can vary depending on the severity of the blockage, but often, there may be no symptoms until the condition is advanced. When symptoms do occur, they may include:\n\nTransient Ischemic Attack (TIA):\n\nOften called a mini-stroke, symptoms can be similar to those of a stroke but are temporary and typically last a few minutes to a few hours.\nSymptoms include sudden weakness or numbness on one side of the body, difficulty speaking or understanding speech, loss of vision in one eye, and sudden dizziness or loss of balance.\nStroke:\n\nMore severe and long-lasting than a TIA, stroke symptoms can include sudden numbness or weakness, particularly on one side of the body, confusion, trouble speaking or understanding speech, vision problems in one or both eyes, difficulty walking, dizziness, and loss of balance or coordination.\nSevere headache with no known cause can also be a sign of a stroke.\nOther Possible Symptoms:\n\nUnexplained dizziness or headaches.\nSudden, severe headaches.\nIn some cases, there may be no warning signs before a stroke occurs.\nSince carotid stenosis can be asymptomatic, regular check-ups and screenings are crucial, especially for individuals with risk factors such as high blood pressure, high cholesterol, smoking, diabetes, or a family history of atherosclerosis or heart disease. Early detection and management are key to preventing serious complications like stroke.\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Likert quality domains \u2014 1 to 5 each\n\n- **Accuracy** \u2014 clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\n\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"accuracy\": 1,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "SymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_0a7c7ce8a3180912006a0dd029124481a0835c626b252904a5",
+    "created_at": 1779290153.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_0a7c7ce8a3180912006a0dd0298ce481a0a6d7fe3708fbea50",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_0a7c7ce8a3180912006a0dd03a8cb081a081a82b9d5d918b4d",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":1,\"gilbert_urgency\":3,\"accuracy\":4,\"comprehensiveness\":4,\"clarity\":5,\"rationale\":\"Balanced explanation noting many cases are asymptomatic and listing typical TIA/stroke features; it also encourages regular check-ups. It does not advise emergency action for acute neurologic symptoms, instead implying non-urgent evaluation. Content is largely accurate, though it overemphasizes nonspecific dizziness/headache as symptoms. Clear, organized, and understandable for a lay reader.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 3,
+              "accuracy": 4,
+              "comprehensiveness": 4,
+              "clarity": 5,
+              "rationale": "Balanced explanation noting many cases are asymptomatic and listing typical TIA/stroke features; it also encourages regular check-ups. It does not advise emergency action for acute neurologic symptoms, instead implying non-urgent evaluation. Content is largely accurate, though it overemphasizes nonspecific dizziness/headache as symptoms. Clear, organized, and understandable for a lay reader."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "SymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "accuracy": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Accuracy",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "accuracy",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "SymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1114,
+      "input_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "output_tokens": 1720,
+      "output_tokens_details": {
+        "reasoning_tokens": 1536
+      },
+      "total_tokens": 2834
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779290171,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 3,
+    "accuracy": 4,
+    "comprehensiveness": 4,
+    "clarity": 5,
+    "rationale": "Balanced explanation noting many cases are asymptomatic and listing typical TIA/stroke features; it also encourages regular check-ups. It does not advise emergency action for acute neurologic symptoms, instead implying non-urgent evaluation. Content is largely accurate, though it overemphasizes nonspecific dizziness/headache as symptoms. Clear, organized, and understandable for a lay reader."
+  },
+  "run_index": 2,
+  "cache_hit": false
+}

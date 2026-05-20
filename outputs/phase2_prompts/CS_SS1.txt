@@ -1,0 +1,76 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: Which are the symptoms of carotid stenoses?
+
+RESPONSE TO SCORE:
+---
+Carotid stenosis, also known as carotid artery disease, occurs when the carotid arteries, the main blood vessels that supply blood to the brain, become narrowed or blocked. This condition can lead to serious complications such as stroke. Symptoms of carotid stenosis can vary depending on the severity of the blockage, but often, there may be no symptoms until the condition is advanced. When symptoms do occur, they may include:
+
+Transient Ischemic Attack (TIA):
+
+Often called a mini-stroke, symptoms can be similar to those of a stroke but are temporary and typically last a few minutes to a few hours.
+Symptoms include sudden weakness or numbness on one side of the body, difficulty speaking or understanding speech, loss of vision in one eye, and sudden dizziness or loss of balance.
+Stroke:
+
+More severe and long-lasting than a TIA, stroke symptoms can include sudden numbness or weakness, particularly on one side of the body, confusion, trouble speaking or understanding speech, vision problems in one or both eyes, difficulty walking, dizziness, and loss of balance or coordination.
+Severe headache with no known cause can also be a sign of a stroke.
+Other Possible Symptoms:
+
+Unexplained dizziness or headaches.
+Sudden, severe headaches.
+In some cases, there may be no warning signs before a stroke occurs.
+Since carotid stenosis can be asymptomatic, regular check-ups and screenings are crucial, especially for individuals with risk factors such as high blood pressure, high cholesterol, smoking, diabetes, or a family history of atherosclerosis or heart disease. Early detection and management are key to preventing serious complications like stroke.
+---
+
+QUESTION CATEGORY: symptoms  (signs_symptoms)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

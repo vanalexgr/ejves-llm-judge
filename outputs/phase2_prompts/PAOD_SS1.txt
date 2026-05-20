@@ -1,0 +1,77 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: Leg artery disease: which symptoms?
+
+RESPONSE TO SCORE:
+---
+Leg artery disease, also known as peripheral artery disease (PAD), occurs when arteries in the legs become narrowed or blocked due to a buildup of fatty deposits (atherosclerosis). This can lead to reduced blood flow to the legs and feet, resulting in various symptoms. Here are the common symptoms of leg artery disease:
+
+Common Symptoms
+Claudication: Pain, cramping, or fatigue in the legs and hips while walking or exercising, which usually subsides with rest.
+Leg Numbness or Weakness: Reduced blood flow can cause a feeling of numbness or weakness in the legs.
+Coldness in the Lower Leg or Foot: One leg may feel cooler than the other due to poor circulation.
+Sores or Ulcers: Persistent sores, ulcers, or wounds on the toes, feet, or legs that heal slowly or not at all.
+Change in Leg Color: The skin on the legs may appear pale, bluish, or darkened.
+Hair Loss on Legs: A decrease in hair growth on the legs and feet.
+Shiny Skin on the Legs: The skin on the legs may become shiny due to a lack of hair and dry skin.
+Weak or Absent Pulse: A weak or absent pulse in the legs or feet can be detected by a healthcare provider.
+Pain at Rest: In more severe cases, pain may occur in the legs and feet even at rest, especially when lying down (ischemic rest pain).
+Less Common Symptoms
+Erectile Dysfunction in Men: Reduced blood flow can affect sexual function in men.
+Tingling or Burning Sensations: Abnormal sensations in the legs due to nerve damage from poor circulation.
+When to Seek Medical Help
+If you experience any of the above symptoms, especially pain while walking that improves with rest, it is important to seek medical evaluation. Early diagnosis and management can prevent the progression of the disease and reduce the risk of complications like critical limb ischemia or amputation.
+---
+
+QUESTION CATEGORY: symptoms  (signs_symptoms)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

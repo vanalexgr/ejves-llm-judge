@@ -1,0 +1,91 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: When I have to go to the doctor for varicose veins?
+
+RESPONSE TO SCORE:
+---
+You should consider seeing a doctor for varicose veins if you experience any of the following:
+
+Severe Pain or Discomfort: If your varicose veins are causing significant pain or discomfort that interferes with your daily activities.
+
+Swelling: Persistent or worsening swelling in your legs or ankles.
+
+Skin Changes: Changes in the skin around the varicose veins, such as discoloration, hardening, or ulceration.
+
+Bleeding: If the varicose veins bleed after a minor injury or spontaneously.
+
+Infection Signs: Signs of infection, such as redness, warmth, and tenderness around the veins.
+
+Symptoms of Blood Clots: Symptoms like swelling, pain, and redness in the leg, which could indicate superficial thrombophlebitis or a more serious condition like deep vein thrombosis (DVT).
+
+Worsening Symptoms: If the symptoms of varicose veins progressively worsen despite self-care measures.
+
+Venous Ulcers: Open sores or ulcers near the varicose veins, typically around the ankles.
+
+Seeing a doctor can help you receive an accurate diagnosis and appropriate treatment, which may include lifestyle changes, compression therapy, or medical procedures to alleviate symptoms and prevent complications.
+---
+
+QUESTION CATEGORY: treatment  (medical_advice)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### D. Discussion of Uncertainty (DISCERN Q7) — 1 to 5 — **TREATMENT QUESTIONS ONLY**
+
+"Does the information describe the uncertainty of treatment?"
+
+- `1`: No mention of uncertainty
+- `2`–`4`: Partial or incomplete discussion of uncertainties
+- `5`: Explicit acknowledgment of uncertainty or variability in treatment outcomes
+
+For symptom/natural-history questions, this field must be omitted from the judge's output (not zero, not null — the schema validator should require its absence for non-treatment items).
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "discern_q7": 1,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

@@ -1,0 +1,102 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: Is stenting effective for carotid stenosis?
+
+RESPONSE TO SCORE:
+---
+Stenting can be an effective treatment for carotid stenosis, particularly in certain patient populations. Here are the key points regarding the effectiveness of carotid artery stenting (CAS):
+
+Effectiveness and Indications
+Comparable to Surgery:
+
+Carotid artery stenting (CAS) is generally considered as effective as carotid endarterectomy (CEA), the traditional surgical method, for reducing the risk of stroke in patients with carotid stenosis.
+Several studies and clinical trials have shown that CAS is a viable alternative to CEA, especially for patients who are at high risk for surgical complications.
+Patient Selection:
+
+High Surgical Risk Patients: CAS is often preferred for patients who are at higher risk for surgical complications due to factors such as severe heart disease, lung disease, or previous neck surgery or radiation.
+Anatomical Considerations: In some cases, the anatomy of the carotid artery may make CAS a better option compared to CEA.
+Patient Preference: Some patients may prefer the less invasive nature of CAS compared to the open surgical approach of CEA.
+Outcomes and Complications:
+
+Short-term Outcomes: CAS tends to have shorter recovery times and less initial discomfort compared to CEA.
+Long-term Outcomes: Long-term outcomes of CAS are generally favorable, with a similar risk of stroke recurrence as CEA.
+Potential Complications: CAS may have a slightly higher risk of certain complications, such as stroke or transient ischemic attack (TIA) during the procedure, compared to CEA. However, improvements in stent technology and procedural techniques have reduced these risks.
+Studies and Guidelines
+Clinical Trials:
+
+Trials like the CREST (Carotid Revascularization Endarterectomy vs. Stenting Trial) have compared CAS and CEA and found them to have similar long-term outcomes regarding stroke prevention.
+These studies suggest that both CAS and CEA are effective for patients with symptomatic and asymptomatic carotid stenosis.
+Guidelines:
+
+Major medical societies, including the American Heart Association (AHA) and the European Society for Vascular Surgery (ESVS), have guidelines that support the use of CAS in appropriate patients.
+Guidelines typically recommend a tailored approach, taking into account individual patient factors and preferences.
+Conclusion
+Carotid artery stenting is an effective treatment for carotid stenosis and offers a less invasive alternative to carotid endarterectomy, especially for certain high-risk patients. The decision between CAS and CEA should be made based on a comprehensive evaluation by a healthcare provider, considering the specific characteristics and needs of the patient.
+
+Regular follow-ups and monitoring are essential after either procedure to ensure the continued effectiveness of the treatment and to manage any potential complications. Consulting with a vascular surgeon or a specialist in interventional radiology can provide further personalized insights and recommendations.
+---
+
+QUESTION CATEGORY: treatment  (best_treatment)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### D. Discussion of Uncertainty (DISCERN Q7) — 1 to 5 — **TREATMENT QUESTIONS ONLY**
+
+"Does the information describe the uncertainty of treatment?"
+
+- `1`: No mention of uncertainty
+- `2`–`4`: Partial or incomplete discussion of uncertainties
+- `5`: Explicit acknowledgment of uncertainty or variability in treatment outcomes
+
+For symptom/natural-history questions, this field must be omitted from the judge's output (not zero, not null — the schema validator should require its absence for non-treatment items).
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "discern_q7": 1,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

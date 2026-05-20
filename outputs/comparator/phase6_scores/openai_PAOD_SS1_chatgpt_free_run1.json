@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "PAOD_SS1_chatgpt_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 11.280240115011111,
+  "request_id": "req_df3e1cf79f7f40c8b969e1c429a6531e",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Leg artery disease: which symptoms?\n\nRESPONSE TO SCORE:\n---\nPeripheral Artery Disease (often called PAD) happens when narrowed arteries reduce blood flow to the legs, usually because of a buildup of fatty deposits in the arteries.\n\nCommon symptoms include:\n\n* **Leg pain when walking (claudication)** \u2014 aching, cramping, tightness, or fatigue in the calf, thigh, or buttock that improves with rest.\n* **Coldness in one lower leg or foot** compared with the other.\n* **Numbness or weakness** in the legs.\n* **Shiny skin or slower hair/nail growth** on the legs or feet.\n* **Weak or absent pulse** in the feet.\n* **Sores or wounds on toes, feet, or legs that heal slowly**.\n* **Color changes** in the skin of the legs or feet (pale, bluish, or reddish).\n* **Pain in the feet or toes at rest**, especially at night in more severe disease.\n* **Erectile dysfunction** can occur in some men with PAD.\n\nSome people have PAD with **no noticeable symptoms**.\n\nRisk factors include smoking, diabetes, high blood pressure, high cholesterol, older age, obesity, and a history of cardiovascular disease.\n\nSeek urgent medical attention if you develop:\n\n* sudden severe leg pain,\n* a cold/pale leg,\n* inability to walk,\n* or a foot wound turning black or infected.\n\nDiagnosis is often made with a simple test called the **ankle-brachial index (ABI)**, along with ultrasound or vascular imaging when needed.\n\nTreatment may involve:\n\n* stopping smoking,\n* regular walking exercise,\n* controlling cholesterol, blood pressure, and diabetes,\n* medications,\n* and sometimes procedures to reopen blocked arteries.\n\nFor more information:\n\n* [American Heart Association PAD overview](https://www.heart.org/en/health-topics/peripheral-artery-disease?utm_source=chatgpt.com)\n* [Mayo Clinic PAD symptoms and causes](https://www.mayoclinic.org/diseases-conditions/peripheral-artery-disease/symptoms-causes/syc-20350557?utm_source=chatgpt.com)\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_061e4b0f12f3e89a006a0df59fe5988195a00676cf779a09f4",
+    "created_at": 1779299743.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_061e4b0f12f3e89a006a0df5a04f44819590c6ea517a8fc4e9",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_061e4b0f12f3e89a006a0df5a96c348195b6081b1d2decb22b",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":1,\"gilbert_urgency\":2,\"comprehensiveness\":5,\"clarity\":5,\"rationale\":\"The response presents a balanced tone, noting that some people have no symptoms and outlining severity variations. It supports physician involvement by advising urgent medical attention for specific red flags. It is highly comprehensive for symptoms of PAD, covering claudication, rest pain, trophic changes, pulses, nonhealing wounds, color changes, and ED. The structure and language are clear and accessible with organized bullet points.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 2,
+              "comprehensiveness": 5,
+              "clarity": 5,
+              "rationale": "The response presents a balanced tone, noting that some people have no symptoms and outlining severity variations. It supports physician involvement by advising urgent medical attention for specific red flags. It is highly comprehensive for symptoms of PAD, covering claudication, rest pain, trophic changes, pulses, nonhealing wounds, color changes, and ED. The structure and language are clear and accessible with organized bullet points."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1091,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 839,
+      "output_tokens_details": {
+        "reasoning_tokens": 704
+      },
+      "total_tokens": 1930
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779299754,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 2,
+    "comprehensiveness": 5,
+    "clarity": 5,
+    "rationale": "The response presents a balanced tone, noting that some people have no symptoms and outlining severity variations. It supports physician involvement by advising urgent medical attention for specific red flags. It is highly comprehensive for symptoms of PAD, covering claudication, rest pain, trophic changes, pulses, nonhealing wounds, color changes, and ED. The structure and language are clear and accessible with organized bullet points."
+  },
+  "run_index": 1,
+  "cache_hit": false
+}

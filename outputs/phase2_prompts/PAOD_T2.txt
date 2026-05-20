@@ -1,0 +1,123 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: Which is the best method for surgical treatment of leg artery disease?
+
+RESPONSE TO SCORE:
+---
+The best method for surgical treatment of leg artery disease, or peripheral artery disease (PAD), depends on various factors, including the location and severity of the blockage, the patient's overall health, and their specific anatomy. Here are the main surgical options, along with their indications and advantages:
+
+1. Angioplasty and Stenting
+Description
+Angioplasty: A minimally invasive procedure where a balloon is used to open up the narrowed or blocked artery.
+Stenting: A stent (a small wire mesh tube) is often placed in the artery to keep it open after angioplasty.
+Indications
+Suitable for shorter, localized blockages.
+Often preferred for patients with fewer comorbidities and those who cannot tolerate more invasive surgeries.
+Advantages
+Minimally invasive with shorter recovery time.
+Lower risk of complications compared to open surgery.
+Can be performed under local anesthesia.
+2. Bypass Surgery
+Description
+Creating a bypass around the blocked artery using a graft, which can be a vein from the patient or a synthetic material.
+Indications
+Best for long or multiple blockages.
+Ideal for patients with severe PAD who have not responded well to less invasive treatments.
+Advantages
+Effective for severe and extensive blockages.
+Provides long-term relief from symptoms and improves blood flow.
+3. Endarterectomy
+Description
+A surgical procedure to remove plaque from the inner lining of the artery.
+Indications
+Used for localized blockages in larger arteries, like the carotid artery.
+Less commonly used for PAD in the legs compared to angioplasty and bypass.
+Advantages
+Direct removal of plaque can be very effective.
+Can restore normal blood flow in specific cases.
+4. Atherectomy
+Description
+Removal of plaque from the artery using a catheter with a cutting device.
+Indications
+Suitable for patients with calcified or very hard plaque that is difficult to treat with angioplasty.
+Advantages
+Minimally invasive.
+Effective for hard-to-treat blockages.
+Factors Influencing the Choice of Surgery
+Severity and Extent of Disease: Extensive blockages often require bypass surgery, while localized blockages may be treated with angioplasty and stenting.
+Patient’s Health: Minimally invasive procedures are preferred for high-risk patients who may not tolerate major surgery.
+Location of Blockage: Certain procedures are more suitable for blockages in specific arteries.
+Previous Treatments: Patients who have not responded to or have recurrent blockages after angioplasty may need bypass surgery.
+Conclusion
+There is no one-size-fits-all answer for the best surgical treatment of leg artery disease. The choice depends on individual patient factors and the specific characteristics of the disease. Here’s a brief summary:
+
+Angioplasty and Stenting: Best for localized, less severe blockages; minimally invasive.
+Bypass Surgery: Best for extensive or multiple blockages; more invasive but effective for severe cases.
+Endarterectomy and Atherectomy: Used in specific situations where plaque needs to be directly removed.
+A thorough evaluation by a vascular specialist, considering the patient's overall health, severity of disease, and specific anatomical considerations, is essential to determine the best surgical approach.
+---
+
+QUESTION CATEGORY: treatment  (best_treatment)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### D. Discussion of Uncertainty (DISCERN Q7) — 1 to 5 — **TREATMENT QUESTIONS ONLY**
+
+"Does the information describe the uncertainty of treatment?"
+
+- `1`: No mention of uncertainty
+- `2`–`4`: Partial or incomplete discussion of uncertainties
+- `5`: Explicit acknowledgment of uncertainty or variability in treatment outcomes
+
+For symptom/natural-history questions, this field must be omitted from the judge's output (not zero, not null — the schema validator should require its absence for non-treatment items).
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "discern_q7": 1,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

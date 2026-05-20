@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "CS_SS2_chatgpt_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 14.411004369845614,
+  "request_id": "req_e8222b672cc24b6ab6e9206577fb9401",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: I have a carotid stenosis; which is my risk of stroke?\n\nRESPONSE TO SCORE:\n---\nThe risk of stroke from Carotid artery stenosis depends mainly on:\n\n* **How severe the narrowing is**\n* Whether you have had symptoms (TIA, vision loss, or stroke)\n* Your age and other vascular risk factors\n* Whether you are receiving modern medical treatment\n\n## Typical stroke risk estimates\n\n### If you have **no symptoms** (\u201casymptomatic\u201d stenosis)\n\nWith modern treatment (statins, blood pressure control, antiplatelet therapy, smoking cessation), the average stroke risk is often:\n\n| Degree of narrowing | Approximate annual stroke risk |\n| ------------------- | ------------------------------ |\n| <50%                | Low                            |\n| 50\u201369%              | About 1% per year or less      |\n| \u226570%                | About 1\u20132% per year            |\n\n---\n\n### If you have had symptoms\n\nSymptoms include:\n\n* TIA (\u201cmini-stroke\u201d)\n* Temporary vision loss in one eye\n* Prior stroke related to that carotid artery\n\nThen the risk is higher:\n\n| Symptomatic stenosis | Stroke risk                                         |\n| -------------------- | --------------------------------------------------- |\n| 50\u201369% narrowing     | Moderate increased risk                             |\n| 70\u201399% narrowing     | High risk, especially in first weeks after symptoms |\n\nFor severe symptomatic stenosis, stroke risk may be around:\n\n* 10\u201320% in the first few months without treatment\n\n---\n\n## Factors that increase stroke risk\n\n* Smoking\n* High blood pressure\n* Diabetes\n* High cholesterol\n* Irregular heart rhythm such as atrial fibrillation\n* Ulcerated or unstable plaque\n* Progression of the stenosis\n\n---\n\n## How risk is reduced\n\nModern treatment can greatly lower stroke risk:\n\n* Statins\n* Antiplatelet medicines (such as aspirin)\n* Blood pressure control\n* Diabetes control\n* Smoking cessation\n* Exercise and Mediterranean-style diet\n\nSome patients benefit from procedures such as:\n\n* Carotid endarterectomy\n* Carotid artery stenting\n\nThese are usually considered for severe narrowing, especially if symptoms are present.\n\nIf you know:\n\n* the percentage of stenosis,\n* whether you had symptoms,\n* and whether it is on one or both sides,\n\nI can explain the usual stroke risk range and treatment recommendations more specifically.\n---\n\nQUESTION CATEGORY: symptoms  (natural_history)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_05fd1dc1e087c36d006a0df55eba60819c942917d353ab74b4",
+    "created_at": 1779299678.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_05fd1dc1e087c36d006a0df55f6664819ca336c3b141d5be2f",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_05fd1dc1e087c36d006a0df56ad4d4819cb3cc5a08983b2905",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":0,\"gilbert_urgency\":0,\"comprehensiveness\":4,\"clarity\":5,\"rationale\":\"The response uses balanced language, highlights uncertainty and factors that modify risk, and gives ranges rather than definitive claims. It does not explicitly encourage consulting a physician or shared decision-making, and it gives no recommendation on when to seek care. It is broadly comprehensive for natural history, covering asymptomatic vs symptomatic risk, degree of stenosis, modifiers, and risk reduction, though some figures are non-specific. The structure is clear and lay-friendly with headings, bullets, and straightforward explanations.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 0,
+              "gilbert_urgency": 0,
+              "comprehensiveness": 4,
+              "clarity": 5,
+              "rationale": "The response uses balanced language, highlights uncertainty and factors that modify risk, and gives ranges rather than definitive claims. It does not explicitly encourage consulting a physician or shared decision-making, and it gives no recommendation on when to seek care. It is broadly comprehensive for natural history, covering asymptomatic vs symptomatic risk, degree of stenosis, modifiers, and risk reduction, though some figures are non-specific. The structure is clear and lay-friendly with headings, bullets, and straightforward explanations."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1133,
+      "input_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "output_tokens": 840,
+      "output_tokens_details": {
+        "reasoning_tokens": 640
+      },
+      "total_tokens": 1973
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779299692,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 0,
+    "gilbert_urgency": 0,
+    "comprehensiveness": 4,
+    "clarity": 5,
+    "rationale": "The response uses balanced language, highlights uncertainty and factors that modify risk, and gives ranges rather than definitive claims. It does not explicitly encourage consulting a physician or shared decision-making, and it gives no recommendation on when to seek care. It is broadly comprehensive for natural history, covering asymptomatic vs symptomatic risk, degree of stenosis, modifiers, and risk reduction, though some figures are non-specific. The structure is clear and lay-friendly with headings, bullets, and straightforward explanations."
+  },
+  "run_index": 3,
+  "cache_hit": false
+}

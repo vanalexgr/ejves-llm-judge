@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "PAOD_SS2_claude_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 12.918168775970116,
+  "request_id": "req_d913801f36af44049a3501c0eacae62f",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: What is the risk of amputation in patients with leg artery disease?\n\nRESPONSE TO SCORE:\n---\n# Amputation Risk in Leg Artery Disease (PAD)\n\n---\n\n## Overall Risk by Disease Stage\n\nThe risk of amputation varies enormously depending on the severity of PAD:\n\nAccording to European Society of Cardiology guidelines, about **1% of patients with intermittent claudication** (the milder stage) will go on to need a major lower limb amputation, while at least **9% of patients with chronic limb-threatening ischemia** (the severe stage) face amputation.\n\n---\n\n## PAD Is the Leading Cause of Amputation\n\nPAD is associated with **51\u201393% of all amputations** depending on geographic region \u2014 making it the dominant driver of limb loss worldwide.\n\n---\n\n## The Role of Diabetes: A Major Multiplier\n\nDiabetes significantly worsens the picture. It increases the incidence of PAD, accelerates disease progression, and raises disease severity. Patients with **both diabetes and PAD** are at particularly high risk of amputation. Despite a decrease in overall amputation numbers in the US, rates among those with both conditions have remained stable or even increased in high-risk subgroups.\n\nDiabetes has been associated with a **2- to 4-fold increase** in the prevalence of PAD, and roughly 20\u201330% of PAD patients have concomitant diabetes.\n\n---\n\n## Mortality After Amputation: Very High\n\nNearly **half of people aged 65 and older** who had a limb amputated because of PAD died within **one year** of surgery, according to American Heart Association statistics.\n\nIn-hospital mortality following major amputation stands at approximately **12.4% within 30 days**.\n\nIn an international analysis, hospital mortality rates after major amputation ranged from 6.1% (Finland) to 20.8% (Hungary), underscoring wide geographic variation.\n\n---\n\n## Who Is at Highest Risk?\n\nWithin PAD patients, the highest amputation risk is carried by **residents of rural areas, African-American and Native American patients, and those of low socioeconomic status** \u2014 highlighting significant regional, racial, and socioeconomic disparities.\n\nOther key risk factors include:\n- Diabetes mellitus\n- Smoking\n- Low ankle-brachial index (ABI)\n- Prior limb revascularization or previous amputation\n- Chronic kidney disease\n- Age \u2265 75\n\n---\n\n## Can Amputation Risk Be Reduced?\n\nYes \u2014 significantly. Antiplatelet agents, statin therapy, supervised exercise, smoking cessation, and control of hypertension and diabetes substantially reduce the likelihood of major adverse limb events. Revascularization methods \u2014 including surgical bypass and minimally invasive endovascular procedures \u2014 have notably decreased amputation rates in PAD patients.\n\n---\n\n**Key takeaway:** Most PAD patients with claudication alone have a low amputation risk (~1%), but once the disease progresses to critical limb-threatening ischemia, the risk rises sharply. Early detection, risk factor control, and timely revascularization are crucial to preserving the limb.\n---\n\nQUESTION CATEGORY: symptoms  (natural_history)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_0c070d2cc3ceecce006a0df74177348196ad898c8be756ab7e",
+    "created_at": 1779300161.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_0c070d2cc3ceecce006a0df741e8008196818afcb8188353ac",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_0c070d2cc3ceecce006a0df74c6220819681ca6e38fb7adfa7",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":0,\"gilbert_urgency\":0,\"comprehensiveness\":4,\"clarity\":4,\"rationale\":\"The response presents stage-dependent risks, modifiers (diabetes, disparities), outcomes after amputation, and prevention strategies, showing balance and acknowledging variation by geography and severity. It does not encourage contacting a clinician or shared decision-making. No urgency or care-seeking guidance is provided. The content is well-structured and readable, though some jargon and lack of explicit time horizons limit completeness and clarity slightly.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 0,
+              "gilbert_urgency": 0,
+              "comprehensiveness": 4,
+              "clarity": 4,
+              "rationale": "The response presents stage-dependent risks, modifiers (diabetes, disparities), outcomes after amputation, and prevention strategies, showing balance and acknowledging variation by geography and severity. It does not encourage contacting a clinician or shared decision-making. No urgency or care-seeking guidance is provided. The content is well-structured and readable, though some jargon and lack of explicit time horizons limit completeness and clarity slightly."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1257,
+      "input_tokens_details": {
+        "cached_tokens": 1152
+      },
+      "output_tokens": 851,
+      "output_tokens_details": {
+        "reasoning_tokens": 704
+      },
+      "total_tokens": 2108
+    },
+    "user": null,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1779300173,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 0,
+    "gilbert_urgency": 0,
+    "comprehensiveness": 4,
+    "clarity": 4,
+    "rationale": "The response presents stage-dependent risks, modifiers (diabetes, disparities), outcomes after amputation, and prevention strategies, showing balance and acknowledging variation by geography and severity. It does not encourage contacting a clinician or shared decision-making. No urgency or care-seeking guidance is provided. The content is well-structured and readable, though some jargon and lack of explicit time horizons limit completeness and clarity slightly."
+  },
+  "run_index": 2,
+  "cache_hit": false
+}

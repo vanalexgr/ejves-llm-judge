@@ -1,0 +1,98 @@
+[
+  {
+    "response_id": "AAA_SS1",
+    "question_group": "symptoms",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 3097
+  },
+  {
+    "response_id": "AAA_SS2",
+    "question_group": "symptoms",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 3113
+  },
+  {
+    "response_id": "AAA_T1",
+    "question_group": "treatment",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 3708
+  },
+  {
+    "response_id": "AAA_T2",
+    "question_group": "treatment",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 4746
+  },
+  {
+    "response_id": "CS_SS1",
+    "question_group": "symptoms",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 4398
+  },
+  {
+    "response_id": "CS_SS2",
+    "question_group": "symptoms",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 4600
+  },
+  {
+    "response_id": "CS_T1",
+    "question_group": "treatment",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 6168
+  },
+  {
+    "response_id": "CS_T2",
+    "question_group": "treatment",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 6242
+  },
+  {
+    "response_id": "PAOD_SS1",
+    "question_group": "symptoms",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 4527
+  },
+  {
+    "response_id": "PAOD_SS2",
+    "question_group": "symptoms",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 4536
+  },
+  {
+    "response_id": "PAOD_T1",
+    "question_group": "treatment",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 5981
+  },
+  {
+    "response_id": "PAOD_T2",
+    "question_group": "treatment",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 6533
+  },
+  {
+    "response_id": "VV_SS1",
+    "question_group": "symptoms",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 3947
+  },
+  {
+    "response_id": "VV_SS2",
+    "question_group": "symptoms",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 4156
+  },
+  {
+    "response_id": "VV_T1",
+    "question_group": "treatment",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 4468
+  },
+  {
+    "response_id": "VV_T2",
+    "question_group": "treatment",
+    "blinding_substitution_count": 0,
+    "prompt_character_length": 5689
+  }
+]

@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "VV_SS1_gemini_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 20.385456221876666,
+  "request_id": "req_b24c4a69ba0b46dc83b8d0d6a48a75af",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which are the symptoms of varicose veins?\n\nRESPONSE TO SCORE:\n---\nVaricose veins are enlarged, twisted, and swollen veins that most commonly appear in the legs and feet. While for some people they are purely a cosmetic concern, for many others, they cause noticeable discomfort and pain.\n\nHere is a breakdown of the visual signs and physical symptoms to look out for:\n\n### Visual Signs (What They Look Like)\n\n* **Dark blue or purple veins:** The veins often appear highly discolored beneath the skin.\n* **Bulging, twisted appearance:** They frequently look like cords or ropes twisting along the legs.\n* **Spider veins:** You might see smaller, red or blue clusters of veins (telangiectasias) near the surface of the skin close to the varicose veins.\n\n---\n\n### Physical Symptoms (What They Feel Like)\n\nThe discomfort caused by varicose veins often worsens after sitting or standing for long periods. Common sensations include:\n\n* **An achy or heavy feeling** in the legs.\n* **Burning, throbbing, or muscle cramping** in the lower legs.\n* **Increased pain** after prolonged inactivity.\n* **Itching** around one or more of the affected veins.\n* **Swelling (edema)** in the lower legs, ankles, and feet.\n\n---\n\n### Advanced Symptoms & Complications\n\nIf left untreated, severe varicose veins can lead to more serious issues due to poor circulation. You should watch out for:\n\n* **Skin discoloration:** The skin around the ankles or lower legs may turn a brownish color.\n* **Skin changes:** The skin can become dry, thin, itchy, or hardened (a condition known as lipodermatosclerosis).\n* **Venous ulcers:** Painful sores or ulcers can form on the skin near the varicose veins, especially near the ankles. **This requires immediate medical attention.**\n* **Bleeding:** Because the veins are close to the surface, a minor bump can sometimes cause them to bleed significantly.\n\n> **When to see a doctor:** If your legs are consistently painful, swollen, or if you notice skin changes or ulcers, it\u2019s a good idea to consult a healthcare provider or a vascular specialist. They can help you explore management options, ranging from compression stockings to minimally invasive procedures.\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_08aa50519add515e006a0df90dc4f48197a2aef0768a2c00ad",
+    "created_at": 1779300621.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_08aa50519add515e006a0df90e23fc819790b9dfb20ab3ffa7",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_08aa50519add515e006a0df91e7f68819796219b1bbb9b7ec7",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\n  \"tone\": 2,\n  \"complementarity\": 1,\n  \"gilbert_urgency\": 2,\n  \"comprehensiveness\": 5,\n  \"clarity\": 5,\n  \"rationale\": \"The response presents a balanced view, noting both cosmetic and symptomatic presentations and when complications warrant more concern. It explicitly encourages consulting a healthcare provider and mentions urgent attention for ulcers, supporting shared decision-making. It thoroughly covers visual signs, common symptoms, and complications. The organization with headings and bullet points is clear and easy for a layperson to follow.\"\n}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 2,
+              "comprehensiveness": 5,
+              "clarity": 5,
+              "rationale": "The response presents a balanced view, noting both cosmetic and symptomatic presentations and when complications warrant more concern. It explicitly encourages consulting a healthcare provider and mentions urgent attention for ulcers, supporting shared decision-making. It thoroughly covers visual signs, common symptoms, and complications. The organization with headings and bullet points is clear and easy for a layperson to follow."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1117,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1025,
+      "output_tokens_details": {
+        "reasoning_tokens": 832
+      },
+      "total_tokens": 2142
+    },
+    "user": null,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1779300641,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 2,
+    "comprehensiveness": 5,
+    "clarity": 5,
+    "rationale": "The response presents a balanced view, noting both cosmetic and symptomatic presentations and when complications warrant more concern. It explicitly encourages consulting a healthcare provider and mentions urgent attention for ulcers, supporting shared decision-making. It thoroughly covers visual signs, common symptoms, and complications. The organization with headings and bullet points is clear and easy for a layperson to follow."
+  },
+  "run_index": 1,
+  "cache_hit": false
+}

@@ -1,0 +1,102 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: How can I improve myarterial leg circulation?
+
+RESPONSE TO SCORE:
+---
+Improving arterial leg circulation, especially if you have or are at risk of peripheral artery disease (PAD), involves a combination of lifestyle changes, medical treatments, and sometimes surgical interventions. Here are some strategies to enhance leg circulation:
+
+Lifestyle Changes
+Quit Smoking: Smoking is a major risk factor for PAD and quitting can significantly improve circulation.
+Exercise Regularly: Regular physical activity, such as walking, can help improve circulation. Aim for at least 30 minutes of moderate exercise most days of the week. Walking programs are particularly effective for PAD.
+Maintain a Healthy Diet: Eat a diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats. This can help manage weight, cholesterol, and blood sugar levels.
+Manage Weight: Maintaining a healthy weight reduces strain on your cardiovascular system.
+Stay Hydrated: Proper hydration is important for maintaining good circulation.
+Medical Management
+Medications: Depending on your condition, your doctor may prescribe medications to manage symptoms and underlying risk factors:
+Antiplatelet agents (like aspirin or clopidogrel) to reduce the risk of blood clots.
+Statins to lower cholesterol levels.
+Medications to manage blood pressure and diabetes.
+Compression Stockings: These can help reduce swelling and improve blood flow in the legs.
+Alternative and Complementary Approaches
+Massage Therapy: Regular massages can stimulate blood flow in the legs.
+Yoga and Stretching: Yoga and stretching exercises can improve flexibility and blood flow.
+Medical Interventions
+Angioplasty and Stenting: Procedures to open narrowed or blocked arteries.
+Bypass Surgery: Creating a bypass around the blocked section of the artery using a graft.
+Atherectomy: Removing plaque from the artery.
+Monitoring and Follow-Up
+Regular Check-Ups: Regular monitoring by your healthcare provider can help manage PAD and prevent complications.
+Foot Care: Proper foot care to prevent infections and injuries, which is especially important for diabetic patients.
+Tips for Daily Habits
+Elevate Your Legs: Elevating your legs above the level of your heart can help reduce swelling and improve circulation.
+Avoid Prolonged Sitting or Standing: Move around regularly to promote blood flow.
+Wear Proper Footwear: Comfortable, supportive shoes can help prevent foot injuries and improve overall leg health.
+Conclusion
+Improving leg circulation involves a comprehensive approach, including lifestyle changes, medical management, and, if necessary, surgical interventions. Working closely with your healthcare provider to develop a personalized plan can help you manage symptoms and improve your overall vascular health.
+---
+
+QUESTION CATEGORY: treatment  (medical_advice)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### D. Discussion of Uncertainty (DISCERN Q7) — 1 to 5 — **TREATMENT QUESTIONS ONLY**
+
+"Does the information describe the uncertainty of treatment?"
+
+- `1`: No mention of uncertainty
+- `2`–`4`: Partial or incomplete discussion of uncertainties
+- `5`: Explicit acknowledgment of uncertainty or variability in treatment outcomes
+
+For symptom/natural-history questions, this field must be omitted from the judge's output (not zero, not null — the schema validator should require its absence for non-treatment items).
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "discern_q7": 1,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

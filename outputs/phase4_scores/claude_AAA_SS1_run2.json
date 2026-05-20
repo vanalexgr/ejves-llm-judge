@@ -1,0 +1,140 @@
+{
+  "status": "success",
+  "judge_name": "claude",
+  "response_id": "AAA_SS1",
+  "question_group": "symptoms",
+  "model_used": "claude-opus-4-7",
+  "latency_seconds": 6.471224468201399,
+  "request_id": "req_011CbE5Btvw8Gn5DsiL3NiR5",
+  "request_payload": {
+    "model": "claude-opus-4-7",
+    "max_tokens": 1000,
+    "messages": [
+      {
+        "role": "user",
+        "content": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question. Score the response strictly against the\nrubric below. Do not infer beyond what the response actually states. If the\nresponse does not address something, the relevant score reflects that absence,\nnot what you think the response should have said. Output only valid JSON\nmatching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which are the signs of AAA?\n\nRESPONSE TO SCORE:\n---\nAAA, or abdominal aortic aneurysm, may present with signs such as a pulsating feeling in the abdomen, deep constant pain in the abdomen or on the side of the abdomen, back pain, and sometimes signs of shock such as clammy skin, rapid heartbeat, low blood pressure, or dizziness. It's important to seek medical attention immediately if you suspect an abdominal aortic aneurysm.\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Likert quality domains \u2014 1 to 5 each\n\n- **Accuracy** \u2014 clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\n\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"accuracy\": 1,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n"
+      }
+    ],
+    "tools": [
+      {
+        "name": "submit_score",
+        "description": "Return the scored rubric JSON.",
+        "input_schema": {
+          "additionalProperties": false,
+          "description": "Structured output for symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "accuracy": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Accuracy",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "accuracy",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "SymptomJudgeOutput",
+          "type": "object"
+        }
+      }
+    ],
+    "tool_choice": {
+      "type": "tool",
+      "name": "submit_score"
+    }
+  },
+  "raw_response": {
+    "id": "msg_01JS25678enbCTpBma41PFv6",
+    "content": [
+      {
+        "id": "toolu_0149g92Td5GkETTJ6cUXmCPD",
+        "input": {
+          "tone": 1,
+          "complementarity": 1,
+          "gilbert_urgency": 1,
+          "accuracy": 3,
+          "comprehensiveness": 3,
+          "clarity": 4,
+          "rationale": "The response lists plausible signs of AAA including pulsatile abdominal mass, abdominal/flank/back pain, and shock features of rupture, which are clinically defensible. However, it fails to mention that most AAAs are asymptomatic and detected incidentally or via screening \u2014 a critical omission that risks misleading patients about the typical clinical picture. Tone is cautious but not balanced with alternative views; urges immediate medical attention (consistent with emergency-level advice). Clear and readable for a layperson."
+        },
+        "name": "submit_score",
+        "type": "tool_use",
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ],
+    "model": "claude-opus-4-7",
+    "role": "assistant",
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "input_tokens": 2457,
+      "output_tokens": 353,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global"
+    },
+    "stop_details": null
+  },
+  "parsed_response": {
+    "tone": 1,
+    "complementarity": 1,
+    "gilbert_urgency": 1,
+    "accuracy": 3,
+    "comprehensiveness": 3,
+    "clarity": 4,
+    "rationale": "The response lists plausible signs of AAA including pulsatile abdominal mass, abdominal/flank/back pain, and shock features of rupture, which are clinically defensible. However, it fails to mention that most AAAs are asymptomatic and detected incidentally or via screening \u2014 a critical omission that risks misleading patients about the typical clinical picture. Tone is cautious but not balanced with alternative views; urges immediate medical attention (consistent with emergency-level advice). Clear and readable for a layperson."
+  },
+  "run_index": 2,
+  "cache_hit": false
+}

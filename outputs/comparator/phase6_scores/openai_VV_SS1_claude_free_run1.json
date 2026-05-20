@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "VV_SS1_claude_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 61.74475175514817,
+  "request_id": "req_1d0dfd688ffe414e96c23f7798152f01",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which are the symptoms of varicose veins?\n\nRESPONSE TO SCORE:\n---\n## Symptoms of Varicose Veins\n\nVaricose veins can cause a range of symptoms, from purely cosmetic concerns to uncomfortable physical sensations:\n\n**Visible Signs**\n- Dark purple or blue veins visible under the skin\n- Twisted, bulging, or cord-like veins, usually on the legs\n- Swollen, raised veins that you can see and feel\n\n**Physical Symptoms**\n- Aching, heavy, or uncomfortable legs\n- Burning, throbbing, or cramping in the lower legs\n- Swelling in the ankles and feet\n- Itching around the affected veins\n- Skin discoloration around the veins (brownish or reddish)\n\n**Worsening Factors**\n- Symptoms often worsen after standing or sitting for long periods\n- Pain may increase in warm weather or at the end of the day\n- Leg restlessness, especially at night\n\n**Signs of Complications** (seek medical attention)\n- Bleeding from a varicose vein\n- Sores or skin ulcers near the ankle\n- Hard, warm, or painful veins (may indicate a clot)\n- Sudden swelling of the entire leg\n\n**Important notes:**\n- Many people have varicose veins with **no pain at all** \u2014 just cosmetic concern\n- Symptoms tend to worsen with **age, pregnancy, obesity, and prolonged standing**\n- Self-care (compression stockings, elevating legs, exercise) can help relieve mild symptoms\n\nIf symptoms are severe, persistent, or accompanied by skin changes or ulcers, it's best to consult a doctor or vascular specialist.\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_016e22e873653c23006a0df75aec7081918c57c1ab8d1cd41d",
+    "created_at": 1779300186.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_016e22e873653c23006a0df75ba24c8191b4e0e1582f97a989",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_016e22e873653c23006a0df796fc4c8191bdb4831305ee12df",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":1,\"gilbert_urgency\":2,\"comprehensiveness\":5,\"clarity\":5,\"rationale\":\"The answer is balanced, noting that some people have no pain, offering self-care, and specifying when to seek care. It encourages physician involvement and flags red-flag symptoms with \u201cseek medical attention,\u201d implying urgent evaluation. It comprehensively lists visible signs, physical symptoms, aggravating factors, and complications. The structured headings and bullet points make it clear and accessible.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 2,
+              "comprehensiveness": 5,
+              "clarity": 5,
+              "rationale": "The answer is balanced, noting that some people have no pain, offering self-care, and specifying when to seek care. It encourages physician involvement and flags red-flag symptoms with \u201cseek medical attention,\u201d implying urgent evaluation. It comprehensively lists visible signs, physical symptoms, aggravating factors, and complications. The structured headings and bullet points make it clear and accessible."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1760,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 622,
+      "output_tokens_details": {
+        "reasoning_tokens": 622
+      },
+      "total_tokens": 2382
+    },
+    "user": null,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1779300248,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 2,
+    "comprehensiveness": 5,
+    "clarity": 5,
+    "rationale": "The answer is balanced, noting that some people have no pain, offering self-care, and specifying when to seek care. It encourages physician involvement and flags red-flag symptoms with \u201cseek medical attention,\u201d implying urgent evaluation. It comprehensively lists visible signs, physical symptoms, aggravating factors, and complications. The structured headings and bullet points make it clear and accessible."
+  },
+  "run_index": 1,
+  "cache_hit": false
+}

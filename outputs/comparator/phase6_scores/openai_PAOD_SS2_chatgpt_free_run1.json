@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "PAOD_SS2_chatgpt_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 20.209897505817935,
+  "request_id": "req_55a168056e9c48f8bd4e3148b06787e7",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: What is the risk of amputation in patients with leg artery disease?\n\nRESPONSE TO SCORE:\n---\nIn Peripheral Artery Disease, the risk of amputation depends greatly on how severe the disease is and whether it is treated.\n\n### General risk\n\n* Most people with **mild or moderate PAD** do **not** lose a limb.\n* The risk becomes much higher when PAD progresses to **critical limb ischemia** (also called chronic limb-threatening ischemia), where blood flow is severely reduced.\n\n### Higher-risk warning signs\n\nThe chance of amputation increases if a person has:\n\n* pain in the foot or toes even at rest,\n* nonhealing ulcers or wounds,\n* gangrene (black tissue),\n* infection,\n* diabetes,\n* smoking,\n* kidney disease,\n* or delayed treatment.\n\n### Approximate risk estimates\n\n* In stable PAD without ulcers or rest pain, major amputation risk is generally **low** over several years.\n* In severe PAD with chronic limb-threatening ischemia, studies suggest:\n\n  * about **10\u201340%** of patients may require some form of amputation within 6\u201312 months if blood flow cannot be restored.\n* Diabetes plus PAD substantially raises risk.\n\n### What lowers the risk\n\nEarly diagnosis and treatment can dramatically reduce amputation risk:\n\n* quitting smoking,\n* supervised walking exercise,\n* cholesterol-lowering therapy (often statins),\n* diabetes and blood pressure control,\n* antiplatelet medications,\n* proper foot care,\n* and vascular procedures such as angioplasty, stenting, or bypass surgery when needed.\n\nSeek urgent vascular evaluation if there is:\n\n* a foot wound that will not heal,\n* black/discolored toes,\n* severe rest pain,\n* or signs of infection.\n\nHelpful references:\n\n* [Society for Vascular Surgery \u2013 PAD information](https://vascular.org/patients-and-referring-physicians/conditions/peripheral-arterial-disease?utm_source=chatgpt.com)\n* [Cleveland Clinic \u2013 Peripheral Artery Disease](https://my.clevelandclinic.org/health/diseases/16878-peripheral-artery-disease-pad?utm_source=chatgpt.com)\n---\n\nQUESTION CATEGORY: symptoms  (natural_history)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_088c5b021377456d006a0df5a2a79c819783c16e80df54c161",
+    "created_at": 1779299746.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_088c5b021377456d006a0df5a2fe608197bdc72fe1b8995376",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_088c5b021377456d006a0df5b3cbc481978eef8300138f64ab",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\n  \"tone\": 2,\n  \"complementarity\": 1,\n  \"gilbert_urgency\": 2,\n  \"comprehensiveness\": 4,\n  \"clarity\": 5,\n  \"rationale\": \"The response uses cautious, balanced language and acknowledges variability by severity, providing ranges and conditions, which supports a balanced tone. It explicitly advises seeking urgent vascular evaluation for warning signs, demonstrating support for physician involvement and an urgent-care recommendation. It covers key elements (severity spectrum, risk factors, warning signs, approximate risk ranges, and mitigation strategies), though it lacks detailed quantitative data for mild PAD. The structure is clear, with headings and bullet points, and uses accessible language.\"\n}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 2,
+              "comprehensiveness": 4,
+              "clarity": 5,
+              "rationale": "The response uses cautious, balanced language and acknowledges variability by severity, providing ranges and conditions, which supports a balanced tone. It explicitly advises seeking urgent vascular evaluation for warning signs, demonstrating support for physician involvement and an urgent-care recommendation. It covers key elements (severity spectrum, risk factors, warning signs, approximate risk ranges, and mitigation strategies), though it lacks detailed quantitative data for mild PAD. The structure is clear, with headings and bullet points, and uses accessible language."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1084,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1060,
+      "output_tokens_details": {
+        "reasoning_tokens": 896
+      },
+      "total_tokens": 2144
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779299766,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 2,
+    "comprehensiveness": 4,
+    "clarity": 5,
+    "rationale": "The response uses cautious, balanced language and acknowledges variability by severity, providing ranges and conditions, which supports a balanced tone. It explicitly advises seeking urgent vascular evaluation for warning signs, demonstrating support for physician involvement and an urgent-care recommendation. It covers key elements (severity spectrum, risk factors, warning signs, approximate risk ranges, and mitigation strategies), though it lacks detailed quantitative data for mild PAD. The structure is clear, with headings and bullet points, and uses accessible language."
+  },
+  "run_index": 1,
+  "cache_hit": false
+}

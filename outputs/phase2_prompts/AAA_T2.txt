@@ -1,0 +1,87 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: Which is the best intervention for AAA?
+
+RESPONSE TO SCORE:
+---
+The best intervention for Abdominal Aortic Aneurysm (AAA) depends on several factors, including the size and growth rate of the aneurysm, the patient's overall health, and the presence of symptoms. Generally, there are two primary interventions for AAA:
+
+Endovascular Aneurysm Repair (EVAR):
+
+Minimally Invasive: Involves inserting a graft within the aneurysm through small incisions in the groin.
+Advantages: Shorter recovery time, less postoperative pain, and lower risk of complications compared to open surgery.
+Disadvantages: May not be suitable for all patients depending on the anatomy of the aneurysm and the blood vessels.
+Open Surgical Repair:
+
+Traditional Approach: Involves making a large incision in the abdomen to directly repair the aneurysm with a synthetic graft.
+Advantages: Generally more durable and effective for large or complex aneurysms.
+Disadvantages: Longer recovery time, higher risk of complications, and more significant impact on the patient's body.
+The choice between EVAR and open surgery often depends on the specifics of the patient's condition. EVAR is typically preferred for patients with suitable anatomy and higher surgical risk due to its minimally invasive nature, while open surgery might be chosen for patients with complex aneurysms or when EVAR is not feasible.
+
+It's important for patients to discuss the options with their healthcare provider to determine the most appropriate intervention based on their individual circumstances.
+---
+
+QUESTION CATEGORY: treatment  (best_treatment)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### D. Discussion of Uncertainty (DISCERN Q7) — 1 to 5 — **TREATMENT QUESTIONS ONLY**
+
+"Does the information describe the uncertainty of treatment?"
+
+- `1`: No mention of uncertainty
+- `2`–`4`: Partial or incomplete discussion of uncertainties
+- `5`: Explicit acknowledgment of uncertainty or variability in treatment outcomes
+
+For symptom/natural-history questions, this field must be omitted from the judge's output (not zero, not null — the schema validator should require its absence for non-treatment items).
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "discern_q7": 1,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

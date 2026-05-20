@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "VV_SS1_chatgpt_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 16.68405371508561,
+  "request_id": "req_0efb7956b813491db0483fe97e22d4d3",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which are the symptoms of varicose veins?\n\nRESPONSE TO SCORE:\n---\nVaricose Veins commonly affect the legs and feet. Symptoms can range from mild cosmetic changes to significant discomfort.\n\nCommon symptoms include:\n\n* Bulging, twisted, or dark purple/blue veins visible under the skin\n* Aching, heavy, or tired legs, especially after standing a long time\n* Burning, throbbing, cramping, or muscle spasms in the legs\n* Swelling in the lower legs or ankles\n* Itching around one or more veins\n* Pain that worsens after prolonged sitting or standing\n* A feeling of pressure or fullness in the legs\n* Restless legs, especially at night\n\nMore advanced symptoms can include:\n\n* Skin discoloration around the ankles\n* Dry, thin, or irritated skin\n* Hardening of the skin\n* Venous ulcers (slow-healing sores), usually near the ankles\n* Bleeding from a vein after minor injury\n\nSeek medical attention promptly if you notice:\n\n* Sudden swelling in one leg\n* Redness, warmth, or severe pain\n* Skin ulcers\n* Bleeding veins\n\nThese can sometimes signal complications such as blood clots or chronic venous insufficiency.\n\nRisk factors include aging, pregnancy, obesity, long periods of standing, family history, and lack of physical activity.\n\nHelpful self-care measures:\n\n* Walking and regular exercise\n* Elevating the legs\n* Avoiding long periods of standing or sitting\n* Compression stockings\n* Maintaining a healthy weight\n\nFor diagnosis and treatment, a vascular specialist or vein clinic may use ultrasound and offer treatments such as compression therapy, sclerotherapy, laser treatment, or minimally invasive vein procedures.\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_08bffb3de17ee9d4006a0df6096fe08194a1b38d3283efca8d",
+    "created_at": 1779299849.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_08bffb3de17ee9d4006a0df609d1f88194b32a377fa99eee24",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_08bffb3de17ee9d4006a0df617f6f881949cc41aee2aa630e3",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\n  \"tone\": 1,\n  \"complementarity\": 1,\n  \"gilbert_urgency\": 2,\n  \"comprehensiveness\": 5,\n  \"clarity\": 5,\n  \"rationale\": \"The response uses cautious, non-absolute phrasing (e.g., \u201ccan include\u201d) without discussing alternative diagnoses, reflecting a generally affirmative tone. It encourages seeking prompt medical attention for red flags and references specialist evaluation, supporting physician involvement. The inclusion of \u201cpromptly\u201d for concerning signs indicates an urgent evaluation rather than emergency services. It thoroughly lists common and advanced symptoms and presents them clearly in well-organized bullet points.\"\n}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 1,
+              "complementarity": 1,
+              "gilbert_urgency": 2,
+              "comprehensiveness": 5,
+              "clarity": 5,
+              "rationale": "The response uses cautious, non-absolute phrasing (e.g., \u201ccan include\u201d) without discussing alternative diagnoses, reflecting a generally affirmative tone. It encourages seeking prompt medical attention for red flags and references specialist evaluation, supporting physician involvement. The inclusion of \u201cpromptly\u201d for concerning signs indicates an urgent evaluation rather than emergency services. It thoroughly lists common and advanced symptoms and presents them clearly in well-organized bullet points."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 994,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1171,
+      "output_tokens_details": {
+        "reasoning_tokens": 960
+      },
+      "total_tokens": 2165
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779299865,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 1,
+    "complementarity": 1,
+    "gilbert_urgency": 2,
+    "comprehensiveness": 5,
+    "clarity": 5,
+    "rationale": "The response uses cautious, non-absolute phrasing (e.g., \u201ccan include\u201d) without discussing alternative diagnoses, reflecting a generally affirmative tone. It encourages seeking prompt medical attention for red flags and references specialist evaluation, supporting physician involvement. The inclusion of \u201cpromptly\u201d for concerning signs indicates an urgent evaluation rather than emergency services. It thoroughly lists common and advanced symptoms and presents them clearly in well-organized bullet points."
+  },
+  "run_index": 3,
+  "cache_hit": false
+}

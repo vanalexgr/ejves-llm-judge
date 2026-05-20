@@ -1,0 +1,79 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: Which are the symptoms of varicose veins?
+
+RESPONSE TO SCORE:
+---
+Varicose veins are enlarged, twisted veins that often appear on the legs and feet. They occur when the valves in the veins do not work properly, causing blood to pool and the veins to swell. Symptoms of varicose veins include:
+
+Visible, Enlarged Veins: The most obvious symptom is the appearance of dark purple or blue veins that are twisted and bulging, often looking like cords on the legs.
+
+Aching or Heavy Feeling: Legs may feel achy, heavy, or fatigued, especially after prolonged standing or sitting.
+
+Swelling: Swelling in the lower legs and ankles can occur.
+
+Pain or Discomfort: There can be a throbbing or burning sensation in the legs.
+
+Muscle Cramps: Particularly at night, muscle cramps in the legs may be experienced.
+
+Itching: The area around varicose veins might be itchy or irritated.
+
+Skin Changes: Skin around the varicose veins may become discolored, hardened, or ulcerated in severe cases.
+
+Restless Legs: Some individuals may experience an urge to move their legs, often accompanied by discomfort.
+
+If you experience any of these symptoms or have concerns about varicose veins, it's advisable to consult a healthcare professional for an accurate diagnosis and appropriate treatment options.
+---
+
+QUESTION CATEGORY: symptoms  (signs_symptoms)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

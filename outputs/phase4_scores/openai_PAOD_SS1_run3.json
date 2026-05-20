@@ -1,0 +1,180 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "PAOD_SS1",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 26.732364119030535,
+  "request_id": "req_904416b3a8b042c2be4177b3a91009a7",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question. Score the response strictly against the\nrubric below. Do not infer beyond what the response actually states. If the\nresponse does not address something, the relevant score reflects that absence,\nnot what you think the response should have said. Output only valid JSON\nmatching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Leg artery disease: which symptoms?\n\nRESPONSE TO SCORE:\n---\nLeg artery disease, also known as peripheral artery disease (PAD), occurs when arteries in the legs become narrowed or blocked due to a buildup of fatty deposits (atherosclerosis). This can lead to reduced blood flow to the legs and feet, resulting in various symptoms. Here are the common symptoms of leg artery disease:\n\nCommon Symptoms\nClaudication: Pain, cramping, or fatigue in the legs and hips while walking or exercising, which usually subsides with rest.\nLeg Numbness or Weakness: Reduced blood flow can cause a feeling of numbness or weakness in the legs.\nColdness in the Lower Leg or Foot: One leg may feel cooler than the other due to poor circulation.\nSores or Ulcers: Persistent sores, ulcers, or wounds on the toes, feet, or legs that heal slowly or not at all.\nChange in Leg Color: The skin on the legs may appear pale, bluish, or darkened.\nHair Loss on Legs: A decrease in hair growth on the legs and feet.\nShiny Skin on the Legs: The skin on the legs may become shiny due to a lack of hair and dry skin.\nWeak or Absent Pulse: A weak or absent pulse in the legs or feet can be detected by a healthcare provider.\nPain at Rest: In more severe cases, pain may occur in the legs and feet even at rest, especially when lying down (ischemic rest pain).\nLess Common Symptoms\nErectile Dysfunction in Men: Reduced blood flow can affect sexual function in men.\nTingling or Burning Sensations: Abnormal sensations in the legs due to nerve damage from poor circulation.\nWhen to Seek Medical Help\nIf you experience any of the above symptoms, especially pain while walking that improves with rest, it is important to seek medical evaluation. Early diagnosis and management can prevent the progression of the disease and reduce the risk of complications like critical limb ischemia or amputation.\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Likert quality domains \u2014 1 to 5 each\n\n- **Accuracy** \u2014 clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\n\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"accuracy\": 1,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "SymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_0f2f4cf8399835a6006a0dd0bbde1881a2bf19b9803d8afaca",
+    "created_at": 1779290299.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_0f2f4cf8399835a6006a0dd0bc446881a28b20dbe9702a3857",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_0f2f4cf8399835a6006a0dd0d1edd881a28508215c78073171",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":1,\"complementarity\":1,\"gilbert_urgency\":3,\"accuracy\":4,\"comprehensiveness\":4,\"clarity\":5,\"rationale\":\"The response accurately lists key PAD symptoms (claudication, rest pain, nonhealing ulcers, color/temperature changes) and separates common from less common findings, using clear, lay-friendly language. It recommends seeking medical evaluation, aligning with non-urgent clinician involvement. Minor limitations include not noting that many individuals with PAD are asymptomatic and suggesting tingling/burning from \u201cnerve damage from poor circulation,\u201d which could be overstated. Overall, it is clear, clinically sound, and reasonably comprehensive.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 1,
+              "complementarity": 1,
+              "gilbert_urgency": 3,
+              "accuracy": 4,
+              "comprehensiveness": 4,
+              "clarity": 5,
+              "rationale": "The response accurately lists key PAD symptoms (claudication, rest pain, nonhealing ulcers, color/temperature changes) and separates common from less common findings, using clear, lay-friendly language. It recommends seeking medical evaluation, aligning with non-urgent clinician involvement. Minor limitations include not noting that many individuals with PAD are asymptomatic and suggesting tingling/burning from \u201cnerve damage from poor circulation,\u201d which could be overstated. Overall, it is clear, clinically sound, and reasonably comprehensive."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "SymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "accuracy": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Accuracy",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "accuracy",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "SymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1169,
+      "input_tokens_details": {
+        "cached_tokens": 1152
+      },
+      "output_tokens": 1401,
+      "output_tokens_details": {
+        "reasoning_tokens": 1216
+      },
+      "total_tokens": 2570
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779290326,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 1,
+    "complementarity": 1,
+    "gilbert_urgency": 3,
+    "accuracy": 4,
+    "comprehensiveness": 4,
+    "clarity": 5,
+    "rationale": "The response accurately lists key PAD symptoms (claudication, rest pain, nonhealing ulcers, color/temperature changes) and separates common from less common findings, using clear, lay-friendly language. It recommends seeking medical evaluation, aligning with non-urgent clinician involvement. Minor limitations include not noting that many individuals with PAD are asymptomatic and suggesting tingling/burning from \u201cnerve damage from poor circulation,\u201d which could be overstated. Overall, it is clear, clinically sound, and reasonably comprehensive."
+  },
+  "run_index": 3,
+  "cache_hit": false
+}

@@ -1,0 +1,80 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: I have a carotid stenosis; which is my risk of stroke?
+
+RESPONSE TO SCORE:
+---
+The risk of stroke in individuals with carotid stenosis depends on several factors, including the degree of narrowing in the carotid arteries, the presence of symptoms, and other individual risk factors such as age, overall health, and the presence of other conditions like hypertension, diabetes, and hyperlipidemia.
+
+Here are some key points to consider:
+
+Degree of Stenosis:
+
+Mild Stenosis (less than 50% narrowing): The risk of stroke is generally low but may increase if other risk factors are present.
+Moderate Stenosis (50-69% narrowing): The risk of stroke is higher compared to mild stenosis, and the need for medical or surgical intervention might be considered based on individual circumstances.
+Severe Stenosis (70% or greater narrowing): The risk of stroke is significantly increased, especially if the stenosis is symptomatic (e.g., previous transient ischemic attack or minor stroke).
+Symptomatic vs. Asymptomatic:
+
+Symptomatic Carotid Stenosis: If you have experienced symptoms like a transient ischemic attack (TIA) or minor stroke, the risk of a subsequent stroke is higher. In such cases, the risk of stroke can be as high as 10-15% per year.
+Asymptomatic Carotid Stenosis: If the stenosis is found incidentally and you have not experienced any symptoms, the risk of stroke is lower, generally around 1-2% per year. However, this risk can vary based on other factors like the progression of the stenosis and overall cardiovascular health.
+Other Risk Factors:
+
+High Blood Pressure: Increases the risk of stroke.
+Smoking: Significantly raises the risk of stroke and accelerates the progression of atherosclerosis.
+Diabetes: Contributes to an increased risk of stroke.
+High Cholesterol: Leads to plaque buildup in the arteries, raising stroke risk.
+Age and Gender: Older age and male gender are associated with a higher risk of stroke.
+---
+
+QUESTION CATEGORY: symptoms  (natural_history)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

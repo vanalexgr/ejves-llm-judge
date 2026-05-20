@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "AAA_SS2_chatgpt_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 17.877753645181656,
+  "request_id": "req_f1f6f65a3438499b8ff776c6bb056074",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which are the risks of AAA?\n\nRESPONSE TO SCORE:\n---\nThe main risks of Abdominal Aortic Aneurysm are related to the aneurysm getting larger and eventually tearing or bursting.\n\n## Major risks and complications\n\n* **Rupture (burst aneurysm)**\n  This is the most serious risk. A ruptured AAA can cause massive internal bleeding and is life-threatening.\n\n* **Aortic dissection**\n  A tear can develop in the inner wall of the aorta, causing severe pain and dangerous blood flow problems.\n\n* **Blood clots**\n  Clots can form inside the aneurysm and travel to the legs or other organs, potentially blocking blood flow.\n\n* **Reduced circulation**\n  Large aneurysms may affect blood supply to nearby organs or limbs.\n\n## Factors that increase the risk of rupture\n\nThe chance of complications rises when the aneurysm:\n\n* Is **larger** (especially over about 5\u20135.5 cm)\n* Is growing quickly\n* Causes symptoms such as pain\n* Occurs in someone who smokes or has uncontrolled high blood pressure\n\n## Risk factors for developing AAA\n\nPeople are more likely to develop an AAA if they:\n\n* Smoke or used to smoke\n* Are older (especially men over 65)\n* Have high blood pressure\n* Have high cholesterol or atherosclerosis\n* Have a family history of AAA\n* Have cardiovascular disease\n\n## Emergency warning signs\n\nSeek urgent medical help if someone with a known or possible AAA develops:\n\n* Sudden severe abdominal, back, or groin pain\n* Fainting or collapse\n* Dizziness\n* Rapid heartbeat\n* Signs of shock\n\nDoctors usually monitor small AAAs with regular imaging and may recommend surgery when the aneurysm becomes large or high-risk.\n---\n\nQUESTION CATEGORY: symptoms  (natural_history)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_016bc52d48d3dd65006a0df50086148194aa21947c8f1947aa",
+    "created_at": 1779299584.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_016bc52d48d3dd65006a0df500ef288194bc3a003bd875048d",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_016bc52d48d3dd65006a0df50fdfe48194a8c61be6fd92c295",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":1,\"gilbert_urgency\":2,\"comprehensiveness\":4,\"clarity\":5,\"rationale\":\"The response balances information on risks, risk modifiers, and management (monitoring vs. intervention), and advises urgent evaluation for red-flag symptoms. It supports physician involvement explicitly. It recommends urgent care (not specifically calling emergency services). Coverage of rupture and thromboembolism is solid, with added risk factors and warning signs, though some complications could be further detailed. The structure and language are clear and accessible.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 2,
+              "comprehensiveness": 4,
+              "clarity": 5,
+              "rationale": "The response balances information on risks, risk modifiers, and management (monitoring vs. intervention), and advises urgent evaluation for red-flag symptoms. It supports physician involvement explicitly. It recommends urgent care (not specifically calling emergency services). Coverage of rupture and thromboembolism is solid, with added risk factors and warning signs, though some complications could be further detailed. The structure and language are clear and accessible."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1003,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1163,
+      "output_tokens_details": {
+        "reasoning_tokens": 1024
+      },
+      "total_tokens": 2166
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779299601,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 2,
+    "comprehensiveness": 4,
+    "clarity": 5,
+    "rationale": "The response balances information on risks, risk modifiers, and management (monitoring vs. intervention), and advises urgent evaluation for red-flag symptoms. It supports physician involvement explicitly. It recommends urgent care (not specifically calling emergency services). Coverage of rupture and thromboembolism is solid, with added risk factors and warning signs, though some complications could be further detailed. The structure and language are clear and accessible."
+  },
+  "run_index": 3,
+  "cache_hit": false
+}

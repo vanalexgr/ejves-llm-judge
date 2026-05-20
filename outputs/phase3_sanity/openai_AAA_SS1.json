@@ -1,0 +1,176 @@
+{
+  "judge_name": "openai",
+  "response_id": "AAA_SS1",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 22.130153698846698,
+  "request_id": "req_8b01a6e5ed0841c196335a4cc6344e87",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question. Score the response strictly against the\nrubric below. Do not infer beyond what the response actually states. If the\nresponse does not address something, the relevant score reflects that absence,\nnot what you think the response should have said. Output only valid JSON\nmatching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which are the signs of AAA?\n\nRESPONSE TO SCORE:\n---\nAAA, or abdominal aortic aneurysm, may present with signs such as a pulsating feeling in the abdomen, deep constant pain in the abdomen or on the side of the abdomen, back pain, and sometimes signs of shock such as clammy skin, rapid heartbeat, low blood pressure, or dizziness. It's important to seek medical attention immediately if you suspect an abdominal aortic aneurysm.\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Likert quality domains \u2014 1 to 5 each\n\n- **Accuracy** \u2014 factual correctness against current vascular surgery practice (ESVS guidelines as benchmark where applicable). 1 = very poor (contains clinically significant errors); 5 = excellent (fully accurate)\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\n\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a 2\u20134 sentence justification string.\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"accuracy\": 1,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"2-4 sentence justification goes here.\"\n}\n",
+    "text_format": "SymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_09adb98ec2f63141006a0cbeb1f0c8819d9c523eccb188584d",
+    "created_at": 1779220145.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_09adb98ec2f63141006a0cbeb285a8819d84e9d43772f625f1",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_09adb98ec2f63141006a0cbec4cedc819da23bfce6c2fd574b",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":1,\"complementarity\":1,\"gilbert_urgency\":2,\"accuracy\":5,\"comprehensiveness\":3,\"clarity\":5,\"rationale\":\"The response accurately lists common AAA symptoms and red-flag features such as abdominal/back pain, a pulsatile sensation, and shock, and advises prompt medical attention. It is clear and easy to understand. However, it omits that most AAAs are asymptomatic and does not distinguish patient-reported symptoms from exam findings (e.g., palpable pulsatile mass). It recommends immediate evaluation but does not explicitly advise calling emergency services for suspected rupture.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 1,
+              "complementarity": 1,
+              "gilbert_urgency": 2,
+              "accuracy": 5,
+              "comprehensiveness": 3,
+              "clarity": 5,
+              "rationale": "The response accurately lists common AAA symptoms and red-flag features such as abdominal/back pain, a pulsatile sensation, and shock, and advises prompt medical attention. It is clear and easy to understand. However, it omits that most AAAs are asymptomatic and does not distinguish patient-reported symptoms from exam findings (e.g., palpable pulsatile mass). It recommends immediate evaluation but does not explicitly advise calling emergency services for suspected rupture."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "SymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "accuracy": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Accuracy",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "2-4 sentences justifying the scores.",
+              "minLength": 1,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "accuracy",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "SymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 751,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 871,
+      "output_tokens_details": {
+        "reasoning_tokens": 704
+      },
+      "total_tokens": 1622
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779220166,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 1,
+    "complementarity": 1,
+    "gilbert_urgency": 2,
+    "accuracy": 5,
+    "comprehensiveness": 3,
+    "clarity": 5,
+    "rationale": "The response accurately lists common AAA symptoms and red-flag features such as abdominal/back pain, a pulsatile sensation, and shock, and advises prompt medical attention. It is clear and easy to understand. However, it omits that most AAAs are asymptomatic and does not distinguish patient-reported symptoms from exam findings (e.g., palpable pulsatile mass). It recommends immediate evaluation but does not explicitly advise calling emergency services for suspected rupture."
+  }
+}

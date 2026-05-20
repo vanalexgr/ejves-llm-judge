@@ -1,0 +1,189 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "AAA_T1",
+  "question_group": "treatment",
+  "model_used": "gpt-5",
+  "latency_seconds": 26.661846573930234,
+  "request_id": "req_36e962c1a793436dad0ddd2b3b2d84a3",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question. Score the response strictly against the\nrubric below. Do not infer beyond what the response actually states. If the\nresponse does not address something, the relevant score reflects that absence,\nnot what you think the response should have said. Output only valid JSON\nmatching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which is the risk of rupture of an AAA?\n\nRESPONSE TO SCORE:\n---\nThe risk of rupture of an abdominal aortic aneurysm (AAA) depends on various factors such as the size of the aneurysm, the rate of growth, and other individual health factors. Generally, the risk of rupture increases as the size of the aneurysm expands. An AAA larger than 5.5 centimeters carries a higher risk of rupture. It's crucial to monitor AAA regularly through imaging tests and follow medical advice to manage the risk of rupture.\n---\n\nQUESTION CATEGORY: treatment  (medical_advice)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### D. Discussion of Uncertainty (DISCERN Q7) \u2014 1 to 5 \u2014 **TREATMENT QUESTIONS ONLY**\n\n\"Does the information describe the uncertainty of treatment?\"\n\n- `1`: No mention of uncertainty\n- `2`\u2013`4`: Partial or incomplete discussion of uncertainties\n- `5`: Explicit acknowledgment of uncertainty or variability in treatment outcomes\n\nFor symptom/natural-history questions, this field must be omitted from the judge's output (not zero, not null \u2014 the schema validator should require its absence for non-treatment items).\n\n\n### E. Likert quality domains \u2014 1 to 5 each\n\n- **Accuracy** \u2014 clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\n\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"discern_q7\": 1,\n  \"accuracy\": 1,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "TreatmentJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_0a282d6b2691cd30006a0dcfc055008190bfda7125e547e57d",
+    "created_at": 1779290048.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_0a282d6b2691cd30006a0dcfc0fb74819084591a61b32169be",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_0a282d6b2691cd30006a0dcfd6ced88190b20395df33a4a3ac",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\n  \"tone\": 2,\n  \"complementarity\": 1,\n  \"gilbert_urgency\": 3,\n  \"discern_q7\": 1,\n  \"accuracy\": 4,\n  \"comprehensiveness\": 2,\n  \"clarity\": 4,\n  \"rationale\": \"The response uses balanced, cautious language and notes variability with factors like size and growth, and it encourages ongoing medical monitoring. It suggests non-urgent medical follow-up rather than emergency care. It does not discuss uncertainty of treatment outcomes. Clinically, it is generally accurate but lacks key quantitative risk estimates and other important modifiers, limiting comprehensiveness, though the wording is clear and easy to follow.\"\n}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 3,
+              "discern_q7": 1,
+              "accuracy": 4,
+              "comprehensiveness": 2,
+              "clarity": 4,
+              "rationale": "The response uses balanced, cautious language and notes variability with factors like size and growth, and it encourages ongoing medical monitoring. It suggests non-urgent medical follow-up rather than emergency care. It does not discuss uncertainty of treatment outcomes. Clinically, it is generally accurate but lacks key quantitative risk estimates and other important modifiers, limiting comprehensiveness, though the wording is clear and easy to follow."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "TreatmentJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for treatment items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "discern_q7": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Discern Q7",
+              "type": "integer"
+            },
+            "accuracy": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Accuracy",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "discern_q7",
+            "accuracy",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "TreatmentJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1008,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1504,
+      "output_tokens_details": {
+        "reasoning_tokens": 1344
+      },
+      "total_tokens": 2512
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779290073,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 3,
+    "discern_q7": 1,
+    "accuracy": 4,
+    "comprehensiveness": 2,
+    "clarity": 4,
+    "rationale": "The response uses balanced, cautious language and notes variability with factors like size and growth, and it encourages ongoing medical monitoring. It suggests non-urgent medical follow-up rather than emergency care. It does not discuss uncertainty of treatment outcomes. Clinically, it is generally accurate but lacks key quantitative risk estimates and other important modifiers, limiting comprehensiveness, though the wording is clear and easy to follow."
+  },
+  "run_index": 1,
+  "cache_hit": false
+}

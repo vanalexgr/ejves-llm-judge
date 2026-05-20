@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "CS_SS1_chatgpt_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 31.509201789973304,
+  "request_id": "req_1532c6ab83c54803bb1952a49fc66331",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which are the symptoms of carotid stenoses?\n\nRESPONSE TO SCORE:\n---\nCarotid artery stenosis often causes **no symptoms** until blood flow to the brain becomes reduced or a small clot travels to the brain.\n\nWhen symptoms occur, they are usually warning signs of a Transient ischemic attack or Stroke.\n\n## Common symptoms\n\nSymptoms usually happen suddenly and may affect one side of the body:\n\n* Weakness or numbness of the face, arm, or leg\n* Drooping of one side of the face\n* Trouble speaking or understanding speech\n* Sudden loss of vision in one eye (often described as a curtain coming down)\n* Blurred or double vision\n* Dizziness or loss of balance\n* Sudden severe headache\n* Confusion\n\n## Important warning sign\n\nA temporary episode that resolves within minutes or hours can still be serious. A TIA may be an early warning before a major stroke.\n\n## Risk factors\n\nCommon risk factors include:\n\n* Smoking\n* High blood pressure\n* High cholesterol\n* Diabetes\n* Older age\n* Heart disease\n* Atherosclerosis\n\n## When to seek urgent help\n\nSeek emergency care immediately if stroke symptoms appear, even if they improve quickly. Early treatment can reduce brain damage and disability.\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_0c7d11190158b4f2006a0df5623fa88192bbe8d429197aa408",
+    "created_at": 1779299682.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_0c7d11190158b4f2006a0df5636d608192bea82e846dc0349a",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_0c7d11190158b4f2006a0df57f07f48192b86625e6a8ed86b2",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":1,\"gilbert_urgency\":1,\"comprehensiveness\":4,\"clarity\":5,\"rationale\":\"Balanced tone notes many cases have no symptoms and frames manifestations as TIA/stroke warning signs. It supports physician involvement by urging immediate emergency care for symptoms. The urgency aligns with calling/going to emergency services. It covers key TIA/stroke symptoms and asymptomatic nature, though it adds risk factors beyond the question. The structure and bullet points make it very clear for lay readers.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 1,
+              "comprehensiveness": 4,
+              "clarity": 5,
+              "rationale": "Balanced tone notes many cases have no symptoms and frames manifestations as TIA/stroke warning signs. It supports physician involvement by urging immediate emergency care for symptoms. The urgency aligns with calling/going to emergency services. It covers key TIA/stroke symptoms and asymptomatic nature, though it adds risk factors beyond the question. The structure and bullet points make it very clear for lay readers."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 903,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 792,
+      "output_tokens_details": {
+        "reasoning_tokens": 640
+      },
+      "total_tokens": 1695
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779299713,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 1,
+    "comprehensiveness": 4,
+    "clarity": 5,
+    "rationale": "Balanced tone notes many cases have no symptoms and frames manifestations as TIA/stroke warning signs. It supports physician involvement by urging immediate emergency care for symptoms. The urgency aligns with calling/going to emergency services. It covers key TIA/stroke symptoms and asymptomatic nature, though it adds risk factors beyond the question. The structure and bullet points make it very clear for lay readers."
+  },
+  "run_index": 3,
+  "cache_hit": false
+}

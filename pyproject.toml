@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ejves-llm-judge"
+version = "0.1.0"
+description = "LLM-as-judge calibration pipeline for the EJVES vascular ChatGPT study."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "anthropic",
+  "matplotlib",
+  "openai",
+  "openpyxl",
+  "pandas",
+  "pingouin",
+  "pyarrow",
+  "pydantic>=2,<3",
+  "pyreadstat",
+  "pytest",
+  "python-dotenv",
+  "rich",
+  "scikit-learn",
+  "scipy",
+  "seaborn",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

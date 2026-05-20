@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "AAA_SS1_gemini_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 39.65914055518806,
+  "request_id": "req_5c8065d5b23745e3944376de7ba4df79",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Which are the signs of AAA?\n\nRESPONSE TO SCORE:\n---\nAn **AAA** usually refers to an **Abdominal Aortic Aneurysm**\u2014a swelling or bulge in the main blood vessel that runs from your heart through your chest and tummy.\n\nThe trick with an AAA is that it often grows slowly and **causes no symptoms at all** until it becomes large or starts to tear. However, knowing what to look for can be life-saving.\n\nHere are the signs to watch out for, broken down by whether the aneurysm is stable or a medical emergency.\n\n---\n\n## 1. Signs of a Growing (But Unruptured) AAA\n\nIf an AAA is expanding, it may start pressing on surrounding organs and nerves. You might notice:\n\n* **A pulsating feeling in the stomach:** A throbbing or pumping sensation near your belly button, similar to a heartbeat.\n* **Persistent back pain:** Deep, aching pain in your lower back or the side of your abdomen that doesn't go away with rest or changing positions.\n* **Constant belly pain:** A dull, steady ache in your stomach area.\n\n---\n\n## 2. Signs of a Ruptured AAA (Medical Emergency) \ud83d\udea8\n\nIf the aneurysm bursts, it causes severe internal bleeding. **This is a life-threatening emergency.** Call emergency services immediately if you or someone else experiences:\n\n* **Sudden, severe pain:** An intense, sharp, or tearing pain in the abdomen, lower back, or groin that comes on instantly.\n* **Signs of shock:** * Clammy, sweaty, or pale skin\n* Dizziness, lightheadedness, or fainting\n* A rapid heartbeat or shallow, fast breathing\n\n\n* **Shortness of breath** or sudden confusion.\n\n---\n\n## Who is Most at Risk?\n\nAAA is most common in men over the age of 65. Major risk factors include:\n\n* Smoking or a history of smoking\n* High blood pressure\n* High cholesterol\n* A family history of AAA\n\n> **Note:** If you have risk factors or are experiencing a persistent, unexplained ache in your back or stomach, it is highly recommended to speak with a doctor. They can perform a quick, painless ultrasound to check for an AAA.\n\n*(If you meant \"AAA\" in a different context\u2014like the American Automobile Association, AAA gaming, or Triple-A batteries\u2014let me know and I'll gladly pivot!)*\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_05a6e977152ad9bb006a0df7fdc21481a391a14cbd56ea9573",
+    "created_at": 1779300349.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_05a6e977152ad9bb006a0df7fe40f881a39aea2d32dee476c9",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_05a6e977152ad9bb006a0df820909081a38e8a0888e1df050d",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\n  \"tone\": 2,\n  \"complementarity\": 1,\n  \"gilbert_urgency\": 1,\n  \"comprehensiveness\": 4,\n  \"clarity\": 5,\n  \"rationale\": \"The response acknowledges that AAA can be asymptomatic and differentiates signs of unruptured versus ruptured aneurysm, showing balanced tone. It recommends calling emergency services for rupture and advises consulting a doctor for risk factors or persistent symptoms, supporting physician involvement. It covers key signs (abdominal/back pain, pulsatile sensation, shock features) though it omits some specifics like a palpable mass or less common presentations. The structure and language are clear and easy to follow.\"\n}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 1,
+              "comprehensiveness": 4,
+              "clarity": 5,
+              "rationale": "The response acknowledges that AAA can be asymptomatic and differentiates signs of unruptured versus ruptured aneurysm, showing balanced tone. It recommends calling emergency services for rupture and advises consulting a doctor for risk factors or persistent symptoms, supporting physician involvement. It covers key signs (abdominal/back pain, pulsatile sensation, shock features) though it omits some specifics like a palpable mass or less common presentations. The structure and language are clear and easy to follow."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1138,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1067,
+      "output_tokens_details": {
+        "reasoning_tokens": 896
+      },
+      "total_tokens": 2205
+    },
+    "user": null,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1779300389,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 1,
+    "comprehensiveness": 4,
+    "clarity": 5,
+    "rationale": "The response acknowledges that AAA can be asymptomatic and differentiates signs of unruptured versus ruptured aneurysm, showing balanced tone. It recommends calling emergency services for rupture and advises consulting a doctor for risk factors or persistent symptoms, supporting physician involvement. It covers key signs (abdominal/back pain, pulsatile sensation, shock features) though it omits some specifics like a palpable mass or less common presentations. The structure and language are clear and easy to follow."
+  },
+  "run_index": 1,
+  "cache_hit": false
+}

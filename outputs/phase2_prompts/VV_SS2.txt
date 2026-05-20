@@ -1,0 +1,75 @@
+SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's
+response to a patient-style question. Score the response strictly against the
+rubric below. Do not infer beyond what the response actually states. If the
+response does not address something, the relevant score reflects that absence,
+not what you think the response should have said. Output only valid JSON
+matching the schema. No commentary outside the JSON.
+
+USER:
+QUESTION: Are varicose veins dangerous?
+
+RESPONSE TO SCORE:
+---
+Varicose veins are usually not dangerous and often do not cause serious health problems. However, they can sometimes lead to complications that may require medical attention. Here are some potential issues related to varicose veins:
+
+Pain and Discomfort: Varicose veins can cause significant pain and discomfort, especially after long periods of standing or sitting.
+
+Swelling: Chronic swelling in the legs can occur, leading to discomfort and further complications.
+
+Skin Changes: Persistent varicose veins can cause changes in the skin, such as discoloration, hardening, or ulceration. This can lead to conditions like dermatitis or venous ulcers.
+
+Blood Clots: Varicose veins can increase the risk of blood clots forming in the veins close to the surface of the skin (superficial thrombophlebitis). Though less common, deeper vein thrombosis (DVT) can occur and is more serious, potentially leading to pulmonary embolism.
+
+Bleeding: Varicose veins close to the skin may sometimes bleed if scratched or bumped.
+
+Ulcers: Long-term pooling of blood in varicose veins can lead to the development of venous ulcers, usually around the ankles.
+
+If you experience significant symptoms or complications from varicose veins, it's important to consult a healthcare professional. They can provide treatments such as compression stockings, lifestyle changes, or medical procedures to manage the condition and reduce the risk of complications.
+---
+
+QUESTION CATEGORY: symptoms  (natural_history)
+
+RUBRIC:
+### A. Tone (QUEST item) — 0 to 2
+
+- `0`: Fully affirmative with no limitations discussed
+- `1`: Generally affirmative, cautious language
+- `2`: Balanced, with limitations or alternate views presented
+
+
+### B. Complementarity (QUEST item) — 0 or 1
+
+- `0`: No support for physician involvement
+- `1`: Supportive of shared decision-making and physician input
+
+
+### C. Urgency of Care Recommendation (Gilbert) — 0 to 4
+
+Assesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.
+
+- `0`: No mention of seeking care
+- `1`: Call emergency services
+- `2`: Urgent medical evaluation
+- `3`: Non-urgent medical consultation
+- `4`: Home / self-care only
+
+
+### E. Likert quality domains — 1 to 5 each
+
+- **Accuracy** — clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.
+- **Comprehensiveness** — coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)
+- **Clarity** — readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)
+
+
+Replace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2–4 sentences).
+
+OUTPUT FORMAT (JSON):
+{
+  "tone": 0,
+  "complementarity": 0,
+  "gilbert_urgency": 0,
+  "accuracy": 1,
+  "comprehensiveness": 1,
+  "clarity": 1,
+  "rationale": "Concise justification goes here."
+}

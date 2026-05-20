@@ -1,0 +1,180 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "VV_SS2",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 27.6269828628283,
+  "request_id": "req_57b1ff538ce34f3f8dfe8a9893adafac",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question. Score the response strictly against the\nrubric below. Do not infer beyond what the response actually states. If the\nresponse does not address something, the relevant score reflects that absence,\nnot what you think the response should have said. Output only valid JSON\nmatching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Are varicose veins dangerous?\n\nRESPONSE TO SCORE:\n---\nVaricose veins are usually not dangerous and often do not cause serious health problems. However, they can sometimes lead to complications that may require medical attention. Here are some potential issues related to varicose veins:\n\nPain and Discomfort: Varicose veins can cause significant pain and discomfort, especially after long periods of standing or sitting.\n\nSwelling: Chronic swelling in the legs can occur, leading to discomfort and further complications.\n\nSkin Changes: Persistent varicose veins can cause changes in the skin, such as discoloration, hardening, or ulceration. This can lead to conditions like dermatitis or venous ulcers.\n\nBlood Clots: Varicose veins can increase the risk of blood clots forming in the veins close to the surface of the skin (superficial thrombophlebitis). Though less common, deeper vein thrombosis (DVT) can occur and is more serious, potentially leading to pulmonary embolism.\n\nBleeding: Varicose veins close to the skin may sometimes bleed if scratched or bumped.\n\nUlcers: Long-term pooling of blood in varicose veins can lead to the development of venous ulcers, usually around the ankles.\n\nIf you experience significant symptoms or complications from varicose veins, it's important to consult a healthcare professional. They can provide treatments such as compression stockings, lifestyle changes, or medical procedures to manage the condition and reduce the risk of complications.\n---\n\nQUESTION CATEGORY: symptoms  (natural_history)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Likert quality domains \u2014 1 to 5 each\n\n- **Accuracy** \u2014 clinical correctness of the response as a whole, not merely the defensibility of individual stated facts. Penalize responses that (a) present an unrepresentative clinical picture (e.g., describing typically-asymptomatic conditions as symptomatic), (b) omit prevalence or epidemiology critical for patient understanding, (c) misalign with current ESVS guidelines on diagnosis or management, or (d) could mislead a patient about clinical priorities. 1 = clinically misleading or contains major errors; 2 = factually defensible but with significant clinical gaps; 3 = factually defensible with minor clinical gaps; 4 = clinically accurate with only minor omissions; 5 = clinically accurate, balanced, and patient-appropriate.\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\n\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"accuracy\": 1,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "SymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_0ec1812fd92a5870006a0dd141927c81a1a996b1099927ec20",
+    "created_at": 1779290433.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_0ec1812fd92a5870006a0dd141eb5881a1bac7c0c967fa20fd",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_0ec1812fd92a5870006a0dd159f26481a1acf2a6d92a28fc94",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":1,\"gilbert_urgency\":3,\"accuracy\":4,\"comprehensiveness\":4,\"clarity\":5,\"rationale\":\"The response is balanced, noting that varicose veins are usually not dangerous while outlining possible complications, and it encourages consulting a healthcare professional. It appropriately recommends non-urgent medical consultation rather than emergency care. The clinical content is accurate regarding common complications (pain, swelling, skin changes, SVT, rare DVT/PE, bleeding, ulcers), though it lacks specific red-flag guidance or epidemiologic context. The explanation is clear and well-structured for a lay reader.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 3,
+              "accuracy": 4,
+              "comprehensiveness": 4,
+              "clarity": 5,
+              "rationale": "The response is balanced, noting that varicose veins are usually not dangerous while outlining possible complications, and it encourages consulting a healthcare professional. It appropriately recommends non-urgent medical consultation rather than emergency care. The clinical content is accurate regarding common complications (pain, swelling, skin changes, SVT, rare DVT/PE, bleeding, ulcers), though it lacks specific red-flag guidance or epidemiologic context. The explanation is clear and well-structured for a lay reader."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "SymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "accuracy": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Accuracy",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "accuracy",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "SymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1063,
+      "input_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "output_tokens": 1388,
+      "output_tokens_details": {
+        "reasoning_tokens": 1216
+      },
+      "total_tokens": 2451
+    },
+    "user": null,
+    "billing": {
+      "payer": "openai"
+    },
+    "completed_at": 1779290460,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 3,
+    "accuracy": 4,
+    "comprehensiveness": 4,
+    "clarity": 5,
+    "rationale": "The response is balanced, noting that varicose veins are usually not dangerous while outlining possible complications, and it encourages consulting a healthcare professional. It appropriately recommends non-urgent medical consultation rather than emergency care. The clinical content is accurate regarding common complications (pain, swelling, skin changes, SVT, rare DVT/PE, bleeding, ulcers), though it lacks specific red-flag guidance or epidemiologic context. The explanation is clear and well-structured for a lay reader."
+  },
+  "run_index": 3,
+  "cache_hit": false
+}

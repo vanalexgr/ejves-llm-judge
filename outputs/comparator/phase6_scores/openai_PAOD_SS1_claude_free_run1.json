@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "judge_name": "openai",
+  "response_id": "PAOD_SS1_claude_free",
+  "question_group": "symptoms",
+  "model_used": "gpt-5",
+  "latency_seconds": 17.99768000515178,
+  "request_id": "req_1a13c1c4cfe64e0b8617d1efc58d33ce",
+  "request_payload": {
+    "model": "gpt-5",
+    "input": "SYSTEM: You are a board-certified vascular surgeon evaluating an AI chatbot's\nresponse to a patient-style question for the comparator arm of a vascular\nsurgery study. Accuracy is assessed separately by a human vascular surgeon and\nis not part of this scoring task. Score only the domains requested in the\nrubric below. Do not infer beyond what the response actually states. Output only\nvalid JSON matching the schema. No commentary outside the JSON.\n\nUSER:\nQUESTION: Leg artery disease: which symptoms?\n\nRESPONSE TO SCORE:\n---\n# Leg Artery Disease (Peripheral Arterial Disease): Key Symptoms\n\nLeg artery disease, or **Peripheral Arterial Disease (PAD)**, occurs when narrowed arteries reduce blood flow to the legs. Here are the main symptoms:\n\n---\n\n## Classic Symptom: Claudication\n\n**Intermittent claudication** is the hallmark symptom \u2014 cramping, aching, or fatigue in the legs (usually the calf, thigh, or buttock) that:\n- Appears during walking or exercise\n- Disappears within minutes of rest\n- Returns predictably at the same walking distance\n\n---\n\n## Other Common Symptoms\n\n**At rest / advanced disease:**\n- Pain in the foot or toes at rest, especially at night (relieved by dangling the leg down)\n- Burning or aching in the lower limb even without exertion\n\n**Skin and tissue changes:**\n- Skin that is pale, bluish (cyanotic), or reddish when the leg is lowered\n- Shiny, hairless, or thin skin on the legs and feet\n- Thickened or slow-growing toenails\n- Slow-healing wounds or ulcers on the feet or ankles\n- Gangrene in severe cases (tissue death)\n\n**Sensory and temperature changes:**\n- Cold or numb feet and toes\n- Reduced sensation in the lower legs\n\n**Pulses:**\n- Weak or absent pulse in the foot or behind the knee (detected by a doctor)\n\n---\n\n## Severity Stages (Fontaine Classification)\n\n| Stage | Symptom |\n|-------|---------|\n| I | No symptoms, but disease present |\n| IIa | Claudication after >200 m walking |\n| IIb | Claudication before 200 m |\n| III | Rest pain |\n| IV | Ulcers / gangrene (critical ischemia) |\n\n---\n\n## When to See a Doctor Urgently\n\nSeek immediate care if you notice:\n- Sudden severe leg pain with cold, pale, or numb limb \u2192 possible **acute limb ischemia** (arterial blockage emergency)\n- Non-healing sores or blackened skin on the foot\n\n---\n\n**Risk factors** that make PAD more likely include smoking, diabetes, hypertension, high cholesterol, and age over 50. An **ABI test** (ankle-brachial index) is the standard first diagnostic step.\n---\n\nQUESTION CATEGORY: symptoms  (signs_symptoms)\n\nRUBRIC:\n### A. Tone (QUEST item) \u2014 0 to 2\n\n- `0`: Fully affirmative with no limitations discussed\n- `1`: Generally affirmative, cautious language\n- `2`: Balanced, with limitations or alternate views presented\n\n\n### B. Complementarity (QUEST item) \u2014 0 or 1\n\n- `0`: No support for physician involvement\n- `1`: Supportive of shared decision-making and physician input\n\n\n### C. Urgency of Care Recommendation (Gilbert) \u2014 0 to 4\n\nAssesses what level of care, if any, the response recommends. This is a categorical level, not a severity scale.\n\n- `0`: No mention of seeking care\n- `1`: Call emergency services\n- `2`: Urgent medical evaluation\n- `3`: Non-urgent medical consultation\n- `4`: Home / self-care only\n\n\n### E. Descriptive quality domains \u2014 1 to 5 each\n\n- **Comprehensiveness** \u2014 coverage of clinically important aspects of the question. 1 = very poor (major omissions); 5 = excellent (complete coverage)\n- **Clarity** \u2014 readability and structural clarity of the response for a layperson. 1 = very poor (confusing or jargon-heavy); 5 = excellent (clear and accessible)\n\nThese two domains are recorded descriptively only in Phase 6 and are not validated primary comparator endpoints.\n\n\nAccuracy is intentionally omitted from this task because it is assigned separately by a human vascular surgeon.\nReplace each numeric placeholder with your integer score (within the stated range). Replace rationale with a concise justification (roughly 2\u20134 sentences).\n\nOUTPUT FORMAT (JSON):\n{\n  \"tone\": 0,\n  \"complementarity\": 0,\n  \"gilbert_urgency\": 0,\n  \"comprehensiveness\": 1,\n  \"clarity\": 1,\n  \"rationale\": \"Concise justification goes here.\"\n}\n",
+    "text_format": "ComparatorSymptomJudgeOutput"
+  },
+  "raw_response": {
+    "id": "resp_0421d3ac3a9f935b006a0df6ee76bc8196a6ca860d91d0b186",
+    "created_at": 1779300078.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-5-2025-08-07",
+    "object": "response",
+    "output": [
+      {
+        "id": "rs_0421d3ac3a9f935b006a0df6eef2a081969a841828d85b2388",
+        "summary": [],
+        "type": "reasoning",
+        "content": null,
+        "encrypted_content": null,
+        "status": null
+      },
+      {
+        "id": "msg_0421d3ac3a9f935b006a0df6fe15188196922a9c9ca7a20612",
+        "content": [
+          {
+            "annotations": [],
+            "text": "{\"tone\":2,\"complementarity\":1,\"gilbert_urgency\":2,\"comprehensiveness\":5,\"clarity\":5,\"rationale\":\"The response is balanced, noting asymptomatic disease (Fontaine I) and when symptoms warrant urgent attention, rather than presenting absolutes. It supports physician involvement by advising immediate care for alarming signs and referencing clinician-assessed pulses and ABI testing. It recommends urgent evaluation (\u201cseek immediate care\u201d) but does not explicitly instruct calling emergency services. The answer is comprehensive, covering claudication, rest pain, skin/tissue changes, sensory/temperature changes, pulses, severity staging, and red flags, and it is clearly organized with headings and bullets understandable to lay readers.\"}",
+            "type": "output_text",
+            "logprobs": [],
+            "parsed": {
+              "tone": 2,
+              "complementarity": 1,
+              "gilbert_urgency": 2,
+              "comprehensiveness": 5,
+              "clarity": 5,
+              "rationale": "The response is balanced, noting asymptomatic disease (Fontaine I) and when symptoms warrant urgent attention, rather than presenting absolutes. It supports physician involvement by advising immediate care for alarming signs and referencing clinician-assessed pulses and ABI testing. It recommends urgent evaluation (\u201cseek immediate care\u201d) but does not explicitly instruct calling emergency services. The answer is comprehensive, covering claudication, rest pain, skin/tissue changes, sensory/temperature changes, pulses, severity staging, and red flags, and it is clearly organized with headings and bullets understandable to lay readers."
+            }
+          }
+        ],
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 1.0,
+    "background": false,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_key": null,
+    "reasoning": {
+      "effort": "medium",
+      "generate_summary": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+      "format": {
+        "name": "ComparatorSymptomJudgeOutput",
+        "schema_": {
+          "additionalProperties": false,
+          "description": "Structured output for comparator symptom and natural-history items.",
+          "properties": {
+            "tone": {
+              "maximum": 2,
+              "minimum": 0,
+              "title": "Tone",
+              "type": "integer"
+            },
+            "complementarity": {
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Complementarity",
+              "type": "integer"
+            },
+            "gilbert_urgency": {
+              "maximum": 4,
+              "minimum": 0,
+              "title": "Gilbert Urgency",
+              "type": "integer"
+            },
+            "comprehensiveness": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Comprehensiveness",
+              "type": "integer"
+            },
+            "clarity": {
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Clarity",
+              "type": "integer"
+            },
+            "rationale": {
+              "description": "Concise justification for the scores.",
+              "maxLength": 1500,
+              "minLength": 20,
+              "title": "Rationale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tone",
+            "complementarity",
+            "gilbert_urgency",
+            "comprehensiveness",
+            "clarity",
+            "rationale"
+          ],
+          "title": "ComparatorSymptomJudgeOutput",
+          "type": "object"
+        },
+        "type": "json_schema",
+        "description": null,
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1135,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1612,
+      "output_tokens_details": {
+        "reasoning_tokens": 1408
+      },
+      "total_tokens": 2747
+    },
+    "user": null,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1779300095,
+    "frequency_penalty": 0.0,
+    "moderation": null,
+    "presence_penalty": 0.0,
+    "prompt_cache_retention": "in_memory",
+    "store": true
+  },
+  "parsed_response": {
+    "tone": 2,
+    "complementarity": 1,
+    "gilbert_urgency": 2,
+    "comprehensiveness": 5,
+    "clarity": 5,
+    "rationale": "The response is balanced, noting asymptomatic disease (Fontaine I) and when symptoms warrant urgent attention, rather than presenting absolutes. It supports physician involvement by advising immediate care for alarming signs and referencing clinician-assessed pulses and ABI testing. It recommends urgent evaluation (\u201cseek immediate care\u201d) but does not explicitly instruct calling emergency services. The answer is comprehensive, covering claudication, rest pain, skin/tissue changes, sensory/temperature changes, pulses, severity staging, and red flags, and it is clearly organized with headings and bullets understandable to lay readers."
+  },
+  "run_index": 1,
+  "cache_hit": false
+}
