@@ -188,19 +188,39 @@ The TRIPOD-LLM checklist must be completed and submitted as Supplementary Table 
 
 ---
 
-## Note on Supplementary Table 2 (Comparator Results)
+## New Table 7 (Comparator Results) — Insert as main Table 7
 
-Add a Supplementary Table 2 containing the per-domain mean scores for each comparator model vs GPT-3.5 benchmark. Use the values from `outputs/comparator/validated_endpoint_comparison.csv` in the repository.
+The comparator arm results should appear as **main Table 7** (not supplementary), because they are directly cited in the Results and Discussion sections. The existing table count updates from 6 main + 1 supplementary to **7 main + 2 supplementary** (adding Table 7 here and Supplementary Table 2 TRIPOD checklist).
 
-**Suggested column layout:**
+Source data: `outputs/comparator/validated_endpoint_comparison.csv` and `outputs/comparator/model_endpoint_summary.csv` in the repository. Values are means (95% bootstrap CI).
+
+**Table 7. Comparator model results versus GPT-3.5 benchmark across validated and descriptive domains (n = 16 responses per model)**
 
 | Domain | GPT-3.5 (original) | GPT-5.5 | Gemini 3.5 Flash | Claude Sonnet 4.6 |
 |--------|--------------------|---------|-----------------|-------------------|
-| Accuracy* | 3.27 | 3.69 | 3.72 | 3.31 |
-| Tone | 1.31 | 1.66 | 1.72 | 1.78 |
-| Complementarity | 0.79 | 0.88 | 0.84 | 0.88 |
-| Urgency (Gilbert) | 2.10 | 1.91 | 2.06 | 2.06 |
-| DISCERN Q7† | 3.04 | 3.50 | 3.13 | 3.19 |
+| Accuracy†, mean (95% CI) | 3.27 (2.93–3.66) | 3.69 (3.45–3.94) | 3.72 (3.55–3.91) | 3.31 (3.00–3.52) |
+| Tone‡, mean (95% CI) | 1.31 (1.21–1.44) | 1.66 (1.47–1.81) | 1.72 (1.59–1.84) | 1.78 (1.66–1.91) |
+| Complementarity‡, mean (95% CI) | 0.79 (0.70–0.90) | 0.88 (0.73–0.97) | 0.84 (0.72–0.94) | 0.88 (0.75–1.00) |
+| Urgency (Gilbert scale)§, mean (95% CI) | 2.10 (1.70–2.49) | 1.91 (1.55–2.28) | 2.06 (1.53–2.50) | 2.06 (1.73–2.39) |
+| DISCERN Q7‡¶, mean (95% CI) | 3.04 (2.83–3.23) | 3.50 (2.65–4.47) | 3.13 (2.25–4.13) | 3.19 (2.37–3.94) |
+| Comprehensiveness*, mean (95% CI) | [see Table 5] | 4.46 (4.33–4.62) | 4.63 (4.50–4.77) | 4.91 (4.83–4.98) |
+| Clarity*, mean (95% CI) | [see Table 5] | 5.00 | 4.98 (4.95–5.00) | 4.91 (4.80–4.99) |
 
-*Accuracy: GPT-3.5 from 3-surgeon consensus; comparator models from dual/triple-surgeon blinded review.  
-†DISCERN Q7: treatment questions only (n = 8 per model).
+*Comprehensiveness and clarity are reported descriptively only; inter-rater reliability for these domains was insufficient for validated endpoint use at this sample size (see Table 2).  
+†Accuracy scored on a 1–5 clinical accuracy scale (higher = better). GPT-3.5 value derived from 3-surgeon consensus; comparator values from dual/triple-surgeon blinded review with adjudication for responses with ≥2-point disagreement.  
+‡Higher score indicates better performance.  
+§Gilbert urgency scale 0–4 (0 = emergency call, 4 = home/self-care); lower score indicates more urgent recommendation. Clinically appropriate urgency depends on question type; see text for interpretation.  
+¶DISCERN Q7 scored on a 1–5 scale (higher = better); treatment questions only (n = 8 per model).  
+95% CIs derived from 1,000-iteration bootstrap resampling.
+
+---
+
+## Generative AI Use Statement — Insert as standalone section after Acknowledgements
+
+Elsevier policy requires a dedicated AI use disclosure. Add the following as a new section titled **"Declaration of Generative AI and AI-assisted technologies in the writing process"**:
+
+> During the preparation of this work, the authors used Claude Code (Anthropic) and Codex (OpenAI) to assist with programming, data analysis pipeline construction, and manuscript formatting. After using these tools, the authors reviewed and edited all content as needed and take full responsibility for the integrity of the work and the accuracy of the results reported. The large language models used as automated scoring instruments within the research pipeline — claude-opus-4-7 (Anthropic) and gpt-5 (OpenAI) — are described in the Methods section as research tools; their use as judge models within the methodology is distinct from the writing-assistance uses described here.
+
+**Change log reference:** Item AI1 (new section, after Acknowledgements).
+
+**Note on manuscript header:** The journal submission form "Use of AI" field should also be ticked "Yes" with the same disclosure text entered in the relevant field.

@@ -199,6 +199,20 @@ Briefly: questions about aortic aneurysm symptoms received a mean urgency score 
 
 ---
 
+---
+
+## Additional Structural Additions
+
+### New Table 7: Comparator Results
+
+A new main Table 7 has been added presenting per-domain mean scores with 95% bootstrap confidence intervals for the three comparator models versus the GPT-3.5 benchmark. This table supports the new comparator Results paragraph (Change Log item R1b) and is directly cited in the Discussion (Change Log item R1c). The manuscript table count updates from 6 main + 1 supplementary to 7 main + 2 supplementary (the second supplementary table being the TRIPOD-LLM checklist, Supplementary Table 2).
+
+### Generative AI Use Statement
+
+In accordance with Elsevier policy on the declaration of AI use, a new section has been added after Acknowledgements (Change Log item AI1) disclosing: (1) the use of Claude Code (Anthropic) and Codex (OpenAI) for pipeline development and manuscript formatting assistance; and (2) the use of claude-opus-4-7 and gpt-5 as automated judge models within the research pipeline (the latter already described in the Methods). The statement clarifies that all scientific content, interpretations, and conclusions are the sole responsibility of the authors. No AI use statement was present in the original submission.
+
+---
+
 *We hope the revised manuscript satisfactorily addresses all reviewer concerns. We are grateful for the constructive and thorough peer review.*
 
 ---

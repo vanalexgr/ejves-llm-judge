@@ -286,6 +286,32 @@ Every change is documented below. Items are coded by reviewer origin (R1 = Revie
 
 ---
 
+### T1 — New Table 7: Comparator results
+
+**Location:** Insert as main Table 7, after existing Table 6, before Discussion or References
+
+**Content:** Per-domain mean scores (95% bootstrap CI) for GPT-3.5 benchmark vs GPT-5.5, Gemini 3.5 Flash, and Claude Sonnet 4.6 across all validated and descriptive endpoints (accuracy, tone, complementarity, urgency, DISCERN Q7, and descriptive comprehensiveness and clarity). Full table layout and footnotes in `03_revised_text_passages.md`.
+
+**Consequential update:** The manuscript cover-page table count updates from "6 tables, 1 supplementary table" to "7 tables, 2 supplementary tables".
+
+**Reason:** Results section now cites a comparator paragraph that requires a dedicated table. Supplementary tables are reserved for the TRIPOD checklist (Supplementary Table 2); main text results belong in main tables.
+
+---
+
+### AI1 — Generative AI Use Statement (new section)
+
+**Location:** Insert as new section titled "Declaration of Generative AI and AI-assisted technologies in the writing process", after Acknowledgements
+
+**New text (insert in full):**
+
+> During the preparation of this work, the authors used Claude Code (Anthropic) and Codex (OpenAI) to assist with programming, data analysis pipeline construction, and manuscript formatting. After using these tools, the authors reviewed and edited all content as needed and take full responsibility for the integrity of the work and the accuracy of the results reported. The large language models used as automated scoring instruments within the research pipeline — claude-opus-4-7 (Anthropic) and gpt-5 (OpenAI) — are described in the Methods section as research tools; their use as judge models within the methodology is distinct from the writing-assistance uses described here.
+
+**Reason:** Elsevier mandatory policy (updated 2023). No AI use statement was present in the original submission. Two distinct uses require disclosure: (1) Claude Code and Codex used for pipeline development and manuscript formatting assistance; (2) claude-opus-4-7 and gpt-5 used as judge models within the research pipeline (already described in Methods). The statement clarifies the boundary between the two uses.
+
+**Also required:** Tick "Yes" in the submission system's AI use field and enter the same disclosure text.
+
+---
+
 ## Summary Count
 
 | Type | Count |
@@ -295,6 +321,8 @@ Every change is documented below. Items are coded by reviewer origin (R1 = Revie
 | Sentence replacements/edits | 7 items |
 | Single sentence additions | 7 items |
 | Phrase replacements | 2 items |
-| **Total discrete changes** | **23 items** |
+| New table (comparator results) | 1 item |
+| New section (AI use statement) | 1 item |
+| **Total discrete changes** | **25 items** |
 
-No section has been rewritten in its entirety. The new comparator arm content (~420 words across Methods, Results, Discussion, Conclusions) is the only substantive addition to the manuscript body.
+No section has been rewritten in its entirety. The new comparator arm content (~420 words across Methods, Results, Discussion, Conclusions) is the only substantive addition to the manuscript body. Table 7 and the AI use statement are additional structural additions required by the comparator results and journal policy respectively.
