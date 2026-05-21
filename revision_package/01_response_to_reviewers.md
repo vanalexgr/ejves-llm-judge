@@ -30,7 +30,7 @@ This correction strengthens rather than weakens the manuscript's conclusions. Th
 
 **Response:** We agree. The originally submitted manuscript referred to "generalist LLMs" in a way that implied breadth not supported by a single-model study. In the revised manuscript, initial conclusions are explicitly restricted to ChatGPT (gpt-3.5-turbo-0125). 
 
-To directly address this limitation, we have conducted a pre-specified comparator analysis evaluating the same 16 question stems in three current-generation models: GPT-5.5, Gemini 3.5 Flash, and Claude Sonnet 4.6. These comparator results are now incorporated into the Methods, Results, and Discussion (see Change Log items R1a–R1d). This extension allows the revised conclusions to address generalist LLMs more broadly while grounding the original analysis explicitly in the GPT-3.5 context.
+To directly address this limitation, we have conducted a pre-specified comparator analysis evaluating the same 16 question stems in three current-generation models: GPT-5.5, Gemini 3.5 Flash, and Claude Sonnet 4.6. These comparator results are now incorporated into the Methods, Results, and Discussion (see Change Log items R1a–R1d). This extension allows the revised conclusions to address generalist LLMs more broadly while grounding the original analysis explicitly in the GPT-3.5 context. The scoring pipeline, calibration outputs, blinded prompts, and final comparator dataset are publicly available at: https://github.com/vanalexgr/ejves-llm-judge
 
 **Changes:** Items R1a (Methods, comparator arm subsection), R1b (Results, comparator results paragraph), R1c (Discussion, comparator integration), R1d (Conclusions, scope correction).
 

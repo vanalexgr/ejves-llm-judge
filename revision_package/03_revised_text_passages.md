@@ -172,6 +172,16 @@ After the sentence "should not be used as standalone sources of patient informat
 
 ---
 
+## Data and Code Availability Statement
+
+Add the following as a new standalone paragraph at the end of the Methods section, before Statistical Analysis, or as a dedicated "Data Availability" section if the journal requires one:
+
+> The scoring pipeline, calibration outputs, blinded judge prompts, and final comparator dataset are publicly available at: https://github.com/vanalexgr/ejves-llm-judge. Raw reviewer workbooks are not publicly distributed due to confidentiality; processed consensus outputs sufficient for replication of all downstream analyses are included in the repository.
+
+Also add the URL to the response letter cover section (see `01_response_to_reviewers.md` — add under the comparator arm methods response).
+
+---
+
 ## Note on TRIPOD-LLM Checklist
 
 The TRIPOD-LLM checklist must be completed and submitted as Supplementary Table 2. It should be referenced in the Methods line 137: add "(Supplementary Table 2)" after "TRIPOD-LLM checklist".
