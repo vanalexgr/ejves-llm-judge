@@ -182,9 +182,17 @@ Also add the URL to the response letter cover section (see `01_response_to_revie
 
 ---
 
-## Note on TRIPOD-LLM Checklist
+## Supplementary Table 2: TRIPOD-LLM Checklist
 
-The TRIPOD-LLM checklist must be completed and submitted as Supplementary Table 2. It should be referenced in the Methods line 137: add "(Supplementary Table 2)" after "TRIPOD-LLM checklist".
+The completed TRIPOD-LLM checklist is in `revision_package/supplementary_table2_tripod_llm.md`. Submit this as Supplementary Table 2.
+
+**Reference:** Omiye JA, Gui H, Rezaei SJ, et al. TRIPOD-LLM: a reporting guideline for studies using large language models. *Nature Medicine*. 2024. https://doi.org/10.1038/s41591-024-03425-5
+
+**Summary status:** 15/19 items fully reported; 2 partially reported (prompt stems available at GitHub but not in main text; compute resources not formally described for consumer-interface study); 2 N/A (no fine-tuning; no in-study model updates).
+
+**One action required:** Add "(Supplementary Table 2)" after "TRIPOD-LLM checklist" at Methods line 137.
+
+**Optional improvement flagged in checklist (item 3f):** Consider adding a supplementary table of the 16 question stems if word count permits.
 
 ---
 
