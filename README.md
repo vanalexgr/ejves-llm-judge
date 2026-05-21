@@ -1,5 +1,15 @@
 # EJVES LLM Judge Pipeline
 
+Start here for a non-technical overview: [PLAIN_SUMMARY.md](PLAIN_SUMMARY.md)
+
+This repository documents a vascular-surgery study workflow asking a narrow question: can an LLM-as-judge be used safely for some rubric domains when evaluating chatbot responses, and where must surgeons remain in control? The final answer is selective rather than universal. The judge was most convincing for urgency of care, usable with caution for some communication-oriented domains, and not acceptable as a standalone instrument for clinical accuracy. Comparator-arm accuracy therefore stayed under blinded surgeon review.
+
+The main current outputs for collaborators are:
+- [outputs/comparator/comparator_report.md](outputs/comparator/comparator_report.md)
+- [outputs/comparator/comparator_summary_tables.xlsx](outputs/comparator/comparator_summary_tables.xlsx)
+- [outputs/calibration/agreement_report.md](outputs/calibration/agreement_report.md)
+- [docs/STUDY_NARRATIVE.md](docs/STUDY_NARRATIVE.md)
+
 This repository contains the code, processed data, prompts, calibration outputs, and final comparator-arm artifacts for an LLM-as-judge pipeline built around the EJVES vascular ChatGPT study.
 
 ## Scope
@@ -24,9 +34,13 @@ The project has two linked goals:
 - `outputs/calibration/`
   Calibration reports, agreement plots, aggregated judge outputs, and manuscript-facing fallback documentation.
 - `outputs/comparator/`
-  Comparator-arm outputs for 48 newer responses: 16 vascular questions answered by `GPT-5.5`, `Gemini 3.5 Flash`, and `Claude Sonnet 4.6`.
+  Comparator-arm outputs for 48 newer responses: 16 vascular questions answered by `GPT-5.5`, `Gemini 3.5 Flash`, and `Claude Sonnet 4.6`, collected from their free consumer-facing interfaces and then copied into the scoring pipeline.
 - `docs/`
   Plain-language study narrative, rubric summary, and comparator analysis plan for collaborators and reviewers.
+
+## Data Access
+
+The archived raw reviewer workbooks are not distributed here as a public raw-data bundle. The processed reconstruction outputs needed for downstream replication live in `data/processed/`. A placeholder note describing the expected historical inputs is in `data/raw/README.md`.
 
 ## Comparator Model Naming
 
@@ -67,6 +81,8 @@ The completed calibration run supports direct judge use only on the domains that
 - `outputs/calibration/methods_addendum.md`
 - `outputs/comparator/comparator_report.md`
 - `docs/STUDY_NARRATIVE.md`
+
+The manuscript Table 2 correction package is also now part of the interpretive frame for this repository. It confirms that the originally submitted clarity and comprehensiveness ICCs were mis-transcribed and that, at the original symptoms-topic sample size (`n = 4` diseases), those two constructs were not meaningfully estimable under ICC(2,k). This does not invalidate the calibration pipeline; it clarifies why both the human and judge signal for those domains remained too unstable for use as validated comparator endpoints.
 
 ## Reproducibility Notes
 

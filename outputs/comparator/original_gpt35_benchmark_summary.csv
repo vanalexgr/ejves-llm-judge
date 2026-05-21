@@ -1,8 +1,8 @@
-endpoint,direction,group,original_mean,response_count
-Accuracy,higher,validated,3.270833333333333,16
-Tone,higher,validated,1.3125,16
-Complementarity,higher,validated,0.7916666666666666,16
-Urgency,lower,validated,2.1041666666666665,16
-DISCERN Q7,higher,validated,3.0416666666666665,8
-Comprehensiveness,higher,descriptive,3.9166666666666665,16
-Clarity,higher,descriptive,3.7708333333333335,16
+endpoint,direction,group,original_mean,original_mean_ci_low,original_mean_ci_high,response_count
+Accuracy,higher,validated,3.270833333333333,2.9265625,3.6567708333333333,16
+Tone,higher,validated,1.3125,1.2083333333333333,1.4375,16
+Complementarity,higher,validated,0.7916666666666666,0.6973958333333333,0.8958333333333333,16
+Urgency,lower,validated,2.1041666666666665,1.6973958333333334,2.490104166666667,16
+DISCERN Q7,higher,validated,3.0416666666666665,2.833333333333333,3.230208333333333,8
+Comprehensiveness,higher,descriptive,3.9166666666666665,3.697395833333333,4.1359375,16
+Clarity,higher,descriptive,3.7708333333333335,3.6041666666666665,3.9901041666666663,16

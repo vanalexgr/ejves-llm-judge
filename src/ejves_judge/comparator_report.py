@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 from openpyxl import load_workbook
 from openpyxl.styles import Font
 import pandas as pd
@@ -18,6 +19,8 @@ SOURCE_MODEL_LABELS = {
 }
 SOURCE_MODEL_ORDER = ("chatgpt_free", "gemini_free", "claude_free")
 ORIGINAL_BENCHMARK_LABEL = "Original GPT-3.5 study benchmark"
+BOOTSTRAP_SAMPLES = 100
+BOOTSTRAP_SEED = 20260521
 
 
 @dataclass(frozen=True)
@@ -82,11 +85,73 @@ def _format_float(value: Any, digits: int = 3) -> str:
     return f"{float(value):.{digits}f}"
 
 
+def _format_ci(low: Any, high: Any, digits: int = 3) -> str:
+    if low is None or high is None or pd.isna(low) or pd.isna(high):
+        return "NA"
+    return f"{float(low):.{digits}f} to {float(high):.{digits}f}"
+
+
+def _format_estimate_with_ci(
+    value: Any,
+    low: Any,
+    high: Any,
+    *,
+    digits: int = 3,
+) -> str:
+    if value is None or pd.isna(value):
+        return "NA"
+    ci = _format_ci(low, high, digits=digits)
+    if ci == "NA":
+        return _format_float(value, digits=digits)
+    return f"{_format_float(value, digits=digits)} ({ci})"
+
+
 def _mean(series: pd.Series) -> float | pd.NA:
     values = series.dropna().astype(float)
     if values.empty:
         return pd.NA
     return float(values.mean())
+
+
+def _bootstrap_mean_ci(
+    series: pd.Series,
+    *,
+    n_bootstrap: int = BOOTSTRAP_SAMPLES,
+    seed: int = BOOTSTRAP_SEED,
+) -> tuple[float, float]:
+    values = series.dropna().astype(float).to_numpy()
+    if len(values) < 2:
+        return float("nan"), float("nan")
+    rng = np.random.default_rng(seed)
+    means = [
+        float(values[rng.integers(0, len(values), size=len(values))].mean())
+        for _ in range(n_bootstrap)
+    ]
+    return float(np.percentile(means, 2.5)), float(np.percentile(means, 97.5))
+
+
+def _bootstrap_delta_ci(
+    left: pd.Series,
+    right: pd.Series,
+    *,
+    direction: str,
+    n_bootstrap: int = BOOTSTRAP_SAMPLES,
+    seed: int = BOOTSTRAP_SEED,
+) -> tuple[float, float]:
+    left_values = left.dropna().astype(float).to_numpy()
+    right_values = right.dropna().astype(float).to_numpy()
+    if len(left_values) < 2 or len(right_values) < 2:
+        return float("nan"), float("nan")
+    rng = np.random.default_rng(seed)
+    deltas: list[float] = []
+    for _ in range(n_bootstrap):
+        left_mean = float(left_values[rng.integers(0, len(left_values), size=len(left_values))].mean())
+        right_mean = float(right_values[rng.integers(0, len(right_values), size=len(right_values))].mean())
+        delta = left_mean - right_mean
+        if direction == "lower":
+            delta = -delta
+        deltas.append(delta)
+    return float(np.percentile(deltas, 2.5)), float(np.percentile(deltas, 97.5))
 
 
 def build_original_benchmark_summary(consensus_frame: pd.DataFrame) -> pd.DataFrame:
@@ -95,12 +160,19 @@ def build_original_benchmark_summary(consensus_frame: pd.DataFrame) -> pd.DataFr
         subset = consensus_frame
         if spec.subset == "treatment":
             subset = subset.loc[subset["question_group"].eq("treatment")]
+        mean_value = _mean(subset[spec.original_column])
+        ci_low, ci_high = _bootstrap_mean_ci(
+            subset[spec.original_column],
+            seed=BOOTSTRAP_SEED + sum(ord(char) for char in spec.original_column),
+        )
         rows.append(
             {
                 "endpoint": spec.display_name,
                 "direction": spec.direction,
                 "group": spec.group,
-                "original_mean": _mean(subset[spec.original_column]),
+                "original_mean": mean_value,
+                "original_mean_ci_low": ci_low,
+                "original_mean_ci_high": ci_high,
                 "response_count": int(subset["response_id"].nunique()),
             }
         )
@@ -124,6 +196,12 @@ def build_model_endpoint_summary(comparator_results: pd.DataFrame) -> pd.DataFra
             if spec.subset == "treatment":
                 spec_subset = subset.loc[subset["question_group"].eq("treatment")]
             row[spec.final_column] = _mean(spec_subset[spec.final_column])
+            ci_low, ci_high = _bootstrap_mean_ci(
+                spec_subset[spec.final_column],
+                seed=BOOTSTRAP_SEED + sum(ord(char) for char in f"{source_model}:{spec.final_column}"),
+            )
+            row[f"{spec.final_column}_ci_low"] = ci_low
+            row[f"{spec.final_column}_ci_high"] = ci_high
         rows.append(row)
     return pd.DataFrame(rows)
 
@@ -133,6 +211,8 @@ def build_endpoint_comparison_table(
     model_summary: pd.DataFrame,
     original_benchmark: pd.DataFrame,
     group: str,
+    comparator_results: pd.DataFrame | None = None,
+    original_consensus: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     benchmark_index = original_benchmark.set_index("endpoint")
@@ -141,22 +221,48 @@ def build_endpoint_comparison_table(
         if spec.group != group:
             continue
         benchmark_value = benchmark_index.loc[spec.display_name, "original_mean"]
+        benchmark_ci_low = benchmark_index.loc[spec.display_name, "original_mean_ci_low"]
+        benchmark_ci_high = benchmark_index.loc[spec.display_name, "original_mean_ci_high"]
         row: dict[str, Any] = {
             "Endpoint": spec.display_name,
             "Direction": "Higher is better" if spec.direction == "higher" else "Lower is better",
             ORIGINAL_BENCHMARK_LABEL: benchmark_value,
+            f"{ORIGINAL_BENCHMARK_LABEL} 95% CI": _format_ci(benchmark_ci_low, benchmark_ci_high),
         }
+        if group == "descriptive":
+            row["Status"] = "Descriptive only; not validated"
         for source_model in SOURCE_MODEL_ORDER:
             if source_model not in summary_index.index:
                 continue
             model_value = summary_index.loc[source_model, spec.final_column]
+            model_ci_low = summary_index.loc[source_model, f"{spec.final_column}_ci_low"]
+            model_ci_high = summary_index.loc[source_model, f"{spec.final_column}_ci_high"]
             delta = model_value - benchmark_value
             row[SOURCE_MODEL_LABELS[source_model]] = model_value
+            row[f"{SOURCE_MODEL_LABELS[source_model]} 95% CI"] = _format_ci(model_ci_low, model_ci_high)
             delta_column = f"{SOURCE_MODEL_LABELS[source_model]} vs original"
             if spec.direction == "lower":
                 row[delta_column] = -delta
             else:
                 row[delta_column] = delta
+            delta_ci_column = f"{delta_column} 95% CI"
+            if comparator_results is not None and original_consensus is not None:
+                model_subset = comparator_results.loc[
+                    comparator_results["source_model"].eq(source_model)
+                ]
+                original_subset = original_consensus
+                if spec.subset == "treatment":
+                    model_subset = model_subset.loc[model_subset["question_group"].eq("treatment")]
+                    original_subset = original_subset.loc[original_subset["question_group"].eq("treatment")]
+                delta_ci_low, delta_ci_high = _bootstrap_delta_ci(
+                    model_subset[spec.final_column],
+                    original_subset[spec.original_column],
+                    direction=spec.direction,
+                    seed=BOOTSTRAP_SEED + sum(ord(char) for char in f"{source_model}:{spec.display_name}:delta"),
+                )
+                row[delta_ci_column] = _format_ci(delta_ci_low, delta_ci_high)
+            else:
+                row[delta_ci_column] = "NA"
         rows.append(row)
     return pd.DataFrame(rows)
 
@@ -201,36 +307,71 @@ def render_comparator_report(
     descriptive_comparison: pd.DataFrame,
     accuracy_resolution: pd.DataFrame,
 ) -> str:
-    validated_summary = model_summary[
-        [
-            "model_label",
-            "validated_accuracy",
-            "validated_tone",
-            "validated_complementarity",
-            "validated_gilbert_urgency",
-            "validated_discern_q7",
-        ]
-    ].rename(
-        columns={
-            "model_label": "Model",
-            "validated_accuracy": "Accuracy",
-            "validated_tone": "Tone",
-            "validated_complementarity": "Complementarity",
-            "validated_gilbert_urgency": "Urgency",
-            "validated_discern_q7": "DISCERN Q7 (treatment)",
+    validated_summary = pd.DataFrame(
+        {
+            "Model": model_summary["model_label"],
+            "Accuracy": model_summary.apply(
+                lambda row: _format_estimate_with_ci(
+                    row["validated_accuracy"],
+                    row["validated_accuracy_ci_low"],
+                    row["validated_accuracy_ci_high"],
+                ),
+                axis=1,
+            ),
+            "Tone": model_summary.apply(
+                lambda row: _format_estimate_with_ci(
+                    row["validated_tone"],
+                    row["validated_tone_ci_low"],
+                    row["validated_tone_ci_high"],
+                ),
+                axis=1,
+            ),
+            "Complementarity": model_summary.apply(
+                lambda row: _format_estimate_with_ci(
+                    row["validated_complementarity"],
+                    row["validated_complementarity_ci_low"],
+                    row["validated_complementarity_ci_high"],
+                ),
+                axis=1,
+            ),
+            "Urgency": model_summary.apply(
+                lambda row: _format_estimate_with_ci(
+                    row["validated_gilbert_urgency"],
+                    row["validated_gilbert_urgency_ci_low"],
+                    row["validated_gilbert_urgency_ci_high"],
+                ),
+                axis=1,
+            ),
+            "DISCERN Q7 (treatment)": model_summary.apply(
+                lambda row: _format_estimate_with_ci(
+                    row["validated_discern_q7"],
+                    row["validated_discern_q7_ci_low"],
+                    row["validated_discern_q7_ci_high"],
+                ),
+                axis=1,
+            ),
         }
     )
-    descriptive_summary = model_summary[
-        [
-            "model_label",
-            "descriptive_comprehensiveness",
-            "descriptive_clarity",
-        ]
-    ].rename(
-        columns={
-            "model_label": "Model",
-            "descriptive_comprehensiveness": "Comprehensiveness",
-            "descriptive_clarity": "Clarity",
+    descriptive_summary = pd.DataFrame(
+        {
+            "Model": model_summary["model_label"],
+            "Status": "Descriptive only; not validated",
+            "Comprehensiveness": model_summary.apply(
+                lambda row: _format_estimate_with_ci(
+                    row["descriptive_comprehensiveness"],
+                    row["descriptive_comprehensiveness_ci_low"],
+                    row["descriptive_comprehensiveness_ci_high"],
+                ),
+                axis=1,
+            ),
+            "Clarity": model_summary.apply(
+                lambda row: _format_estimate_with_ci(
+                    row["descriptive_clarity"],
+                    row["descriptive_clarity_ci_low"],
+                    row["descriptive_clarity_ci_high"],
+                ),
+                axis=1,
+            ),
         }
     )
 
@@ -247,6 +388,7 @@ def render_comparator_report(
 
 - Comparator responses: {len(comparator_results)} total (`16` question stems x `3` models)
 - Comparator models: GPT-5.5, Gemini 3.5 Flash, Claude Sonnet 4.6
+- Comparator collection mode: free consumer-facing model interfaces, copied into the scoring pipeline before judge evaluation
 - Original benchmark: reconstructed GPT-3.5 study set (`16` responses)
 - Final comparator accuracy process: two blinded board-certified surgeon ratings for all `48` responses, with blinded third-surgeon adjudication for `5` initially disputed rows
 
@@ -256,7 +398,7 @@ def render_comparator_report(
 
 ## Validated Endpoints By Model
 
-`Accuracy`, `tone`, `complementarity`, `gilbert_urgency`, and treatment-only `DISCERN Q7` are the calibration-passing comparator endpoints. Lower urgency scores indicate stronger recommendation for urgent care.
+`Accuracy`, `tone`, `complementarity`, `gilbert_urgency`, and treatment-only `DISCERN Q7` are the calibration-passing comparator endpoints. Lower urgency scores indicate stronger recommendation for urgent care. Table entries below are mean scores with bootstrap 95% confidence intervals.
 
 {validated_summary.to_markdown(index=False, floatfmt='.3f')}
 
@@ -264,11 +406,13 @@ def render_comparator_report(
 
 Positive `vs original` values indicate improvement. For urgency, the delta is sign-flipped so positive values mean more appropriate urgency signaling than the original GPT-3.5 benchmark.
 
+Detailed 95% bootstrap confidence intervals for these benchmark deltas are included in `validated_endpoint_comparison.csv` and `comparator_summary_tables.xlsx`.
+
 {validated_comparison.to_markdown(index=False, floatfmt='.3f')}
 
 ## Descriptive-Only Endpoints
 
-`Comprehensiveness` and `clarity` are retained descriptively only because calibration showed low reliability for both humans and judges on these domains.
+`Comprehensiveness` and `clarity` are retained descriptively only because the corrected manuscript Table 2 indicates that, at the original symptoms-topic sample size (`n = 4` diseases), human ICC(2,k) for these domains was not meaningfully estimable; the response-level judge calibration in this repository was likewise weak. These table entries are descriptive only and should not be cited as validated endpoints.
 
 {descriptive_summary.to_markdown(index=False, floatfmt='.3f')}
 
@@ -283,14 +427,22 @@ Positive `vs original` values indicate improvement. For urgency, the delta is si
 - Complementarity was broadly stable across models; GPT-5.5 and Claude Sonnet 4.6 matched each other on average, while Gemini 3.5 Flash was slightly lower.
 - Urgency signaling remained strongest for {urgency_leader['model_label']} because it produced the lowest mean urgency score ({_format_float(urgency_leader['validated_gilbert_urgency'])}).
 - Treatment uncertainty handling (`DISCERN Q7`) was highest for {discern_leader['model_label']} ({_format_float(discern_leader['validated_discern_q7'])}).
-- Descriptively, all three newer models were clearer and more comprehensive than the original GPT-3.5 benchmark, but these two domains should not be framed as validated primary endpoints.
+- Descriptively, all three newer models were clearer and more comprehensive than the original GPT-3.5 benchmark, but these two domains should not be framed as validated primary endpoints. The corrected Table 2 interpretation is that the original human topic-level signal for these constructs was itself unstable or non-estimable at this sample size.
+
+## Measurement And Review Process Caveats
+
+- Mixed measurement arms apply across time: the original GPT-3.5 benchmark uses the reconstructed historical human-consensus ratings, whereas comparator accuracy uses the later dual-surgeon plus adjudication workflow. These benchmark comparisons are therefore pragmatic rather than perfectly instrument-equivalent.
+- VGA served as one of the two comparator-arm accuracy raters and is disclosed here as a board-certified surgeon rather than as an independent historical reviewer from the original study set. The mitigation was full blinding to model identity during the initial scoring round, followed by third-rater adjudication for the rows with large disagreement.
+- Mario made `2` explicit post-round score revisions after reviewing the rationale set. Those revisions were retained in the audit trail rather than silently overwritten, and both rows remained inside the disagreement-managed workflow instead of being used to bypass adjudication.
+- The `5/48` adjudication cases represent a 10.4% third-review rate. This should be interpreted as an expected signal-detection feature of the clinical accuracy workflow, not as evidence that the adjudication process failed.
 
 ## Recommended Manuscript Framing
 
 1. Present the newer models as improved communicators relative to the original GPT-3.5 benchmark on the calibration-passing judged domains.
 2. Present accuracy as a human-scored endpoint, not an AI-judged endpoint.
 3. State explicitly that the comparator arm combined judge scoring for calibration-passing communication domains with blinded surgeon scoring for clinical accuracy.
-4. Keep `comprehensiveness` and `clarity` in supplementary or descriptive tables only, with the calibration reliability caveat.
+4. State explicitly that tone, complementarity, and DISCERN-Q7 were floor-passing domains with more modest absolute agreement than urgency, so they should be read as usable-with-caution rather than as strong psychometric validations.
+5. Keep `comprehensiveness` and `clarity` in supplementary or descriptive tables only, with the corrected Table 2 caveat that the original topic-level human reliability for these constructs was not meaningfully estimable at this sample size.
 """
 
 
@@ -309,11 +461,15 @@ def write_comparator_report(
         model_summary=model_summary,
         original_benchmark=original_benchmark,
         group="validated",
+        comparator_results=comparator_results,
+        original_consensus=original_consensus,
     )
     descriptive_comparison = build_endpoint_comparison_table(
         model_summary=model_summary,
         original_benchmark=original_benchmark,
         group="descriptive",
+        comparator_results=comparator_results,
+        original_consensus=original_consensus,
     )
     accuracy_resolution = build_accuracy_resolution_summary(comparator_results)
 

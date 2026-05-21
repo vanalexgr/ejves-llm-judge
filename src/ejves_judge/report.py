@@ -29,6 +29,12 @@ def _format_float(value: Any, digits: int = 3) -> str:
     return f"{float(value):.{digits}f}"
 
 
+def _format_ci(low: Any, high: Any, digits: int = 3) -> str:
+    if low is None or high is None or pd.isna(low) or pd.isna(high):
+        return "NA"
+    return f"{float(low):.{digits}f} to {float(high):.{digits}f}"
+
+
 def _display_item_name(item: str) -> str:
     return item.replace("_", " ").title().replace("Q7", "Q7")
 
@@ -206,7 +212,15 @@ def _summary_table(analysis: dict[str, Any]) -> pd.DataFrame:
     return frame.assign(
         rubric_item=frame["item"].map(_display_item_name),
         kappa=frame["primary_metric"].map(_format_float),
+        kappa_95_ci=frame.apply(
+            lambda row: _format_ci(row["primary_metric_ci_low"], row["primary_metric_ci_high"]),
+            axis=1,
+        ),
         icc_2_1=frame["icc_2_1"].map(_format_float),
+        icc_2_1_95_ci=frame.apply(
+            lambda row: _format_ci(row["icc_2_1_ci_low"], row["icc_2_1_ci_high"]),
+            axis=1,
+        ),
         spearman_rho=frame["spearman_rho"].map(_format_float),
         interhuman_floor=frame["interhuman_primary_floor"].map(_format_float),
     )[
@@ -214,7 +228,9 @@ def _summary_table(analysis: dict[str, Any]) -> pd.DataFrame:
             "rubric_item",
             "primary_metric_name",
             "kappa",
+            "kappa_95_ci",
             "icc_2_1",
+            "icc_2_1_95_ci",
             "spearman_rho",
             "interhuman_floor",
             "verdict",
@@ -231,7 +247,15 @@ def _per_judge_tables(analysis: dict[str, Any]) -> dict[str, pd.DataFrame]:
         tables[judge_name] = subset.assign(
             rubric_item=subset["item"].map(_display_item_name),
             kappa=subset["primary_metric"].map(_format_float),
+            kappa_95_ci=subset.apply(
+                lambda row: _format_ci(row["primary_metric_ci_low"], row["primary_metric_ci_high"]),
+                axis=1,
+            ),
             icc_2_1=subset["icc_2_1"].map(_format_float),
+            icc_2_1_95_ci=subset.apply(
+                lambda row: _format_ci(row["icc_2_1_ci_low"], row["icc_2_1_ci_high"]),
+                axis=1,
+            ),
             spearman_rho=subset["spearman_rho"].map(_format_float),
             interhuman_floor=subset["interhuman_primary_floor"].map(_format_float),
         )[
@@ -239,7 +263,9 @@ def _per_judge_tables(analysis: dict[str, Any]) -> dict[str, pd.DataFrame]:
                 "rubric_item",
                 "primary_metric_name",
                 "kappa",
+                "kappa_95_ci",
                 "icc_2_1",
+                "icc_2_1_95_ci",
                 "spearman_rho",
                 "interhuman_floor",
                 "verdict",
@@ -258,13 +284,16 @@ def _judge_reviewer_matrix_tables(analysis: dict[str, Any]) -> dict[str, pd.Data
         for judge_name in MODEL_ORDER:
             row = {"Judge": _display_judge_name(judge_name, analysis["model_strings"])}
             for reviewer in HUMAN_ORDER:
-                value = pairwise.loc[
+                metric_row = pairwise.loc[
                     pairwise["item"].eq(item)
                     & pairwise["judge_name"].eq(judge_name)
                     & pairwise["reviewer"].eq(reviewer),
-                    "primary_metric",
                 ].iloc[0]
-                row[reviewer] = _format_float(value)
+                row[reviewer] = _format_float(metric_row["primary_metric"])
+                row[f"{reviewer} 95% CI"] = _format_ci(
+                    metric_row["primary_metric_ci_low"],
+                    metric_row["primary_metric_ci_high"],
+                )
             human_values = interhuman.loc[interhuman["item"].eq(item), "primary_metric"]
             row["Min human-human"] = _format_float(human_values.min())
             row["Mean human-human"] = _format_float(human_values.mean())
@@ -280,16 +309,26 @@ def _interhuman_section_tables(analysis: dict[str, Any]) -> tuple[pd.DataFrame, 
         rubric_item=pairwise["item"].map(_display_item_name),
         reviewer_pair=pairwise["reviewer_a"] + " vs " + pairwise["reviewer_b"],
         primary_metric=pairwise["primary_metric"].map(_format_float),
+        primary_metric_95_ci=pairwise.apply(
+            lambda row: _format_ci(row["primary_metric_ci_low"], row["primary_metric_ci_high"]),
+            axis=1,
+        ),
     )[
-        ["rubric_item", "reviewer_pair", "primary_metric_name", "primary_metric"]
+        ["rubric_item", "reviewer_pair", "primary_metric_name", "primary_metric", "primary_metric_95_ci"]
     ]
 
     icc = analysis["interhuman_icc"].copy()
     icc["rubric_item"] = icc["item"].map(_display_item_name)
     icc["icc_2_1"] = icc["icc_2_1"].map(_format_float)
+    icc["icc_2_1_95_ci"] = icc.apply(
+        lambda row: _format_ci(row["icc_2_1_ci_low"], row["icc_2_1_ci_high"]),
+        axis=1,
+    )
     icc["manuscript_table2"] = icc["manuscript_table2"].map(_format_float)
     icc["delta_vs_manuscript"] = icc["delta_vs_manuscript"].map(_format_float)
-    icc_table = icc[["rubric_item", "icc_2_1", "manuscript_table2", "delta_vs_manuscript"]]
+    icc_table = icc[
+        ["rubric_item", "icc_2_1", "icc_2_1_95_ci", "manuscript_table2", "delta_vs_manuscript"]
+    ]
     return pairwise_table, icc_table
 
 
@@ -301,22 +340,37 @@ def _interhuman_subset_section_tables(analysis: dict[str, Any]) -> dict[str, dic
             rubric_item=pairwise["item"].map(_display_item_name),
             reviewer_pair=pairwise["reviewer_a"] + " vs " + pairwise["reviewer_b"],
             primary_metric=pairwise["primary_metric"].map(_format_float),
+            primary_metric_95_ci=pairwise.apply(
+                lambda row: _format_ci(row["primary_metric_ci_low"], row["primary_metric_ci_high"]),
+                axis=1,
+            ),
         )[
-            ["rubric_item", "reviewer_pair", "primary_metric_name", "primary_metric"]
+            ["rubric_item", "reviewer_pair", "primary_metric_name", "primary_metric", "primary_metric_95_ci"]
         ]
 
         icc = analysis["interhuman_subset"][question_group]["icc"].copy()
         icc["rubric_item"] = icc["item"].map(_display_item_name)
         icc["icc_2_k"] = icc["icc_2_k"].map(_format_float)
+        icc["icc_2_k_95_ci"] = icc.apply(
+            lambda row: _format_ci(row["icc_2_k_ci_low"], row["icc_2_k_ci_high"]),
+            axis=1,
+        )
         icc["manuscript_table2"] = icc["manuscript_table2"].map(_format_float)
         icc["delta_vs_manuscript"] = icc["delta_vs_manuscript"].map(_format_float)
 
         if question_group == "symptoms":
             icc_table = icc[
-                ["rubric_item", "icc_type", "icc_2_k", "manuscript_table2", "delta_vs_manuscript"]
+                [
+                    "rubric_item",
+                    "icc_type",
+                    "icc_2_k",
+                    "icc_2_k_95_ci",
+                    "manuscript_table2",
+                    "delta_vs_manuscript",
+                ]
             ]
         else:
-            icc_table = icc[["rubric_item", "icc_type", "icc_2_k"]]
+            icc_table = icc[["rubric_item", "icc_type", "icc_2_k", "icc_2_k_95_ci"]]
 
         response_count = int(analysis["interhuman_subset"][question_group]["icc"]["response_count"].iloc[0])
         tables[question_group] = {
@@ -402,7 +456,16 @@ def build_agreement_report(
         "Verdict logic: PASS requires the explicit CODEX threshold when one exists and also requires "
         "ensemble-vs-consensus agreement to be at least as high as the minimum pairwise inter-human "
         "agreement for the same item. REVIEW means only one criterion is met, or no explicit threshold "
-        "exists and the result falls short of the inter-human floor. FAIL means both explicit criteria fail.\n"
+        "exists and the result falls short of the inter-human floor. FAIL means both explicit criteria fail. "
+        "Because some inter-human floors are negative, a PASS verdict should be read as a rule-based "
+        "calibration pass rather than as a blanket psychometric endorsement; absolute agreement can still "
+        "be modest, especially for tone and other floor-only domains.\n"
+    )
+    sections.append(
+        "Key stopping signal for accuracy: after the Track B anchor revision, Claude and GPT-5 moved in "
+        "opposite directions (weighted κ = -0.222 vs 0.255), indicating that the revised rubric did not "
+        "produce a stable convergent target across judges. Further tuning was therefore stopped to avoid "
+        "circular optimisation on the same 16-response calibration set.\n"
     )
     sections.append(
         _render_markdown_table(
@@ -411,7 +474,9 @@ def build_agreement_report(
                 "rubric_item",
                 "primary_metric_name",
                 "kappa",
+                "kappa_95_ci",
                 "icc_2_1",
+                "icc_2_1_95_ci",
                 "spearman_rho",
                 "interhuman_floor",
                 "verdict",
@@ -434,7 +499,9 @@ def build_agreement_report(
                     "rubric_item",
                     "primary_metric_name",
                     "kappa",
+                    "kappa_95_ci",
                     "icc_2_1",
+                    "icc_2_1_95_ci",
                     "spearman_rho",
                     "interhuman_floor",
                     "verdict",
@@ -446,14 +513,25 @@ def build_agreement_report(
     sections.append("## Section 3: Judge-vs-Individual-Human Matrix\n")
     sections.append(
         "Each table reports the primary agreement metric for that rubric item: quadratic weighted kappa "
-        "for ordinal/Likert items and unweighted kappa for complementarity.\n"
+        "for ordinal/Likert items and unweighted kappa for complementarity. Negative values mean the judge "
+        "moved against the human reference standard rather than merely adding random noise.\n"
     )
     for item in ALL_ITEMS:
         sections.append(f"### {_display_item_name(item)}\n")
         sections.append(
             _render_markdown_table(
                 judge_reviewer_tables[item],
-                ["Judge", "MDO", "WD", "EG", "Min human-human", "Mean human-human"],
+                [
+                    "Judge",
+                    "MDO",
+                    "MDO 95% CI",
+                    "WD",
+                    "WD 95% CI",
+                    "EG",
+                    "EG 95% CI",
+                    "Min human-human",
+                    "Mean human-human",
+                ],
             )
         )
         sections.append("")
@@ -463,21 +541,29 @@ def build_agreement_report(
     sections.append(
         _render_markdown_table(
             interhuman_pairwise_table,
-            ["rubric_item", "reviewer_pair", "primary_metric_name", "primary_metric"],
+            [
+                "rubric_item",
+                "reviewer_pair",
+                "primary_metric_name",
+                "primary_metric",
+                "primary_metric_95_ci",
+            ],
         )
     )
     sections.append("\n### ICC Comparison to Manuscript Table 2\n")
     sections.append(
         _render_markdown_table(
             interhuman_icc_table,
-            ["rubric_item", "icc_2_1", "manuscript_table2", "delta_vs_manuscript"],
+            ["rubric_item", "icc_2_1", "icc_2_1_95_ci", "manuscript_table2", "delta_vs_manuscript"],
         )
     )
     sections.append(
-        "\nNote: the recomputed human ICC(2,1) values above are derived directly from the source reviewer "
-        "spreadsheets. If they differ from the manuscript values "
-        f"({', '.join(f'{_display_item_name(k)}={v:.2f}' for k, v in MANUSCRIPT_TABLE2_REFERENCE.items())}), "
-        "that indicates the manuscript likely used a different ICC parameterization and/or preprocessing path."
+        "\nNote: the manuscript Table 2 was later corrected. The symptoms-topic JASP analysis retains "
+        "Accuracy at 0.83, but Clarity and Comprehensiveness are now treated as non-estimable at that "
+        "sample size (0.00 if floored from non-positive raw ICC estimates). The response-level ICC(2,1) "
+        "values above are reconstructed directly from the source reviewer spreadsheets across the 16 "
+        "response-level items, so they are an audit-side calibration view rather than a strict reprint of "
+        "the manuscript's topic-level Table 2."
     )
 
     sections.append("\n## Section 4b: Symptoms-subset inter-human ICC(2,k)\n")
@@ -486,38 +572,63 @@ def build_agreement_report(
         "`question_group == 'symptoms'`. Treatment subset: "
         f"`{interhuman_subset_tables['treatment']['response_count']}` responses with "
         "`question_group == 'treatment'`. ICC in this subsection uses two-way random absolute agreement "
-        "average measures, i.e. ICC(A,k) / ICC(2,k).\n"
+        "average measures, i.e. ICC(A,k) / ICC(2,k). The originally submitted manuscript Table 2, however, "
+        "was based on a symptoms-topic JASP file with `n = 4` disease topics rather than these 8 "
+        "response-level symptom items, so the comparison is contextual rather than a one-to-one numeric "
+        "reproduction.\n"
     )
     sections.append("### Symptoms-only Pairwise Human Agreement\n")
     sections.append(
         _render_markdown_table(
             interhuman_subset_tables["symptoms"]["pairwise"],
-            ["rubric_item", "reviewer_pair", "primary_metric_name", "primary_metric"],
+            [
+                "rubric_item",
+                "reviewer_pair",
+                "primary_metric_name",
+                "primary_metric",
+                "primary_metric_95_ci",
+            ],
         )
     )
     sections.append("\n### Symptoms-only ICC(2,k) vs Manuscript Table 2\n")
     sections.append(
         _render_markdown_table(
             interhuman_subset_tables["symptoms"]["icc"],
-            ["rubric_item", "icc_type", "icc_2_k", "manuscript_table2", "delta_vs_manuscript"],
+            [
+                "rubric_item",
+                "icc_type",
+                "icc_2_k",
+                "icc_2_k_95_ci",
+                "manuscript_table2",
+                "delta_vs_manuscript",
+            ],
         )
     )
     sections.append(
-        "\nThe manuscript comparison above is applied only to the symptoms subset, because that was the "
-        "requested cross-check against Table 2."
+        "\nThe corrected manuscript interpretation is that Accuracy remained estimable and good at the "
+        "symptoms-topic level (ICC[2,k] = 0.83), whereas Clarity and Comprehensiveness were effectively "
+        "non-estimable at that sample size (reported as 0.00 if floored from non-positive raw estimates). "
+        "The response-level subset shown above is still useful as a calibration stress test, but it should "
+        "not be read as a literal recreation of the manuscript Table 2 workflow."
     )
     sections.append("\n### Treatment-only Pairwise Human Agreement\n")
     sections.append(
         _render_markdown_table(
             interhuman_subset_tables["treatment"]["pairwise"],
-            ["rubric_item", "reviewer_pair", "primary_metric_name", "primary_metric"],
+            [
+                "rubric_item",
+                "reviewer_pair",
+                "primary_metric_name",
+                "primary_metric",
+                "primary_metric_95_ci",
+            ],
         )
     )
     sections.append("\n### Treatment-only ICC(2,k)\n")
     sections.append(
         _render_markdown_table(
             interhuman_subset_tables["treatment"]["icc"],
-            ["rubric_item", "icc_type", "icc_2_k"],
+            ["rubric_item", "icc_type", "icc_2_k", "icc_2_k_95_ci"],
         )
     )
 

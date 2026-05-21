@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import math
-from typing import Any
+from typing import Any, Callable
 import warnings
 
 import numpy as np
@@ -25,11 +25,17 @@ ALL_ITEMS: tuple[str, ...] = ORDINAL_ITEMS + BINARY_ITEMS + LIKERT_ITEMS
 
 MODEL_ORDER: tuple[str, ...] = ("claude", "openai")
 HUMAN_ORDER: tuple[str, ...] = ("MDO", "WD", "EG")
+# Corrected manuscript Table 2 values from the symptoms-topic JASP analysis.
+# Accuracy was transcribed correctly in the submitted manuscript. Clarity and
+# comprehensiveness were later corrected to non-estimable / effectively zero
+# under the small-sample absolute-agreement model.
 MANUSCRIPT_TABLE2_REFERENCE: dict[str, float] = {
     "accuracy": 0.83,
-    "clarity": 0.79,
-    "comprehensiveness": 0.86,
+    "clarity": 0.00,
+    "comprehensiveness": 0.00,
 }
+BOOTSTRAP_SAMPLES = 100
+BOOTSTRAP_SEED = 20260521
 
 
 @dataclass(frozen=True)
@@ -332,13 +338,15 @@ def icc_absolute_agreement(
         )
         long_df = long_df.rename(columns={complete.index.name or "index": "targets"})
         try:
-            icc_df = pg.intraclass_corr(
-                data=long_df,
-                targets="targets",
-                raters="raters",
-                ratings="scores",
-                nan_policy="omit",
-            )
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                icc_df = pg.intraclass_corr(
+                    data=long_df,
+                    targets="targets",
+                    raters="raters",
+                    ratings="scores",
+                    nan_policy="omit",
+                )
             icc_type = "ICC(A,k)" if average_measures else "ICC(A,1)"
             return float(icc_df.loc[icc_df["Type"].eq(icc_type), "ICC"].iloc[0])
         except (AssertionError, ValueError, ZeroDivisionError):
@@ -369,13 +377,15 @@ def pingouin_icc_table(score_table: pd.DataFrame) -> pd.DataFrame:
     )
     long_df = long_df.rename(columns={complete.index.name or "index": "targets"})
     try:
-        return pg.intraclass_corr(
-            data=long_df,
-            targets="targets",
-            raters="raters",
-            ratings="scores",
-            nan_policy="omit",
-        )
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            return pg.intraclass_corr(
+                data=long_df,
+                targets="targets",
+                raters="raters",
+                ratings="scores",
+                nan_policy="omit",
+            )
     except (AssertionError, ValueError, ZeroDivisionError):
         return pd.DataFrame(
             {
@@ -432,6 +442,80 @@ def bland_altman_stats(left: pd.Series, right: pd.Series) -> tuple[float, float,
     return mean_diff, loa_low, loa_high
 
 
+def _bootstrap_ci_from_callable(
+    sample_size: int,
+    statistic_fn: Callable[[np.ndarray], float],
+    *,
+    n_bootstrap: int = BOOTSTRAP_SAMPLES,
+    seed: int = BOOTSTRAP_SEED,
+) -> tuple[float, float]:
+    if sample_size < 2:
+        return float("nan"), float("nan")
+
+    rng = np.random.default_rng(seed)
+    statistics: list[float] = []
+    for _ in range(n_bootstrap):
+        indices = rng.integers(0, sample_size, size=sample_size)
+        statistic = statistic_fn(indices)
+        if statistic is None or math.isnan(float(statistic)):
+            continue
+        statistics.append(float(statistic))
+
+    if len(statistics) < max(50, n_bootstrap // 10):
+        return float("nan"), float("nan")
+
+    return (
+        float(np.percentile(statistics, 2.5)),
+        float(np.percentile(statistics, 97.5)),
+    )
+
+
+def bootstrap_primary_metric_ci(
+    left_values: pd.Series,
+    right_values: pd.Series,
+    *,
+    item: str,
+    n_bootstrap: int = BOOTSTRAP_SAMPLES,
+) -> tuple[float, float]:
+    mask = left_values.notna() & right_values.notna()
+    left = left_values[mask].astype(float).reset_index(drop=True)
+    right = right_values[mask].astype(float).reset_index(drop=True)
+    if len(left) < 2:
+        return float("nan"), float("nan")
+
+    def _statistic(indices: np.ndarray) -> float:
+        return safe_weighted_kappa(left.iloc[indices], right.iloc[indices], item)
+
+    return _bootstrap_ci_from_callable(
+        len(left),
+        _statistic,
+        n_bootstrap=n_bootstrap,
+        seed=BOOTSTRAP_SEED + sum(ord(char) for char in item),
+    )
+
+
+def bootstrap_icc_ci(
+    score_table: pd.DataFrame,
+    *,
+    average_measures: bool = False,
+    n_bootstrap: int = BOOTSTRAP_SAMPLES,
+) -> tuple[float, float]:
+    complete = score_table.dropna()
+    if len(complete) < 2:
+        return float("nan"), float("nan")
+
+    def _statistic(indices: np.ndarray) -> float:
+        sampled = complete.iloc[indices].reset_index(drop=True)
+        return icc_absolute_agreement(sampled, average_measures=average_measures)
+
+    return _bootstrap_ci_from_callable(
+        len(complete),
+        _statistic,
+        n_bootstrap=n_bootstrap,
+        seed=BOOTSTRAP_SEED + (1000 if average_measures else 0),
+    )
+
+
 def score_table_for_icc(
     left: pd.Series,
     right: pd.Series,
@@ -459,15 +543,24 @@ def agreement_row(
         "n": int(mask.sum()),
         "primary_metric_name": spec.primary_metric_name,
         "primary_metric": safe_weighted_kappa(left_values, right_values, item),
+        "primary_metric_ci_low": float("nan"),
+        "primary_metric_ci_high": float("nan"),
         "spearman_rho": safe_spearman(left_clean, right_clean),
         "icc_2_1": float("nan"),
+        "icc_2_1_ci_low": float("nan"),
+        "icc_2_1_ci_high": float("nan"),
         "mean_signed_difference": float("nan"),
         "loa_low": float("nan"),
         "loa_high": float("nan"),
     }
+    (
+        row["primary_metric_ci_low"],
+        row["primary_metric_ci_high"],
+    ) = bootstrap_primary_metric_ci(left_values, right_values, item=item)
     if spec.kind == "likert":
         icc_table = score_table_for_icc(left_clean, right_clean, left_name="left", right_name="right")
         row["icc_2_1"] = icc_absolute_agreement(icc_table)
+        row["icc_2_1_ci_low"], row["icc_2_1_ci_high"] = bootstrap_icc_ci(icc_table)
         (
             row["mean_signed_difference"],
             row["loa_low"],
@@ -600,11 +693,14 @@ def interhuman_icc_summary(human_long: pd.DataFrame) -> pd.DataFrame:
         score_table = human_long.pivot(index="response_id", columns="reviewer", values=item)
         icc_table = pingouin_icc_table(score_table)
         icc_a_1 = float(icc_table.loc[icc_table["Type"].eq("ICC(A,1)"), "ICC"].iloc[0])
+        icc_ci_low, icc_ci_high = bootstrap_icc_ci(score_table)
         manuscript_value = MANUSCRIPT_TABLE2_REFERENCE.get(item)
         rows.append(
             {
                 "item": item,
                 "icc_2_1": icc_a_1,
+                "icc_2_1_ci_low": icc_ci_low,
+                "icc_2_1_ci_high": icc_ci_high,
                 "manuscript_table2": manuscript_value,
                 "delta_vs_manuscript": (
                     icc_a_1 - manuscript_value if manuscript_value is not None else float("nan")
@@ -635,6 +731,7 @@ def subset_interhuman_reliability(
     for item in LIKERT_ITEMS:
         score_table = subset.pivot(index="response_id", columns="reviewer", values=item)
         icc_a_k = icc_absolute_agreement(score_table, average_measures=True)
+        icc_ci_low, icc_ci_high = bootstrap_icc_ci(score_table, average_measures=True)
         manuscript_value = MANUSCRIPT_TABLE2_REFERENCE.get(item)
         compare_to_manuscript = question_group == "symptoms"
         icc_rows.append(
@@ -644,6 +741,8 @@ def subset_interhuman_reliability(
                 "item": item,
                 "icc_type": "ICC(A,k)",
                 "icc_2_k": icc_a_k,
+                "icc_2_k_ci_low": icc_ci_low,
+                "icc_2_k_ci_high": icc_ci_high,
                 "manuscript_table2": manuscript_value if compare_to_manuscript else float("nan"),
                 "delta_vs_manuscript": (
                     icc_a_k - manuscript_value

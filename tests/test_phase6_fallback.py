@@ -10,6 +10,7 @@ from ejves_judge.phase6_fallback import (
 def _context() -> Phase6FallbackContext:
     return Phase6FallbackContext(
         comparator_response_count=48,
+        third_rater_case_count=5,
         claude_model="claude-opus-4-7",
         openai_model="gpt-5",
         ensemble_accuracy_kappa=0.1282051282,
@@ -48,5 +49,6 @@ def test_methods_addendum_is_manuscript_facing() -> None:
     assert "claude-opus-4-7" in text
     assert "gpt-5" in text
     assert "weighted kappa for accuracy was 0.128" in text
-    assert "Mario as a focused human spot-check on 48 comparator responses" in text
+    assert "rated independently and blinded by two board-certified surgeons" in text
+    assert "blinded third-surgeon adjudication for the 5 rows" in text
     assert "No further rubric iteration was performed for accuracy" in text
