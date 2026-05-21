@@ -1,0 +1,1329 @@
+response_id,source_model,disease,domain,question_group,question_text,response_text,tone,complementarity,gilbert_urgency,discern_q7,comprehensiveness,clarity,mario_accuracy_original,mario_requested_revised_accuracy,mario_accuracy_final,mario_accuracy_notes,mario_rationale,vga_accuracy_final,vga_accuracy_notes,vga_rationale,third_reviewer_accuracy,third_reviewer_notes,third_reviewer_used,adjudication_case_id,human_accuracy_mean,human_accuracy_abs_diff,human_accuracy_resolution_status,final_validated_accuracy,final_accuracy_resolution_status,final_accuracy_source,validated_accuracy,accuracy_source,validated_tone,validated_complementarity,validated_gilbert_urgency,validated_discern_q7,descriptive_comprehensiveness,descriptive_clarity
+AAA_SS1_claude_free,claude_free,AAA,signs_symptoms,symptoms,WHICH ARE THE SIGNS OF AAA,"## Signs of Abdominal Aortic Aneurysm (AAA)
+
+AAA is often called a ""silent killer"" because it frequently has **no symptoms** until it ruptures. Here's what to know:
+
+---
+
+### Unruptured AAA (often asymptomatic, but may include)
+
+- **Pulsating sensation** in the abdomen (like a heartbeat in the belly)
+- **Deep, persistent pain** in the abdomen or lower back
+- **Tenderness** in the chest, abdomen, or back
+- Feeling of fullness or discomfort after eating small amounts
+
+---
+
+### Ruptured AAA — **Medical Emergency 🚨**
+
+Rupture is life-threatening and requires immediate emergency care. Signs include:
+
+- **Sudden, severe pain** in the abdomen, back, or flank — often described as tearing or ripping
+- **Radiating pain** to the groin, buttocks, or legs
+- **Hypotension** (dangerously low blood pressure)
+- **Rapid heart rate** (tachycardia)
+- **Dizziness, lightheadedness, or fainting**
+- **Pallor** (pale, clammy skin)
+- **Loss of consciousness** or shock
+
+---
+
+### Risk Factors to Watch For
+
+You're at higher risk if you have:
+- Age **65+**, especially men
+- **Smoking history** (biggest modifiable risk factor)
+- **High blood pressure** or atherosclerosis
+- **Family history** of AAA
+- Known connective tissue disorders (e.g., Marfan syndrome)
+
+---
+
+### Key Takeaway
+
+> If you or someone nearby experiences **sudden, severe abdominal or back pain**, especially with dizziness or low blood pressure — **call emergency services immediately (112 in Greece)**. A ruptured AAA can be fatal within minutes.
+
+Routine **ultrasound screening** is recommended for men aged 65–75 who have ever smoked, as early detection is the best protection.",1.5,0.5,1.0,,4.666666666666666,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,1.5,0.5,1.0,,4.666666666666666,5.0
+AAA_SS2_claude_free,claude_free,AAA,natural_history,symptoms,WHICH ARE THE RISKS OF AAA,"## Risk Factors for Abdominal Aortic Aneurysm (AAA)
+
+---
+
+### 🔴 Major Risk Factors
+
+| Risk Factor | Details |
+|---|---|
+| **Age** | Risk increases significantly after age 65 |
+| **Sex** | Men are 4–6× more likely to develop AAA than women |
+| **Smoking** | The **single biggest modifiable risk factor** — smokers are 7–8× more likely to develop AAA |
+| **Family history** | Having a first-degree relative with AAA increases your risk significantly |
+| **Atherosclerosis** | Hardening/narrowing of arteries damages the aortic wall |
+| **High blood pressure** | Chronic hypertension weakens arterial walls over time |
+
+---
+
+### 🟠 Additional Risk Factors
+
+- **High cholesterol (hyperlipidemia)** — promotes plaque buildup in arteries
+- **Obesity** — increases cardiovascular strain
+- **Chronic obstructive pulmonary disease (COPD)** — strongly associated with AAA, especially in smokers
+- **Prior aortic disease** — history of other aneurysms (e.g., thoracic)
+- **Connective tissue disorders** — e.g., Marfan syndrome, Ehlers-Danlos syndrome
+- **Vasculitis** — inflammatory conditions affecting blood vessels
+- **Physical trauma** — injury to the abdomen or aorta
+
+---
+
+### 🟡 Factors That Lower Risk
+
+- Being **female** (though women have worse outcomes if rupture occurs)
+- **Diabetes mellitus** — paradoxically appears to have a protective effect on aortic wall
+- **Black or Asian ethnicity** — lower prevalence compared to white populations
+
+---
+
+### ⚠️ Risks Associated with AAA Itself (Complications)
+
+Once an AAA is present, the main dangers are:
+
+- **Rupture** — mortality rate up to **80–90%** overall (including pre-hospital deaths)
+- **Thrombosis** — blood clots forming inside the aneurysm
+- **Embolism** — clots breaking off and blocking downstream arteries (legs, kidneys)
+- **Compression of nearby structures** — e.g., ureters, vertebrae, bowel
+- **Aortoenteric or aortocaval fistula** — abnormal connections to bowel or veins (rare but serious)
+
+---
+
+### 📏 Risk of Rupture by Aneurysm Size
+
+The larger the aneurysm, the higher the rupture risk:
+
+| Diameter | Annual Rupture Risk |
+|---|---|
+| < 4 cm | < 1% |
+| 4–5 cm | 1–3% |
+| 5–6 cm | 3–15% |
+| > 6 cm | **10–30%+** |
+
+---
+
+### Key Takeaway
+
+> **Smoking cessation** is the most important thing you can do to reduce AAA risk. Combined with **blood pressure control**, **regular screening** (ultrasound for at-risk individuals), and a **heart-healthy lifestyle**, the risks can be significantly managed.",1.5,0.5,1.5,,4.833333333333334,5.0,2,,2,,,3,,,,,False,,2.5,1.0,minor_disagreement,2.5,minor_disagreement,dual_surgeon_mean,2.5,dual_surgeon_mean,1.5,0.5,1.5,,4.833333333333334,5.0
+AAA_T1_claude_free,claude_free,AAA,medical_advice,treatment,WHICH IS THE RISK OF RUPTURE OF AN AAA,"## Risk of Rupture of an Abdominal Aortic Aneurysm (AAA)
+
+---
+
+### 📏 Rupture Risk by Aneurysm Diameter
+
+The **size of the aneurysm** is the most important predictor of rupture risk:
+
+| Diameter | Annual Rupture Risk |
+|---|---|
+| < 4.0 cm | < 1% |
+| 4.0 – 4.9 cm | 1 – 3% |
+| 5.0 – 5.9 cm | 3 – 15% |
+| 6.0 – 6.9 cm | 10 – 20% |
+| 7.0 cm+ | **20 – 50%+** |
+
+> ⚠️ **Surgical intervention** is generally recommended when diameter reaches **5.5 cm in men** and **5.0 cm in women**
+
+---
+
+### 📈 Other Factors That Increase Rupture Risk
+
+Beyond size, several factors significantly raise the risk:
+
+- **Rapid expansion rate** — growth > 0.5–1.0 cm per year is a strong warning sign
+- **Female sex** — women rupture at smaller diameters than men
+- **Continued smoking** — accelerates aneurysm growth and weakens the aortic wall
+- **Uncontrolled hypertension** — increased pressure on the weakened wall
+- **Aneurysm shape** — saccular (asymmetric) aneurysms rupture more easily than fusiform (symmetric)
+- **COPD** — associated with faster growth and higher rupture risk
+- **Larger diameter-to-aorta ratio** — relative size matters, not just absolute size
+- **Eccentric thrombus** — certain clot patterns inside the aneurysm increase wall stress
+- **Family history of rupture**
+
+---
+
+### 💀 Mortality After Rupture
+
+Rupture carries an extremely high death rate:
+
+| Scenario | Mortality Rate |
+|---|---|
+| Overall (including pre-hospital deaths) | **~80–90%** |
+| Patients who reach hospital alive | **40–70%** |
+| Emergency surgical repair (open) | **40–50%** |
+| Emergency EVAR (endovascular repair) | **25–40%** |
+| Elective surgical repair (unruptured) | **1–5%** |
+
+> The contrast between **elective vs emergency repair** mortality highlights why **early detection and planned surgery** is so critical.
+
+---
+
+### 🔄 Growth Rate & Monitoring
+
+| Aneurysm Size | Recommended Surveillance |
+|---|---|
+| 3.0 – 3.9 cm | Every **3 years** |
+| 4.0 – 4.9 cm | Every **6–12 months** |
+| 5.0 – 5.4 cm | Every **3–6 months** |
+| ≥ 5.5 cm | **Refer for surgical evaluation** |
+
+---
+
+### 🚨 Signs That Rupture May Be Imminent
+
+Seek **emergency care immediately** if any of these occur:
+
+- Sudden, severe **tearing or ripping pain** in abdomen or back
+- Pain radiating to the **groin, legs, or buttocks**
+- **Pulsating abdominal mass**
+- **Hypotension + tachycardia** (shock)
+- **Syncope** (fainting)
+- Pale, cold, clammy skin
+
+---
+
+### Key Takeaway
+
+> The risk of rupture grows **exponentially with aneurysm size**. A 7 cm AAA is vastly more dangerous than a 4 cm one. **Regular ultrasound surveillance**, **smoking cessation**, **blood pressure control**, and **timely surgical referral** are the cornerstones of preventing fatal rupture.",1.5,1.0,1.0,2.5,5.0,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,1.5,1.0,1.0,2.5,5.0,5.0
+AAA_T2_claude_free,claude_free,AAA,best_treatment,treatment,WHICH IS THE BEST INTERVENTION FOR AAA,"## Best Intervention for Abdominal Aortic Aneurysm (AAA)
+
+---
+
+### 🔵 Two Main Surgical Options
+
+There are two established surgical treatments for AAA:
+
+---
+
+### 1. 🩺 EVAR — Endovascular Aneurysm Repair
+
+A **minimally invasive** procedure where a stent-graft is inserted through the groin arteries and deployed inside the aorta to exclude the aneurysm from circulation.
+
+**Advantages:**
+- No large abdominal incision
+- Shorter hospital stay (1–3 days)
+- Faster recovery (2–4 weeks)
+- Lower **short-term** mortality (1–2%)
+- Suitable for high-risk/elderly patients
+- Less blood loss and lower cardiac stress
+
+**Disadvantages:**
+- Requires lifelong **imaging surveillance** (CT/ultrasound)
+- Risk of **endoleak** (blood continuing to flow into aneurysm sac)
+- Higher **re-intervention rate** over time
+- Not suitable for all anatomies (neck, iliac angles)
+- Long-term survival **equivalent to open repair** at 5–10 years
+
+---
+
+### 2. 🏥 Open Surgical Repair (OSR)
+
+A traditional **open abdominal surgery** where the aneurysm is clamped and replaced with a synthetic graft.
+
+**Advantages:**
+- More **durable** — lower re-intervention rate
+- No need for lifelong imaging surveillance
+- Suitable for complex anatomies
+- Proven **long-term results** (decades of data)
+
+**Disadvantages:**
+- Major surgery — larger incision, longer recovery (6–8 weeks)
+- Higher short-term mortality (3–5% elective)
+- Greater cardiac, pulmonary, and renal stress
+- Not ideal for elderly or high-risk patients
+- Longer hospital stay (5–10 days)
+
+---
+
+### ⚖️ EVAR vs Open Repair — Head to Head
+
+| Feature | EVAR | Open Repair |
+|---|---|---|
+| Invasiveness | Minimally invasive | Major surgery |
+| 30-day mortality | **Lower** (1–2%) | Higher (3–5%) |
+| Long-term survival | Equivalent at 5–10 yrs | Equivalent at 5–10 yrs |
+| Re-intervention rate | **Higher** | Lower |
+| Surveillance needed | **Lifelong** | Minimal |
+| Recovery time | 2–4 weeks | 6–8 weeks |
+| Anatomic suitability | Not always possible | More universally applicable |
+| Best for | Elderly, high-risk patients | Younger, fit patients |
+
+---
+
+### 📐 When to Intervene — Thresholds
+
+| Patient | Diameter Threshold |
+|---|---|
+| Men | ≥ **5.5 cm** |
+| Women | ≥ **5.0 cm** |
+| Rapid growth (any size) | > **1 cm/year** or > **0.5 cm in 6 months** |
+| Symptomatic AAA (any size) | **Immediate referral** |
+| Ruptured AAA | **Emergency intervention** |
+
+---
+
+### 🚨 Ruptured AAA — Emergency Setting
+
+In rupture, the priority is **speed**:
+
+- **EVAR** is preferred if anatomy is suitable — lower mortality than open in emergency
+- **Open repair** if EVAR not feasible anatomically
+- Mortality remains high (25–50%) even with best care
+- ""Damage control"" resuscitation used — permissive hypotension until aorta is controlled
+
+---
+
+### 💊 Non-Surgical / Medical Management
+
+For **small aneurysms (< 5.5 cm)** that don't yet meet intervention criteria:
+
+- **Surveillance ultrasound** at regular intervals
+- **Smoking cessation** — most important modifiable factor
+- **Blood pressure control** — target < 130/80 mmHg (ACE inhibitors, ARBs, beta-blockers)
+- **Statin therapy** — reduces cardiovascular risk and may slow growth
+- **Antiplatelet therapy** (aspirin) — for cardiovascular protection
+- **Regular exercise** — moderate, avoiding heavy straining
+- ❌ No drug has been proven to definitively **stop aneurysm growth**
+
+---
+
+### 🏆 Current Guidelines Summary (ESC/SVS)
+
+> **EVAR is the preferred first-line intervention** for anatomically suitable patients due to lower perioperative risk, with open repair reserved for younger/fit patients or unsuitable EVAR anatomy. Both are equally effective long-term.
+
+---
+
+### Key Takeaway
+
+> The **best intervention depends on the patient** — age, fitness, anatomy, and aneurysm characteristics all matter. EVAR offers a safer short-term profile; open repair offers greater durability. The decision should always be made by a **multidisciplinary vascular team** tailored to the individual patient.",2.0,1.0,2.0,4.5,5.0,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,2.0,1.0,2.0,4.5,5.0,5.0
+CS_SS1_claude_free,claude_free,CS,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF CAROTID STENOSES,"## Symptoms of Carotid Artery Stenosis
+
+---
+
+### 🔵 Important Distinction — Symptomatic vs Asymptomatic
+
+| Type | Definition |
+|---|---|
+| **Asymptomatic** | Stenosis present but **no neurological symptoms** — very common, often found incidentally |
+| **Symptomatic** | Stenosis has caused **TIA or stroke** — requires urgent evaluation and treatment |
+
+> The majority of carotid stenoses are **asymptomatic** — which makes screening in high-risk patients critically important.
+
+---
+
+### 🧠 Neurological Symptoms (Ipsilateral to the Stenosis)
+
+Symptoms occur when reduced blood flow or emboli reach the brain:
+
+---
+
+### 1. ⚡ TIA — Transient Ischemic Attack (""Mini-Stroke"")
+
+Temporary neurological symptoms that **resolve within 24 hours** (usually minutes):
+
+- Sudden **weakness or numbness** of the face, arm, or leg (contralateral side)
+- Sudden **speech difficulty** (dysarthria or aphasia)
+- Sudden **confusion or difficulty understanding**
+- Sudden **vision loss in one eye** (Amaurosis Fugax — see below)
+- Sudden **dizziness or loss of balance**
+
+> ⚠️ TIA is a **medical emergency** — 10–15% of TIA patients suffer a stroke within 90 days, with highest risk in the first 48 hours
+
+---
+
+### 2. 👁️ Amaurosis Fugax (Transient Monocular Blindness)
+
+A **hallmark symptom** of carotid stenosis:
+
+- Sudden, **painless, temporary loss of vision** in one eye
+- Often described as a **""curtain or shade""** coming down over the eye
+- Lasts seconds to minutes, then resolves completely
+- Caused by an embolus to the **ophthalmic artery** (first branch of internal carotid)
+- Should be treated as a **TIA equivalent** — urgent workup required
+
+---
+
+### 3. 🧠 Stroke (Cerebrovascular Accident — CVA)
+
+When ischemia is **prolonged and irreversible**:
+
+- **Hemiplegia or hemiparesis** — weakness/paralysis of one side of the body
+- **Hemisensory loss** — numbness on one side
+- **Aphasia** — difficulty speaking or understanding language (if dominant hemisphere affected)
+- **Facial droop** — unilateral facial weakness
+- **Visual field defects** — homonymous hemianopia
+- **Cognitive impairment** — confusion, memory loss
+- **Dysphagia** — difficulty swallowing
+
+---
+
+### 🔍 FAST / BE-FAST Recognition Tool
+
+| Letter | Sign |
+|---|---|
+| **B** | Balance — sudden loss of balance |
+| **E** | Eyes — sudden vision changes |
+| **F** | Face — facial drooping |
+| **A** | Arms — arm weakness |
+| **S** | Speech — slurred or absent speech |
+| **T** | Time — **call 112 immediately** |
+
+---
+
+### 👂 Local Symptoms (Rare)
+
+Occasionally, carotid stenosis may cause local neck symptoms:
+
+- **Carotid bruit** — abnormal sound heard with stethoscope over the neck (not a symptom felt by the patient, but a clinical sign)
+- **Neck pulsation** or awareness of heartbeat in the neck
+- **Pulsatile tinnitus** — whooshing sound in the ear
+- **Cranial nerve compression** (in large aneurysms/masses) — rare
+
+---
+
+### 📊 Degree of Stenosis vs Symptom Risk
+
+| Stenosis Degree | Stroke Risk | Management |
+|---|---|---|
+| < 50% | Low | Medical therapy |
+| 50 – 69% | Moderate | Medical therapy ± intervention |
+| 70 – 99% (symptomatic) | **High** | **Urgent CEA or CAS** |
+| 70 – 99% (asymptomatic) | Moderate | Medical therapy ± intervention |
+| 100% (occlusion) | Variable | Medical therapy (surgery not possible) |
+
+---
+
+### 🚨 When Symptoms Require Emergency Action
+
+Seek **immediate emergency care (112)** if any of the following occur suddenly:
+
+- One-sided weakness or paralysis
+- Slurred or absent speech
+- Sudden vision loss in one or both eyes
+- Sudden severe headache with no known cause
+- Loss of consciousness or confusion
+- Loss of balance or coordination
+
+---
+
+### 💊 Asymptomatic Stenosis — What to Watch For
+
+Patients with known asymptomatic carotid stenosis should be educated to **immediately report**:
+
+- Any episode of limb weakness, even brief
+- Any transient speech difficulty
+- Any episode of vision loss in one eye
+- Any unusual headache or dizziness
+
+---
+
+### Key Takeaway
+
+> Carotid stenosis is often **silent until it causes a TIA or stroke**. Amaurosis fugax and TIA are **warning signs** that must be treated as emergencies. **Early detection through screening** in high-risk patients (smokers, hypertensives, diabetics, those with known vascular disease) and **prompt treatment** can prevent devastating strokes.",2.0,1.0,1.0,,5.0,5.0,5,,5,,The distinction between TIA/stroke and asymptomatic is quite clear and well explained IMHO,3,,"Reduced blood flow is rarely an issue from a stenotic carotid - and is mentioned first. dizziness or loss of balance symptoms will definately cause false alarming for the vast majority of patients looking for info. Same for confusion, memory loss which is really not related to carotid disease",3,"The answer contains terminology that lacks sufficient precision and specificity for the intended audience,misalign with current ESVS guidelines on diagnosis or management.",True,ADJ_02,4.0,2.0,adjudication_needed,3.0,triple_surgeon_resolved,triple_surgeon_median,3.0,triple_surgeon_median,2.0,1.0,1.0,,5.0,5.0
+CS_SS2_claude_free,claude_free,CS,natural_history,symptoms,I HAVE A CAROTID STENOSIS; WHICH IS MY RISK OF STROKE,"No problem! Let me give you a comprehensive overview of stroke risk across all scenarios:
+
+---
+
+## Your Stroke Risk with Carotid Stenosis
+
+---
+
+### 📊 Risk by Symptom Status
+
+| Situation | 2-Year Stroke Risk | 5-Year Stroke Risk |
+|---|---|---|
+| **Asymptomatic** < 50% | ~1–2% | ~2–5% |
+| **Asymptomatic** 50–69% | ~3–5% | ~5–10% |
+| **Asymptomatic** 70–99% | ~5–10% | ~10–20% |
+| **Symptomatic TIA** 50–69% | ~15–20% | ~25–30% |
+| **Symptomatic TIA** 70–99% | **~25–35%** | **~35–45%** |
+| **After Stroke** 70–99% | **Very high** | **>40%** |
+
+> ⚠️ **Symptomatic stenosis = dramatically higher risk** than asymptomatic of the same degree
+
+---
+
+### ⚡ Short-Term Risk After a TIA
+
+This is the most **time-critical** scenario:
+
+| Time After TIA | Stroke Risk |
+|---|---|
+| First 48 hours | **~5–10%** |
+| First 7 days | **~10–15%** |
+| First 90 days | **~15–20%** |
+
+> 🚨 TIA must be treated as an **emergency** — risk is highest in the first 48 hours
+
+---
+
+### 🔢 ABCD² Score — TIA Stroke Risk Calculator
+
+If you have had a TIA, your short-term stroke risk can be estimated:
+
+| Factor | Points |
+|---|---|
+| Age ≥ 60 years | +1 |
+| Blood pressure ≥ 140/90 mmHg | +1 |
+| Clinical features: unilateral weakness | +2 |
+| Clinical features: speech disturbance only | +1 |
+| Duration ≥ 60 minutes | +2 |
+| Duration 10–59 minutes | +1 |
+| Diabetes present | +1 |
+| **Maximum score** | **7** |
+
+| Total Score | 2-Day Stroke Risk |
+|---|---|
+| 0–3 (Low) | ~1% |
+| 4–5 (Moderate) | ~4% |
+| 6–7 (High) | **~8–10%** |
+
+---
+
+### 🔴 Factors That Increase Your Personal Risk
+
+Your individual risk is **higher** if you have:
+
+- ✅ **Symptoms** (TIA, amaurosis fugax, prior stroke)
+- ✅ **High-grade stenosis** (70–99%)
+- ✅ **Contralateral carotid disease**
+- ✅ **Uncontrolled hypertension**
+- ✅ **Active smoking**
+- ✅ **Diabetes**
+- ✅ **Atrial fibrillation**
+- ✅ **Unstable / ulcerated plaque** on imaging
+- ✅ **Silent infarcts** on brain MRI
+- ✅ **Microemboli** detected on transcranial Doppler
+
+---
+
+### 🟢 Factors That Reduce Your Risk
+
+Your risk is **lower** if you have:
+
+- ✅ **Asymptomatic** stenosis
+- ✅ **Well-controlled blood pressure** (< 130/80)
+- ✅ **Statin therapy** (stabilizes plaque)
+- ✅ **Antiplatelet therapy** (aspirin/clopidogrel)
+- ✅ **Non-smoking status**
+- ✅ **Stable, calcified plaque** on imaging
+- ✅ **Good collateral circulation**
+
+---
+
+### 💊 How Medical Treatment Reduces Your Risk
+
+With **optimal medical therapy**, stroke risk can be significantly reduced:
+
+| Treatment | Risk Reduction |
+|---|---|
+| Statins | ~25–35% relative risk reduction |
+| Antiplatelets (aspirin) | ~20–25% |
+| Blood pressure control | ~30–40% |
+| Smoking cessation | ~50% over time |
+| **All combined (best medical therapy)** | **Up to 60–70% reduction** |
+
+---
+
+### 🏥 How Surgery Reduces Your Risk
+
+| Intervention | Benefit |
+|---|---|
+| **CEA (symptomatic 70–99%)** | Reduces 5-yr stroke risk by ~50% |
+| **CEA (symptomatic 50–69%)** | Moderate benefit — ~30% reduction |
+| **CEA (asymptomatic 70–99%)** | Modest benefit — ~30% relative reduction |
+| **CAS (Carotid Artery Stenting)** | Similar to CEA in suitable patients |
+
+---
+
+### 🏆 Key Takeaway
+
+> Your stroke risk depends on **three things above all else:**
+> 1. **Whether you have had symptoms** (TIA, vision loss, weakness) — if yes, risk is high and urgent action is needed
+> 2. **The degree of your stenosis** — higher grade = higher risk
+> 3. **How well your risk factors are controlled** — blood pressure, cholesterol, smoking, diabetes
+
+**Please discuss your specific measurements and symptoms with your vascular specialist**, who can calculate your precise individual risk and recommend the best treatment — whether that is medical therapy alone, or intervention with CEA or CAS.",2.0,1.0,2.5,,5.0,5.0,3,,3,,,2,,,,,False,,2.5,1.0,minor_disagreement,2.5,minor_disagreement,dual_surgeon_mean,2.5,dual_surgeon_mean,2.0,1.0,2.5,,5.0,5.0
+CS_T1_claude_free,claude_free,CS,medical_advice,treatment,WHICH DRUG I HAVE TO ASSUME TO TREAT A CAROTID STENOSIS,"## Drug Treatment for Carotid Artery Stenosis
+
+---
+
+### 🎯 Goal of Medical Therapy
+
+Medical treatment has **three main objectives:**
+1. **Prevent stroke** (antithrombotic therapy)
+2. **Stabilize the plaque** (statins)
+3. **Slow disease progression** (risk factor control)
+
+---
+
+### 💊 1. ANTIPLATELET THERAPY — Essential for All Patients
+
+**The cornerstone of medical treatment:**
+
+| Drug | Dose | Notes |
+|---|---|---|
+| **Aspirin** | 75–100 mg/day | First-line, lifelong |
+| **Clopidogrel** | 75 mg/day | Alternative if aspirin intolerant |
+| **Aspirin + Clopidogrel** | 100 mg + 75 mg/day | Short-term after TIA/stroke (21–90 days) |
+| **Ticagrelor + Aspirin** | 90 mg x2/day + 100 mg | Alternative dual therapy after TIA |
+
+> ⚠️ **Dual antiplatelet therapy (DAPT)** is recommended for **30–90 days after a TIA or minor stroke**, then single antiplatelet lifelong
+
+---
+
+### 💊 2. STATINS — Mandatory for All Patients
+
+**Statins do more than lower cholesterol — they stabilize plaque:**
+
+| Drug | Dose | Notes |
+|---|---|---|
+| **Atorvastatin** | 40–80 mg/day | **First choice** — most evidence |
+| **Rosuvastatin** | 20–40 mg/day | Alternative — very effective |
+| **Simvastatin** | 20–40 mg/day | Less preferred |
+
+**Benefits of statins in carotid stenosis:**
+- Stabilize and reduce plaque vulnerability
+- Reduce inflammation in the arterial wall
+- Lower LDL cholesterol — **target LDL < 1.4 mmol/L (55 mg/dL)** in symptomatic patients
+- Reduce stroke risk by **25–35%**
+- May slow or reverse plaque progression
+
+> ✅ **High-intensity statin therapy is mandatory** regardless of baseline cholesterol levels
+
+---
+
+### 💊 3. ANTIHYPERTENSIVE THERAPY — If BP is Elevated
+
+**Target blood pressure: < 130/80 mmHg**
+
+| Drug Class | Examples | Notes |
+|---|---|---|
+| **ACE Inhibitors** | Ramipril, Perindopril | **First choice** — vascular protective |
+| **ARBs** | Losartan, Valsartan | If ACE inhibitor not tolerated |
+| **Calcium Channel Blockers** | Amlodipine | Excellent add-on therapy |
+| **Thiazide Diuretics** | Indapamide | Useful combination partner |
+| **Beta-Blockers** | Bisoprolol, Nebivolol | If heart disease also present |
+
+> ⚠️ **Avoid abrupt or excessive BP lowering** in high-grade bilateral stenosis or occlusion — may worsen cerebral perfusion
+
+---
+
+### 💊 4. DIABETES CONTROL — If Diabetic
+
+| Target | Goal |
+|---|---|
+| **HbA1c** | < 7.0% (53 mmol/mol) |
+| **Fasting glucose** | < 7.0 mmol/L |
+
+**Preferred agents in vascular disease:**
+- **SGLT2 inhibitors** (Empagliflozin, Dapagliflozin) — cardiovascular protective
+- **GLP-1 agonists** (Semaglutide, Liraglutide) — reduce cardiovascular events
+- **Metformin** — first-line oral agent
+
+---
+
+### 💊 5. ADDITIONAL LIPID-LOWERING — If Statin Not Enough
+
+| Drug | Notes |
+|---|---|
+| **Ezetimibe** 10 mg/day | Add-on to statin — further LDL reduction ~20% |
+| **PCSK9 inhibitors** (Evolocumab, Alirocumab) | For very high-risk patients not at LDL target on statin + ezetimibe |
+
+---
+
+### 💊 6. ANTICOAGULATION — Special Cases
+
+**NOT routinely used for carotid stenosis alone, but indicated if:**
+
+| Condition | Drug |
+|---|---|
+| **Atrial fibrillation** | DOACs (Apixaban, Rivaroxaban, Dabigatran) — preferred over warfarin |
+| **Cardioembolic stroke** | Anticoagulation after appropriate delay |
+| **Mechanical heart valves** | Warfarin |
+
+> ❌ Anticoagulants **do not replace** antiplatelets in carotid stenosis without AF
+
+---
+
+### 📋 Treatment Summary by Patient Type
+
+| Patient Type | Essential Drugs |
+|---|---|
+| **Asymptomatic stenosis** | Aspirin + High-dose Statin + BP control |
+| **After TIA** | DAPT (90 days) → Single antiplatelet + High-dose Statin + BP control |
+| **After Stroke** | Single antiplatelet + High-dose Statin + BP control |
+| **With AF** | Anticoagulation + Statin + BP control |
+| **With Diabetes** | Antiplatelet + Statin + BP control + SGLT2i or GLP-1 |
+
+---
+
+### 🚭 Non-Drug Measures — Equally Important
+
+| Measure | Benefit |
+|---|---|
+| **Smoking cessation** | ~50% stroke risk reduction |
+| **Mediterranean diet** | Reduces cardiovascular events |
+| **Regular exercise** | 30 min moderate activity, 5 days/week |
+| **Weight management** | Target BMI < 25 |
+| **Alcohol moderation** | < 14 units/week |
+| **Stress management** | Reduces BP and cardiovascular risk |
+
+---
+
+### 🏆 Key Takeaway
+
+> The **most important drugs** for carotid stenosis are:
+> 1. **Antiplatelet** (aspirin or clopidogrel) — prevents clot formation
+> 2. **High-dose statin** (atorvastatin 40–80 mg) — stabilizes plaque
+> 3. **Antihypertensive** (ACE inhibitor preferred) — protects vessels
+>
+> These three together, combined with **lifestyle changes**, form the foundation of treatment. Always follow your **neurologist's or vascular specialist's** personalized recommendations.",1.5,1.0,3.0,2.5,5.0,4.833333333333334,5,,5,,Medical therapy is well explained without major gaps,2,,Antithrombotic therapy has no place in carotid artery disease and does not prevent stroke. This is for AF patients.,4,"medical slang,information not suitable for non medical stuff.",True,ADJ_03,3.5,3.0,adjudication_needed,4.0,triple_surgeon_resolved,triple_surgeon_median,4.0,triple_surgeon_median,1.5,1.0,3.0,2.5,5.0,4.833333333333334
+CS_T2_claude_free,claude_free,CS,best_treatment,treatment,IS STENTING EFFECTIVE FOR CAROTID STENOSIS,"## Is Stenting Effective for Carotid Stenosis?
+
+---
+
+### 🔵 What is Carotid Artery Stenting (CAS)?
+
+Carotid Artery Stenting (CAS) is a **minimally invasive endovascular procedure** where:
+1. A catheter is inserted through the **femoral artery** (groin)
+2. A **self-expanding stent** is deployed across the stenosis
+3. A **cerebral protection device** (filter) catches debris during the procedure
+4. The stent **props open** the narrowed artery permanently
+
+---
+
+### 📊 Clinical Evidence — Major Trials
+
+| Trial | Finding |
+|---|---|
+| **NASCET** | CEA superior to medical therapy for symptomatic 70–99% stenosis |
+| **CREST** | CAS and CEA **equivalent** in long-term stroke/death prevention |
+| **ICSS** | CEA safer than CAS in short-term (less periprocedural stroke) |
+| **SAPPHIRE** | CAS **non-inferior** to CEA in high surgical risk patients |
+| **SPACE** | CAS non-inferior to CEA but trend favoring CEA |
+| **EVA-3S** | CEA safer than CAS in symptomatic patients |
+| **CREST-2** | Medical therapy alone competitive with intervention in asymptomatic stenosis |
+
+---
+
+### ⚖️ CAS vs CEA — Direct Comparison
+
+| Feature | CAS (Stenting) | CEA (Surgery) |
+|---|---|---|
+| Invasiveness | **Minimally invasive** | Open surgery |
+| Anesthesia | Local/sedation | General or local |
+| Hospital stay | 1–2 days | 2–3 days |
+| Recovery | **1–2 weeks** | 3–4 weeks |
+| Periprocedural stroke risk | Slightly higher (2–4%) | Lower (1–3%) |
+| Periprocedural MI risk | **Lower** | Slightly higher |
+| Cranial nerve injury | **None** | 5–8% (usually temporary) |
+| Restenosis rate | Slightly higher | Lower |
+| Long-term stroke prevention | **Equivalent** | Equivalent |
+| Best for | High surgical risk patients | Standard surgical risk |
+
+---
+
+### ✅ When CAS is Preferred
+
+CAS is the **recommended choice** in these situations:
+
+- **High surgical risk patients:**
+  - Severe cardiac disease (recent MI, heart failure)
+  - Severe COPD
+  - Contralateral carotid occlusion
+  - Previous neck surgery or radiation
+  - High carotid bifurcation (surgically inaccessible)
+  - Severe obesity
+- **Patient preference** for minimally invasive approach
+- **Restenosis** after previous CEA
+- **Anatomically challenging** lesions for surgery
+- Patients on **anticoagulation** therapy
+
+---
+
+### ❌ When CAS is NOT Preferred (CEA Better)
+
+| Situation | Reason |
+|---|---|
+| **Age > 70–75 years** | Higher embolic risk with stenting in elderly |
+| **Heavily calcified lesions** | Stent deployment difficult/risky |
+| **Very tortuous vessels** | Catheter navigation difficult |
+| **Large thrombus** in plaque | High embolic risk during procedure |
+| **Symptomatic patients** (standard risk) | CEA has lower periprocedural stroke rate |
+| **Unstable / recently symptomatic** | CEA preferred urgently |
+
+---
+
+### 🧠 Periprocedural Risk Comparison
+
+| Risk | CAS | CEA |
+|---|---|---|
+| Stroke (30-day) | 2–4% | 1–3% |
+| Death (30-day) | 0.5–1% | 0.5–1% |
+| Myocardial Infarction | **Lower** | Slightly higher |
+| Cranial nerve palsy | **0%** | 5–8% |
+| Wound complications | **0%** | 2–5% |
+| Hyperperfusion syndrome | Rare | Rare |
+
+---
+
+### 📈 Long-Term Effectiveness
+
+| Outcome | CAS | CEA |
+|---|---|---|
+| 5-year stroke prevention | **Equivalent** | Equivalent |
+| 10-year stroke prevention | **Equivalent** | Equivalent |
+| Restenosis rate | 3–5% | 1–3% |
+| Re-intervention needed | Slightly more | Slightly less |
+| Survival benefit | **Equivalent** | Equivalent |
+
+> ✅ **Both procedures are equally effective long-term** — the difference lies in **short-term periprocedural risk** and **patient suitability**
+
+---
+
+### 🆕 Modern Advances in CAS
+
+Recent innovations have improved CAS safety:
+
+- **Transcarotid Artery Revascularization (TCAR)** — newer technique with direct carotid access and **reverse flow protection**, significantly reducing embolic stroke risk
+- **Improved stent designs** — better conformability, lower restenosis
+- **Better cerebral protection devices** — reduced periprocedural embolization
+- **Dual antiplatelet therapy** pre/post procedure — reduces thrombotic complications
+
+---
+
+### 📋 Current Guidelines (ESC/SVS 2023)
+
+| Patient Group | Recommendation |
+|---|---|
+| Symptomatic 70–99% (standard risk) | **CEA preferred** within 2 weeks of symptoms |
+| Symptomatic 70–99% (high surgical risk) | **CAS acceptable** alternative |
+| Symptomatic 50–69% | CEA preferred; CAS in high surgical risk |
+| Asymptomatic 70–99% | CEA or CAS + best medical therapy; or medical therapy alone |
+| Post-CEA restenosis | **CAS preferred** |
+| Radiation-induced stenosis | **CAS preferred** |
+
+---
+
+### 🏆 Key Takeaway
+
+> **Yes — CAS is effective for carotid stenosis**, with long-term stroke prevention **equivalent to surgical CEA**. However:
+> - **CEA remains the gold standard** for symptomatic patients at standard surgical risk
+> - **CAS is the preferred alternative** for high surgical risk patients or anatomically challenging cases
+> - The choice between CAS and CEA should always be made by a **multidisciplinary vascular team** based on your individual anatomy, risk profile, and symptom status
+> - In expert hands, **both procedures are safe and effective**",2.0,1.0,3.0,4.5,5.0,4.833333333333334,4,,4,,I don't see major misalignments in the way cAS is explained,2,,We have clear ESVS recommendations about CEA being superior to CAS in most cases. CAS is an acceptable second choice. CAS is reserved for special patient population. SIngle study outcomes given with 3 words are misleading. I would prefer referencing societal recommendations,3, misalign with current ESVS guidelines on diagnosis or management; (d) could mislead a patient about clinical priorities.,True,ADJ_04,3.0,2.0,adjudication_needed,3.0,triple_surgeon_resolved,triple_surgeon_median,3.0,triple_surgeon_median,2.0,1.0,3.0,4.5,5.0,4.833333333333334
+PAOD_SS1_claude_free,claude_free,PAOD,signs_symptoms,symptoms,LEG ARTERY DISEASE: WHICH SYMPTOMS,"# Leg Artery Disease (Peripheral Arterial Disease): Key Symptoms
+
+Leg artery disease, or **Peripheral Arterial Disease (PAD)**, occurs when narrowed arteries reduce blood flow to the legs. Here are the main symptoms:
+
+---
+
+## Classic Symptom: Claudication
+
+**Intermittent claudication** is the hallmark symptom — cramping, aching, or fatigue in the legs (usually the calf, thigh, or buttock) that:
+- Appears during walking or exercise
+- Disappears within minutes of rest
+- Returns predictably at the same walking distance
+
+---
+
+## Other Common Symptoms
+
+**At rest / advanced disease:**
+- Pain in the foot or toes at rest, especially at night (relieved by dangling the leg down)
+- Burning or aching in the lower limb even without exertion
+
+**Skin and tissue changes:**
+- Skin that is pale, bluish (cyanotic), or reddish when the leg is lowered
+- Shiny, hairless, or thin skin on the legs and feet
+- Thickened or slow-growing toenails
+- Slow-healing wounds or ulcers on the feet or ankles
+- Gangrene in severe cases (tissue death)
+
+**Sensory and temperature changes:**
+- Cold or numb feet and toes
+- Reduced sensation in the lower legs
+
+**Pulses:**
+- Weak or absent pulse in the foot or behind the knee (detected by a doctor)
+
+---
+
+## Severity Stages (Fontaine Classification)
+
+| Stage | Symptom |
+|-------|---------|
+| I | No symptoms, but disease present |
+| IIa | Claudication after >200 m walking |
+| IIb | Claudication before 200 m |
+| III | Rest pain |
+| IV | Ulcers / gangrene (critical ischemia) |
+
+---
+
+## When to See a Doctor Urgently
+
+Seek immediate care if you notice:
+- Sudden severe leg pain with cold, pale, or numb limb → possible **acute limb ischemia** (arterial blockage emergency)
+- Non-healing sores or blackened skin on the foot
+
+---
+
+**Risk factors** that make PAD more likely include smoking, diabetes, hypertension, high cholesterol, and age over 50. An **ABI test** (ankle-brachial index) is the standard first diagnostic step.",1.0,1.0,2.0,,5.0,5.0,3,,3,,,2,,,,,False,,2.5,1.0,minor_disagreement,2.5,minor_disagreement,dual_surgeon_mean,2.5,dual_surgeon_mean,1.0,1.0,2.0,,5.0,5.0
+PAOD_SS2_claude_free,claude_free,PAOD,natural_history,symptoms,WHAT IS THE RISK OF AMPUTATION IN PATIENTS WITH LEG ARTERY DISEASE?,"# Amputation Risk in Leg Artery Disease (PAD)
+
+---
+
+## Overall Risk by Disease Stage
+
+The risk of amputation varies enormously depending on the severity of PAD:
+
+According to European Society of Cardiology guidelines, about **1% of patients with intermittent claudication** (the milder stage) will go on to need a major lower limb amputation, while at least **9% of patients with chronic limb-threatening ischemia** (the severe stage) face amputation.
+
+---
+
+## PAD Is the Leading Cause of Amputation
+
+PAD is associated with **51–93% of all amputations** depending on geographic region — making it the dominant driver of limb loss worldwide.
+
+---
+
+## The Role of Diabetes: A Major Multiplier
+
+Diabetes significantly worsens the picture. It increases the incidence of PAD, accelerates disease progression, and raises disease severity. Patients with **both diabetes and PAD** are at particularly high risk of amputation. Despite a decrease in overall amputation numbers in the US, rates among those with both conditions have remained stable or even increased in high-risk subgroups.
+
+Diabetes has been associated with a **2- to 4-fold increase** in the prevalence of PAD, and roughly 20–30% of PAD patients have concomitant diabetes.
+
+---
+
+## Mortality After Amputation: Very High
+
+Nearly **half of people aged 65 and older** who had a limb amputated because of PAD died within **one year** of surgery, according to American Heart Association statistics.
+
+In-hospital mortality following major amputation stands at approximately **12.4% within 30 days**.
+
+In an international analysis, hospital mortality rates after major amputation ranged from 6.1% (Finland) to 20.8% (Hungary), underscoring wide geographic variation.
+
+---
+
+## Who Is at Highest Risk?
+
+Within PAD patients, the highest amputation risk is carried by **residents of rural areas, African-American and Native American patients, and those of low socioeconomic status** — highlighting significant regional, racial, and socioeconomic disparities.
+
+Other key risk factors include:
+- Diabetes mellitus
+- Smoking
+- Low ankle-brachial index (ABI)
+- Prior limb revascularization or previous amputation
+- Chronic kidney disease
+- Age ≥ 75
+
+---
+
+## Can Amputation Risk Be Reduced?
+
+Yes — significantly. Antiplatelet agents, statin therapy, supervised exercise, smoking cessation, and control of hypertension and diabetes substantially reduce the likelihood of major adverse limb events. Revascularization methods — including surgical bypass and minimally invasive endovascular procedures — have notably decreased amputation rates in PAD patients.
+
+---
+
+**Key takeaway:** Most PAD patients with claudication alone have a low amputation risk (~1%), but once the disease progresses to critical limb-threatening ischemia, the risk rises sharply. Early detection, risk factor control, and timely revascularization are crucial to preserving the limb.",2.0,0.0,1.5,,4.333333333333334,4.5,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,2.0,0.0,1.5,,4.333333333333334,4.5
+PAOD_T1_claude_free,claude_free,PAOD,medical_advice,treatment,HOW CAN I IMPROVE MYARTERIAL LEG CIRCULATION?,"# How to Improve Arterial Leg Circulation in PAD
+
+---
+
+## 1. Exercise — The Most Powerful Tool
+
+**Supervised Exercise Therapy (SET)** is the #1 evidence-based treatment for PAD:
+
+- **Walking programs** are the gold standard — walk until near-maximal pain, rest, repeat
+- Aim for **30–45 minutes, 3 times per week**
+- Improves collateral circulation, muscle efficiency, and walking distance
+- Benefits are comparable to some revascularization procedures in mild-moderate PAD
+
+> Even if it hurts — controlled walking *through* claudication pain is therapeutic, not harmful.
+
+---
+
+## 2. Stop Smoking — Absolutely Essential
+
+- Smoking is the **single biggest modifiable risk factor** for PAD progression
+- It causes vasoconstriction, accelerates atherosclerosis, and doubles amputation risk
+- Stopping smoking slows disease progression significantly
+- Seek help: nicotine replacement, varenicline (Champix), or counseling
+
+---
+
+## 3. Control Your Risk Factors
+
+| Risk Factor | Target |
+|-------------|--------|
+| **Blood pressure** | < 130/80 mmHg |
+| **LDL cholesterol** | < 70 mg/dL (high-intensity statins recommended) |
+| **Blood sugar (HbA1c)** | < 7% if diabetic |
+| **Body weight** | Reach/maintain healthy BMI |
+
+---
+
+## 4. Medications Your Doctor May Prescribe
+
+- **Statins** (e.g. atorvastatin) — reduce plaque, lower amputation and cardiovascular risk
+- **Antiplatelet agents** (aspirin, clopidogrel) — reduce clot risk in the arteries
+- **Cilostazol** — vasodilator that improves walking distance in claudication
+- **Rivaroxaban** (low dose) + aspirin — may reduce major limb events in some patients
+- **Ramipril (ACE inhibitor)** — shown to improve walking distance in PAD
+
+---
+
+## 5. Foot and Wound Care
+
+- Inspect feet **daily** for cuts, blisters, or sores
+- Keep feet clean and moisturized (but not between toes)
+- Wear **well-fitting shoes** — avoid going barefoot
+- Treat any wound promptly — poor circulation means slow healing and high infection risk
+
+---
+
+## 6. Diet
+
+- Follow a **Mediterranean-style diet**: olive oil, fish, vegetables, legumes, whole grains
+- Reduce saturated fats, processed foods, and salt
+- Omega-3 fatty acids (oily fish) have anti-inflammatory vascular benefits
+- Stay well **hydrated** — dehydration thickens the blood
+
+---
+
+## 7. Posture and Habits
+
+- **Avoid crossing your legs** — compresses arteries
+- **Avoid cold exposure** — causes vasoconstriction
+- **Elevate the head of your bed** slightly (10–15 cm) if you have rest pain — gravity helps perfusion
+- Avoid tight socks or compression stockings unless prescribed (they can worsen arterial flow)
+
+---
+
+## 8. Revascularization (When Needed)
+
+If lifestyle and medications are insufficient, doctors may offer:
+
+- **Angioplasty ± stent** — minimally invasive, reopens narrowed arteries
+- **Bypass surgery** — reroutes blood around a blocked segment
+- **Atherectomy** — removes plaque from inside the artery
+
+These are typically reserved for **severe claudication, rest pain, or non-healing wounds**.
+
+---
+
+## What to Avoid
+
+- ❌ Smoking (critical)
+- ❌ Prolonged sitting or immobility
+- ❌ Cold exposure to feet
+- ❌ Unsupervised compression stockings
+- ❌ Ignoring foot wounds
+
+---
+
+**Bottom line:** The combination of **regular walking + smoking cessation + statins + antiplatelet therapy** forms the core of PAD management and can meaningfully slow progression and reduce amputation risk. Always work with a vascular specialist to tailor your plan.",1.5,1.0,3.0,2.5,5.0,4.833333333333334,4,,4,,,4,,,,,False,,4.0,0.0,exact_agreement,4.0,exact_agreement,dual_surgeon_agreement,4.0,dual_surgeon_agreement,1.5,1.0,3.0,2.5,5.0,4.833333333333334
+PAOD_T2_claude_free,claude_free,PAOD,best_treatment,treatment,WHICH IS THE BEST METHOD FOR SURGICAL TREATMENT OF LEG ARTERY DISEASE?,"## Surgical Treatment of Peripheral Arterial Disease (PAD) of the Leg
+
+There's no single ""best"" method — the optimal approach depends on several key factors. Here's a breakdown of the main options and when each is preferred:
+
+---
+
+### 🔹 1. Endovascular (Minimally Invasive) Techniques
+**Best for: Aortoiliac and short-segment femoropopliteal disease**
+
+- **Angioplasty (PTA)** – Balloon dilation of the narrowed artery
+- **Stenting** – Metal stent placed to keep the artery open
+- **Atherectomy** – Plaque removal devices
+- **Drug-Coated Balloons (DCB)** – Reduce restenosis rates
+
+✅ Preferred when lesions are **short**, patient is **high surgical risk**, or anatomy is favorable (TASC A/B lesions)
+
+---
+
+### 🔹 2. Open Surgical Bypass
+**Best for: Long-segment occlusions, TASC C/D lesions, failed endovascular attempts**
+
+- **Aortobifemoral bypass** – For aortoiliac disease (gold standard at this level)
+- **Femoro-popliteal bypass** – Using saphenous vein (preferred) or synthetic graft
+- **Femoro-tibial/peroneal bypass** – For below-knee disease, limb salvage
+
+✅ **Autologous saphenous vein** is the gold standard conduit — significantly better long-term patency than synthetic grafts
+
+---
+
+### 🔹 3. Hybrid Procedures
+**Best for: Multi-level disease**
+
+Combines open surgery and endovascular techniques in the same session (e.g., endarterectomy + stenting).
+
+---
+
+### 🔹 4. Endarterectomy
+**Best for: Common femoral artery disease (CFA)**
+
+Surgical removal of plaque — the **CFA endarterectomy** remains the preferred treatment for disease at the femoral bifurcation, as stenting in this location performs poorly due to mechanical stress.
+
+---
+
+## Key Decision Factors
+
+| Factor | Favors Endovascular | Favors Open Surgery |
+|---|---|---|
+| Lesion length | Short | Long / occlusion |
+| Patient fitness | Poor surgical candidate | Good surgical candidate |
+| Life expectancy | Lower | Longer |
+| Vein conduit available | — | Yes → bypass preferred |
+| Anatomy (TASC) | A/B | C/D |
+| Urgency | Acute limb ischemia | Chronic/critical ischemia |
+
+---
+
+## Current Consensus
+
+The **2024 ESC/ESVS Guidelines** and **ACC/AHA Guidelines** generally advocate:
+
+- **Endovascular-first** strategy for most femoropopliteal lesions, given lower procedural risk and comparable medium-term outcomes
+- **Open bypass (vein graft)** remains superior for **long-term patency** in complex, long-segment disease
+- **CFA disease** → always surgical endarterectomy
+- **Aortoiliac disease** → endovascular for TASC A/B; open bypass for TASC C/D
+
+---
+
+> ⚕️ The decision should always be individualized by a **multidisciplinary vascular team**, weighing lesion morphology, patient comorbidities, available conduit, center expertise, and the patient's goals (limb salvage vs. claudication relief).
+
+Would you like more detail on a specific arterial level or clinical scenario?",2.0,1.0,3.0,4.5,5.0,4.5,3,,3,,,3,,,,,False,,3.0,0.0,exact_agreement,3.0,exact_agreement,dual_surgeon_agreement,3.0,dual_surgeon_agreement,2.0,1.0,3.0,4.5,5.0,4.5
+VV_SS1_claude_free,claude_free,VV,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF VARICOSE VEINS,"## Symptoms of Varicose Veins
+
+Varicose veins can cause a range of symptoms, from purely cosmetic concerns to uncomfortable physical sensations:
+
+**Visible Signs**
+- Dark purple or blue veins visible under the skin
+- Twisted, bulging, or cord-like veins, usually on the legs
+- Swollen, raised veins that you can see and feel
+
+**Physical Symptoms**
+- Aching, heavy, or uncomfortable legs
+- Burning, throbbing, or cramping in the lower legs
+- Swelling in the ankles and feet
+- Itching around the affected veins
+- Skin discoloration around the veins (brownish or reddish)
+
+**Worsening Factors**
+- Symptoms often worsen after standing or sitting for long periods
+- Pain may increase in warm weather or at the end of the day
+- Leg restlessness, especially at night
+
+**Signs of Complications** (seek medical attention)
+- Bleeding from a varicose vein
+- Sores or skin ulcers near the ankle
+- Hard, warm, or painful veins (may indicate a clot)
+- Sudden swelling of the entire leg
+
+**Important notes:**
+- Many people have varicose veins with **no pain at all** — just cosmetic concern
+- Symptoms tend to worsen with **age, pregnancy, obesity, and prolonged standing**
+- Self-care (compression stockings, elevating legs, exercise) can help relieve mild symptoms
+
+If symptoms are severe, persistent, or accompanied by skin changes or ulcers, it's best to consult a doctor or vascular specialist.",2.0,1.0,2.5,,5.0,5.0,4,,4,,,4,,,,,False,,4.0,0.0,exact_agreement,4.0,exact_agreement,dual_surgeon_agreement,4.0,dual_surgeon_agreement,2.0,1.0,2.5,,5.0,5.0
+VV_SS2_claude_free,claude_free,VV,natural_history,symptoms,ARE VARICOSE VEINS DANGEROUS,"## Are Varicose Veins Dangerous?
+
+In most cases, varicose veins are **not dangerous** and are primarily a cosmetic concern. However, they can sometimes lead to serious complications if left untreated.
+
+---
+
+### Usually Not Dangerous
+For most people, varicose veins cause:
+- Mild discomfort and cosmetic concern
+- No serious health risk
+- Manageable symptoms with lifestyle changes
+
+---
+
+### Potential Complications (When They Can Become Serious)
+
+**1. Superficial Thrombophlebitis**
+Inflammation and blood clots forming in veins just under the skin — causes redness, pain, and warmth along the vein.
+
+**2. Deep Vein Thrombosis (DVT)**
+A more serious clot forming in deeper veins — can cause significant leg swelling and pain. Requires immediate medical attention.
+
+**3. Pulmonary Embolism**
+If a DVT clot breaks loose and travels to the lungs — this is life-threatening and a medical emergency.
+
+**4. Bleeding**
+Varicose veins close to the skin can burst and bleed, sometimes with very little trauma.
+
+**5. Venous Ulcers**
+Chronic poor circulation can cause painful, slow-healing sores near the ankles — particularly in advanced or long-neglected cases.
+
+**6. Skin Changes (Lipodermatosclerosis)**
+Hardening and darkening of the skin around the ankles due to prolonged increased pressure in the veins.
+
+---
+
+### When to See a Doctor Urgently
+- Sudden, severe leg swelling
+- A vein that is bleeding
+- Red, hot, or hardened skin over a vein
+- Chest pain or difficulty breathing (possible pulmonary embolism)
+
+---
+
+### Bottom Line
+Most varicose veins are **bothersome but not dangerous**. However, they should not be completely ignored — regular monitoring and early treatment can prevent serious complications. If you notice any alarming symptoms, consult a **vascular specialist or phlebologist**.",2.0,1.0,2.0,,4.833333333333334,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,2.0,1.0,2.0,,4.833333333333334,5.0
+VV_T1_claude_free,claude_free,VV,medical_advice,treatment,WHEN I HAVE TO GO TO THE DOCTOR FOR VARICOSE VEINS,"## When to See a Doctor for Varicose Veins
+
+---
+
+### 🚨 Go to the Emergency Room Immediately If:
+- A varicose vein **bursts and bleeds** and won't stop
+- You have **sudden chest pain or difficulty breathing** (possible pulmonary embolism)
+- **Sudden severe swelling** of the entire leg
+- You feel **faint or dizzy** along with leg symptoms
+
+---
+
+### ⚠️ See a Doctor Soon (Within Days) If:
+- A vein becomes **red, hot, swollen, or hard** — may indicate a clot
+- You develop **sores or ulcers** near your ankle that won't heal
+- The skin around your veins turns **dark, thick, or leathery**
+- You notice **significant swelling** in your legs or ankles that doesn't go away
+- A vein **bleeds** even from minor injury
+
+---
+
+### 📅 Schedule a Routine Appointment If:
+- Varicose veins are causing **persistent pain, aching, or heaviness**
+- You have **burning, throbbing, or cramping** that disrupts daily life
+- Symptoms are **getting worse over time**
+- You are **pregnant** and developing varicose veins
+- You want to discuss **cosmetic treatment** options
+- Home remedies (compression stockings, leg elevation) are **not helping**
+- You have a **family history** of blood clots or vascular disease
+
+---
+
+### 👨‍⚕️ Who to See:
+- **General practitioner (GP)** — for initial assessment and referral
+- **Vascular surgeon** — for treatment of serious or advanced cases
+- **Phlebologist** — a specialist in vein diseases
+- **Dermatologist** — if skin complications are present
+
+---
+
+### 🏠 When You Can Monitor at Home:
+- Veins are **only a cosmetic concern** with no pain
+- Symptoms are **mild and manageable** with compression stockings
+- You have **no skin changes, ulcers, or swelling**
+
+---
+
+### Bottom Line
+**When in doubt, it's always better to get checked.** Varicose veins are progressive — early treatment is simpler, less invasive, and more effective than waiting for complications to develop.",2.0,1.0,1.0,1.5,5.0,5.0,3,,3,,,3,,,,,False,,3.0,0.0,exact_agreement,3.0,exact_agreement,dual_surgeon_agreement,3.0,dual_surgeon_agreement,2.0,1.0,1.0,1.5,5.0,5.0
+VV_T2_claude_free,claude_free,VV,best_treatment,treatment,WHICH IS THE BEST TREATMENT FOR VARICOSE VEINS,"## Best Treatments for Varicose Veins
+
+Treatment depends on the **severity, size, location** of the veins and your **overall health**. Options range from lifestyle changes to minimally invasive procedures to surgery.
+
+---
+
+### 🏠 1. Lifestyle Changes (Mild Cases)
+The first line of management for minor symptoms:
+- **Compression stockings** — the most common conservative treatment; improve circulation and reduce swelling
+- **Regular exercise** — walking improves leg muscle pump function
+- **Leg elevation** — raises legs above heart level to reduce pressure
+- **Weight management** — reduces pressure on leg veins
+- **Avoid prolonged standing or sitting** — take regular breaks and move around
+
+---
+
+### 💉 2. Sclerotherapy (Most Popular Non-Surgical Treatment)
+- A chemical solution is **injected directly into the vein**
+- The vein scars, collapses, and is gradually absorbed by the body
+- Best for **small to medium varicose veins and spider veins**
+- Usually requires **multiple sessions**
+- No anesthesia needed, performed in a clinic
+- Very effective with **high success rates**
+
+---
+
+### 🔥 3. Thermal Ablation (Minimally Invasive — Gold Standard)
+Two main types, both highly effective:
+
+**Endovenous Laser Ablation (EVLA/EVLT)**
+- A laser fiber is inserted into the vein via a tiny incision
+- Laser heat closes the vein permanently
+- Performed under local anesthesia
+- Very high success rate (~95%)
+- Minimal recovery time
+
+**Radiofrequency Ablation (RFA)**
+- Uses radiofrequency energy instead of laser
+- Similar effectiveness to laser
+- Slightly less post-procedure bruising
+- Currently one of the **most recommended treatments**
+
+---
+
+### 🧴 4. Foam Sclerotherapy
+- A **foam version** of sclerotherapy
+- More effective than liquid sclerotherapy for **larger veins**
+- Ultrasound-guided for precision
+- Minimally invasive, done in clinic
+
+---
+
+### 🏥 5. Surgical Options (Severe Cases)
+Reserved for large, complex, or recurrent varicose veins:
+
+**Vein Stripping and Ligation**
+- The affected vein is **tied off and surgically removed**
+- Performed under general or spinal anesthesia
+- Longer recovery time (2–4 weeks)
+- Less commonly used now due to minimally invasive alternatives
+
+**Ambulatory Phlebectomy**
+- Small varicose veins are **removed through tiny skin punctures**
+- Performed under local anesthesia
+- Minimal scarring, quick recovery
+- Often combined with other treatments
+
+---
+
+### 🆕 6. Newer Techniques
+- **VenaSeal** — medical glue injected to seal the vein shut; no heat or anesthesia needed
+- **Clarivein** — mechanical and chemical combination treatment
+- **Steam ablation** — uses steam to close the vein
+
+---
+
+### Comparison Summary
+
+| Treatment | Best For | Invasiveness | Recovery |
+|---|---|---|---|
+| Compression stockings | Mild symptoms | None | Ongoing |
+| Sclerotherapy | Small/medium veins | Minimal | 1–2 days |
+| Laser ablation (EVLA) | Large veins | Minimal | 3–5 days |
+| Radiofrequency (RFA) | Large veins | Minimal | 3–5 days |
+| VenaSeal | Large veins | Minimal | 1–2 days |
+| Surgery | Severe/complex | High | 2–4 weeks |
+
+---
+
+### 🏆 What is Considered the Best Overall?
+For most patients today, **Radiofrequency Ablation (RFA) or Endovenous Laser Ablation (EVLA)** are considered the gold standard because they are:
+- Highly effective (90–95% success rate)
+- Minimally invasive
+- Done under local anesthesia
+- Have quick recovery times
+- Have low complication rates
+
+---
+
+### Important Reminder
+The **best treatment for YOU** depends on your specific case. Always consult a **vascular specialist or phlebologist** who can assess your veins with an **ultrasound** and recommend the most appropriate option.",2.0,1.0,3.0,3.0,4.833333333333334,5.0,4,,4,,,4,,,,,False,,4.0,0.0,exact_agreement,4.0,exact_agreement,dual_surgeon_agreement,4.0,dual_surgeon_agreement,2.0,1.0,3.0,3.0,4.833333333333334,5.0

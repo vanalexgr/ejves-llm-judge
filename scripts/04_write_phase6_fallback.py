@@ -15,7 +15,7 @@ from ejves_judge.phase6_fallback import write_phase6_fallback_documents  # noqa:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Write Phase 6 fallback comparator methodology and Methods addendum."
+        description="Write comparator methodology and Methods addendum from the completed calibration run."
     )
     parser.add_argument(
         "--human-long-path",
@@ -39,7 +39,7 @@ def parse_args() -> argparse.Namespace:
         "--accuracy-spotcheck-count",
         default=48,
         type=int,
-        help="Number of comparator responses assigned to Mario's accuracy spot-check.",
+        help="Number of comparator responses included in the blinded human accuracy workflow.",
     )
     return parser.parse_args()
 

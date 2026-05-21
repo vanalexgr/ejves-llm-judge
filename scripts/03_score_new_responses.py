@@ -45,18 +45,18 @@ def parse_args() -> argparse.Namespace:
         "--mario-review-output",
         type=Path,
         default=None,
-        help="Optional explicit output path for Mario's accuracy review CSV.",
+        help="Optional explicit output path for the initial human accuracy review CSV.",
     )
     parser.add_argument(
         "--mario-review-input",
         type=Path,
         default=None,
-        help="Optional completed Mario accuracy review CSV to merge into the final comparator results.",
+        help="Optional completed initial human accuracy review CSV to merge into comparator results.",
     )
     parser.add_argument(
         "--prepare-only",
         action="store_true",
-        help="Validate the comparator CSV and write Mario's review sheet without making API calls.",
+        help="Validate the comparator CSV and write the initial human accuracy review sheet without making API calls.",
     )
     return parser.parse_args()
 
@@ -71,7 +71,7 @@ def main() -> int:
                 mario_review_output_path=args.mario_review_output,
             )
             print("Phase 6 preparation completed.")
-            print(f"Mario review sheet: {mario_review_path}")
+            print(f"Initial human review sheet: {mario_review_path}")
             return 0
 
         summary = run_phase6(
@@ -96,7 +96,7 @@ def main() -> int:
         print(f"Failures: {', '.join(summary.failures)}")
     else:
         print("Failures: none")
-    print(f"Mario review sheet: {summary.mario_review_sheet_path}")
+    print(f"Initial human review sheet: {summary.mario_review_sheet_path}")
     print(f"Total latency_seconds: {summary.total_latency_seconds:.3f}")
     print(f"Estimated cost_usd: {summary.estimated_cost_usd:.6f}")
     return 0
@@ -104,4 +104,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

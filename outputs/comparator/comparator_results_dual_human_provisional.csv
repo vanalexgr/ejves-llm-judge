@@ -1,4 +1,4 @@
-response_id,source_model,disease,domain,question_group,question_text,response_text,mario_accuracy,mario_accuracy_notes,accuracy_reviewer,accuracy_role
+response_id,source_model,disease,domain,question_group,question_text,response_text,tone,complementarity,gilbert_urgency,discern_q7,comprehensiveness,clarity,mario_accuracy,mario_accuracy_notes,vga_accuracy,vga_accuracy_notes,human_accuracy_mean,human_accuracy_abs_diff,human_accuracy_resolution_status,validated_accuracy,accuracy_source,validated_tone,validated_complementarity,validated_gilbert_urgency,validated_discern_q7,descriptive_comprehensiveness,descriptive_clarity
 AAA_SS1_chatgpt_free,chatgpt_free,AAA,signs_symptoms,symptoms,WHICH ARE THE SIGNS OF AAA,"“AAA” most commonly refers to Abdominal Aortic Aneurysm.
 
 Many people with an AAA have **no symptoms at first**, and it may be found during a scan for something else. When symptoms do occur, common signs can include:
@@ -18,7 +18,7 @@ Signs that an AAA may be **rupturing** — which is a medical emergency — incl
 
 Risk factors include smoking, older age, high blood pressure, and family history.
 
-If you meant a different “AAA” (for example in sports, gaming, or another medical term), tell me which one and I’ll explain that instead.",,,Mario,validated_endpoint
+If you meant a different “AAA” (for example in sports, gaming, or another medical term), tell me which one and I’ll explain that instead.",1.5,0.0,0.5,,4.0,5.0,3,,3,,3.0,0.0,exact_agreement,3.0,dual_surgeon_agreement,1.5,0.0,0.5,,4.0,5.0
 AAA_SS2_chatgpt_free,chatgpt_free,AAA,natural_history,symptoms,WHICH ARE THE RISKS OF AAA,"The main risks of Abdominal Aortic Aneurysm are related to the aneurysm getting larger and eventually tearing or bursting.
 
 ## Major risks and complications
@@ -65,7 +65,7 @@ Seek urgent medical help if someone with a known or possible AAA develops:
 * Rapid heartbeat
 * Signs of shock
 
-Doctors usually monitor small AAAs with regular imaging and may recommend surgery when the aneurysm becomes large or high-risk.",,,Mario,validated_endpoint
+Doctors usually monitor small AAAs with regular imaging and may recommend surgery when the aneurysm becomes large or high-risk.",1.0,1.0,1.5,,4.333333333333334,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,1.0,1.0,1.5,,4.333333333333334,5.0
 AAA_T1_chatgpt_free,chatgpt_free,AAA,medical_advice,treatment,WHICH IS THE RISK OF RUPTURE OF AN AAA,"The risk of rupture for an Abdominal Aortic Aneurysm depends mainly on its **size**, how fast it is growing, and whether it is causing symptoms.
 
 Approximate annual rupture risk by aneurysm diameter:
@@ -94,7 +94,7 @@ Because rupture can be fatal, doctors often consider repair when:
 * The aneurysm grows quickly
 * Symptoms develop
 
-If you know the exact size of the AAA, I can give a more specific estimate of rupture risk and the usual treatment approach.",,,Mario,validated_endpoint
+If you know the exact size of the AAA, I can give a more specific estimate of rupture risk and the usual treatment approach.",1.5,1.0,1.5,2.5,4.333333333333334,5.0,5,,3,,4.0,2.0,adjudication_needed,,dual_surgeon_adjudication_needed,1.5,1.0,1.5,2.5,4.333333333333334,5.0
 AAA_T2_chatgpt_free,chatgpt_free,AAA,best_treatment,treatment,WHICH IS THE BEST INTERVENTION FOR AAA,"The best treatment for an Abdominal Aortic Aneurysm depends on:
 
 * The aneurysm’s size and shape
@@ -175,7 +175,7 @@ There is no single best procedure for everyone.
 
 In many modern cases, **EVAR** is preferred because recovery is easier and early survival is better. However, **open repair** may provide better durability over many years in selected patients.
 
-A vascular surgeon usually decides based on CT imaging and overall risk profile.",,,Mario,validated_endpoint
+A vascular surgeon usually decides based on CT imaging and overall risk profile.",2.0,1.0,1.5,5.0,4.5,5.0,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,2.0,1.0,1.5,5.0,4.5,5.0
 CS_SS1_chatgpt_free,chatgpt_free,CS,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF CAROTID STENOSES,"Carotid artery stenosis often causes **no symptoms** until blood flow to the brain becomes reduced or a small clot travels to the brain.
 
 When symptoms occur, they are usually warning signs of a Transient ischemic attack or Stroke.
@@ -211,7 +211,7 @@ Common risk factors include:
 
 ## When to seek urgent help
 
-Seek emergency care immediately if stroke symptoms appear, even if they improve quickly. Early treatment can reduce brain damage and disability.",,,Mario,validated_endpoint
+Seek emergency care immediately if stroke symptoms appear, even if they improve quickly. Early treatment can reduce brain damage and disability.",1.5,0.5,1.0,,4.0,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,1.5,0.5,1.0,,4.0,5.0
 CS_SS2_chatgpt_free,chatgpt_free,CS,natural_history,symptoms,I HAVE A CAROTID STENOSIS; WHICH IS MY RISK OF STROKE,"The risk of stroke from Carotid artery stenosis depends mainly on:
 
 * **How severe the narrowing is**
@@ -290,7 +290,7 @@ If you know:
 * whether you had symptoms,
 * and whether it is on one or both sides,
 
-I can explain the usual stroke risk range and treatment recommendations more specifically.",,,Mario,validated_endpoint
+I can explain the usual stroke risk range and treatment recommendations more specifically.",2.0,0.5,1.5,,4.833333333333334,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,0.5,1.5,,4.833333333333334,5.0
 CS_T1_chatgpt_free,chatgpt_free,CS,medical_advice,treatment,WHICH DRUG I HAVE TO ASSUME TO TREAT A CAROTID STENOSIS,"Treatment for Carotid artery stenosis usually focuses on reducing the risk of Stroke and slowing plaque buildup. The exact medicines depend on your symptoms, degree of narrowing, age, bleeding risk, and other conditions.
 
 Commonly used medications include:
@@ -329,7 +329,7 @@ If you tell me:
 * your age,
 * and your current medications,
 
-I can explain the treatment approach that is commonly recommended in situations similar to yours.",,,Mario,validated_endpoint
+I can explain the treatment approach that is commonly recommended in situations similar to yours.",2.0,1.0,3.0,4.5,3.833333333333333,5.0,5,,4,,4.5,1.0,minor_disagreement,4.5,dual_surgeon_mean,2.0,1.0,3.0,4.5,3.833333333333333,5.0
 CS_T2_chatgpt_free,chatgpt_free,CS,best_treatment,treatment,IS STENTING EFFECTIVE FOR CAROTID STENOSIS,"Yes — Carotid artery stenting can be effective for treating Carotid artery stenosis in selected patients.
 
 The goal is to reduce the risk of Stroke by widening the narrowed artery and improving blood flow to the brain.
@@ -412,7 +412,7 @@ The best treatment depends on:
 * General health
 * Brain imaging and artery anatomy
 
-A vascular surgeon or stroke specialist usually decides whether stenting or surgery is safer in a specific case.",,,Mario,validated_endpoint
+A vascular surgeon or stroke specialist usually decides whether stenting or surgery is safer in a specific case.",2.0,1.0,3.0,4.5,4.833333333333334,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,1.0,3.0,4.5,4.833333333333334,5.0
 PAOD_SS1_chatgpt_free,chatgpt_free,PAOD,signs_symptoms,symptoms,LEG ARTERY DISEASE: WHICH SYMPTOMS,"Peripheral Artery Disease (often called PAD) happens when narrowed arteries reduce blood flow to the legs, usually because of a buildup of fatty deposits in the arteries.
 
 Common symptoms include:
@@ -451,7 +451,7 @@ Treatment may involve:
 For more information:
 
 * [American Heart Association PAD overview](https://www.heart.org/en/health-topics/peripheral-artery-disease?utm_source=chatgpt.com)
-* [Mayo Clinic PAD symptoms and causes](https://www.mayoclinic.org/diseases-conditions/peripheral-artery-disease/symptoms-causes/syc-20350557?utm_source=chatgpt.com)",,,Mario,validated_endpoint
+* [Mayo Clinic PAD symptoms and causes](https://www.mayoclinic.org/diseases-conditions/peripheral-artery-disease/symptoms-causes/syc-20350557?utm_source=chatgpt.com)",1.5,1.0,2.0,,5.0,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,1.5,1.0,2.0,,5.0,5.0
 PAOD_SS2_chatgpt_free,chatgpt_free,PAOD,natural_history,symptoms,WHAT IS THE RISK OF AMPUTATION IN PATIENTS WITH LEG ARTERY DISEASE?,"In Peripheral Artery Disease, the risk of amputation depends greatly on how severe the disease is and whether it is treated.
 
 ### General risk
@@ -502,7 +502,7 @@ Seek urgent vascular evaluation if there is:
 Helpful references:
 
 * [Society for Vascular Surgery – PAD information](https://vascular.org/patients-and-referring-physicians/conditions/peripheral-arterial-disease?utm_source=chatgpt.com)
-* [Cleveland Clinic – Peripheral Artery Disease](https://my.clevelandclinic.org/health/diseases/16878-peripheral-artery-disease-pad?utm_source=chatgpt.com)",,,Mario,validated_endpoint
+* [Cleveland Clinic – Peripheral Artery Disease](https://my.clevelandclinic.org/health/diseases/16878-peripheral-artery-disease-pad?utm_source=chatgpt.com)",2.0,1.0,2.0,,4.5,5.0,5,,4,,4.5,1.0,minor_disagreement,4.5,dual_surgeon_mean,2.0,1.0,2.0,,4.5,5.0
 PAOD_T1_chatgpt_free,chatgpt_free,PAOD,medical_advice,treatment,HOW CAN I IMPROVE MYARTERIAL LEG CIRCULATION?,"Improving circulation in Peripheral Artery Disease usually involves a combination of lifestyle changes, medical treatment, and sometimes vascular procedures.
 
 ## Most effective ways to improve leg circulation
@@ -588,7 +588,7 @@ These procedures can restore blood flow and help prevent limb loss.
 More information:
 
 * [American Heart Association – PAD treatment and prevention](https://www.heart.org/en/health-topics/peripheral-artery-disease/prevention-and-treatment-of-pad?utm_source=chatgpt.com)
-* [NHLBI – Peripheral Artery Disease overview](https://www.nhlbi.nih.gov/health/peripheral-artery-disease?utm_source=chatgpt.com)",,,Mario,validated_endpoint
+* [NHLBI – Peripheral Artery Disease overview](https://www.nhlbi.nih.gov/health/peripheral-artery-disease?utm_source=chatgpt.com)",1.5,1.0,2.0,2.0,4.833333333333334,5.0,5,,4,,4.5,1.0,minor_disagreement,4.5,dual_surgeon_mean,1.5,1.0,2.0,2.0,4.833333333333334,5.0
 PAOD_T2_chatgpt_free,chatgpt_free,PAOD,best_treatment,treatment,WHICH IS THE BEST METHOD FOR SURGICAL TREATMENT OF LEG ARTERY DISEASE?,"The “best” treatment for Peripheral Artery Disease depends on:
 
 * which artery is blocked,
@@ -675,7 +675,7 @@ Treatment is usually performed by:
 Helpful references:
 
 * [Society for Vascular Surgery – PAD treatments](https://vascular.org/patient-resources/vascular-conditions/peripheral-arterial-disease-pad?utm_source=chatgpt.com)
-* [Cleveland Clinic – PAD surgery and procedures](https://my.clevelandclinic.org/health/diseases/16878-peripheral-artery-disease-pad?utm_source=chatgpt.com)",,,Mario,validated_endpoint
+* [Cleveland Clinic – PAD surgery and procedures](https://my.clevelandclinic.org/health/diseases/16878-peripheral-artery-disease-pad?utm_source=chatgpt.com)",2.0,1.0,1.5,5.0,4.333333333333334,5.0,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,2.0,1.0,1.5,5.0,4.333333333333334,5.0
 VV_SS1_chatgpt_free,chatgpt_free,VV,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF VARICOSE VEINS,"Varicose Veins commonly affect the legs and feet. Symptoms can range from mild cosmetic changes to significant discomfort.
 
 Common symptoms include:
@@ -716,7 +716,7 @@ Helpful self-care measures:
 * Compression stockings
 * Maintaining a healthy weight
 
-For diagnosis and treatment, a vascular specialist or vein clinic may use ultrasound and offer treatments such as compression therapy, sclerotherapy, laser treatment, or minimally invasive vein procedures.",,,Mario,validated_endpoint
+For diagnosis and treatment, a vascular specialist or vein clinic may use ultrasound and offer treatments such as compression therapy, sclerotherapy, laser treatment, or minimally invasive vein procedures.",1.0,1.0,2.0,,5.0,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,1.0,1.0,2.0,,5.0,5.0
 VV_SS2_chatgpt_free,chatgpt_free,VV,natural_history,symptoms,ARE VARICOSE VEINS DANGEROUS,"Varicose Veins are often more uncomfortable than dangerous, but in some cases they can lead to complications that need medical attention.
 
 Most people experience symptoms such as:
@@ -751,7 +751,7 @@ Many cases can be managed effectively with:
 * Elevating the legs
 * Medical procedures if needed
 
-Modern treatments are usually minimally invasive and quite effective. A vascular specialist can determine whether your veins are mainly cosmetic or medically significant.",,,Mario,validated_endpoint
+Modern treatments are usually minimally invasive and quite effective. A vascular specialist can determine whether your veins are mainly cosmetic or medically significant.",2.0,1.0,2.5,,4.666666666666666,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,1.0,2.5,,4.666666666666666,5.0
 VV_T1_chatgpt_free,chatgpt_free,VV,medical_advice,treatment,WHEN I HAVE TO GO TO THE DOCTOR FOR VARICOSE VEINS,"You should see a doctor about Varicose Veins if you have symptoms that are persistent, worsening, or causing complications.
 
 Make an appointment if you notice:
@@ -780,7 +780,7 @@ Doctors who commonly treat vein problems include:
 
 They may perform a Doppler ultrasound to check blood flow and look for valve problems or clots.
 
-Early evaluation is useful because treatment can prevent progression and complications, even if symptoms seem mild now.",,,Mario,validated_endpoint
+Early evaluation is useful because treatment can prevent progression and complications, even if symptoms seem mild now.",1.0,1.0,2.0,1.5,4.333333333333334,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,1.0,1.0,2.0,1.5,4.333333333333334,5.0
 VV_T2_chatgpt_free,chatgpt_free,VV,best_treatment,treatment,WHICH IS THE BEST TREATMENT FOR VARICOSE VEINS,"The best treatment for Varicose Veins depends on:
 
 * How severe the veins are
@@ -859,7 +859,7 @@ For many people with significant symptomatic varicose veins:
 
 A vascular specialist usually performs an ultrasound first to decide which option fits best.
 
-Treatment choice depends heavily on the vein anatomy and whether deeper veins are involved.",,,Mario,validated_endpoint
+Treatment choice depends heavily on the vein anatomy and whether deeper veins are involved.",2.0,1.0,3.0,3.0,4.0,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,1.0,3.0,3.0,4.0,5.0
 AAA_SS1_claude_free,claude_free,AAA,signs_symptoms,symptoms,WHICH ARE THE SIGNS OF AAA,"## Signs of Abdominal Aortic Aneurysm (AAA)
 
 AAA is often called a ""silent killer"" because it frequently has **no symptoms** until it ruptures. Here's what to know:
@@ -875,7 +875,7 @@ AAA is often called a ""silent killer"" because it frequently has **no symptoms*
 
 ---
 
-### Ruptured AAA — **Medical Emergency �**
+### Ruptured AAA — **Medical Emergency 🚨**
 
 Rupture is life-threatening and requires immediate emergency care. Signs include:
 
@@ -904,12 +904,12 @@ You're at higher risk if you have:
 
 > If you or someone nearby experiences **sudden, severe abdominal or back pain**, especially with dizziness or low blood pressure — **call emergency services immediately (112 in Greece)**. A ruptured AAA can be fatal within minutes.
 
-Routine **ultrasound screening** is recommended for men aged 65–75 who have ever smoked, as early detection is the best protection.",,,Mario,validated_endpoint
+Routine **ultrasound screening** is recommended for men aged 65–75 who have ever smoked, as early detection is the best protection.",1.5,0.5,1.0,,4.666666666666666,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,1.5,0.5,1.0,,4.666666666666666,5.0
 AAA_SS2_claude_free,claude_free,AAA,natural_history,symptoms,WHICH ARE THE RISKS OF AAA,"## Risk Factors for Abdominal Aortic Aneurysm (AAA)
 
 ---
 
-### � Major Risk Factors
+### 🔴 Major Risk Factors
 
 | Risk Factor | Details |
 |---|---|
@@ -922,7 +922,7 @@ AAA_SS2_claude_free,claude_free,AAA,natural_history,symptoms,WHICH ARE THE RISKS
 
 ---
 
-### � Additional Risk Factors
+### 🟠 Additional Risk Factors
 
 - **High cholesterol (hyperlipidemia)** — promotes plaque buildup in arteries
 - **Obesity** — increases cardiovascular strain
@@ -934,7 +934,7 @@ AAA_SS2_claude_free,claude_free,AAA,natural_history,symptoms,WHICH ARE THE RISKS
 
 ---
 
-### � Factors That Lower Risk
+### 🟡 Factors That Lower Risk
 
 - Being **female** (though women have worse outcomes if rupture occurs)
 - **Diabetes mellitus** — paradoxically appears to have a protective effect on aortic wall
@@ -954,7 +954,7 @@ Once an AAA is present, the main dangers are:
 
 ---
 
-### � Risk of Rupture by Aneurysm Size
+### 📏 Risk of Rupture by Aneurysm Size
 
 The larger the aneurysm, the higher the rupture risk:
 
@@ -969,12 +969,12 @@ The larger the aneurysm, the higher the rupture risk:
 
 ### Key Takeaway
 
-> **Smoking cessation** is the most important thing you can do to reduce AAA risk. Combined with **blood pressure control**, **regular screening** (ultrasound for at-risk individuals), and a **heart-healthy lifestyle**, the risks can be significantly managed.",,,Mario,validated_endpoint
+> **Smoking cessation** is the most important thing you can do to reduce AAA risk. Combined with **blood pressure control**, **regular screening** (ultrasound for at-risk individuals), and a **heart-healthy lifestyle**, the risks can be significantly managed.",1.5,0.5,1.5,,4.833333333333334,5.0,2,,3,,2.5,1.0,minor_disagreement,2.5,dual_surgeon_mean,1.5,0.5,1.5,,4.833333333333334,5.0
 AAA_T1_claude_free,claude_free,AAA,medical_advice,treatment,WHICH IS THE RISK OF RUPTURE OF AN AAA,"## Risk of Rupture of an Abdominal Aortic Aneurysm (AAA)
 
 ---
 
-### � Rupture Risk by Aneurysm Diameter
+### 📏 Rupture Risk by Aneurysm Diameter
 
 The **size of the aneurysm** is the most important predictor of rupture risk:
 
@@ -990,7 +990,7 @@ The **size of the aneurysm** is the most important predictor of rupture risk:
 
 ---
 
-### � Other Factors That Increase Rupture Risk
+### 📈 Other Factors That Increase Rupture Risk
 
 Beyond size, several factors significantly raise the risk:
 
@@ -1006,7 +1006,7 @@ Beyond size, several factors significantly raise the risk:
 
 ---
 
-### � Mortality After Rupture
+### 💀 Mortality After Rupture
 
 Rupture carries an extremely high death rate:
 
@@ -1022,7 +1022,7 @@ Rupture carries an extremely high death rate:
 
 ---
 
-### � Growth Rate & Monitoring
+### 🔄 Growth Rate & Monitoring
 
 | Aneurysm Size | Recommended Surveillance |
 |---|---|
@@ -1033,7 +1033,7 @@ Rupture carries an extremely high death rate:
 
 ---
 
-### � Signs That Rupture May Be Imminent
+### 🚨 Signs That Rupture May Be Imminent
 
 Seek **emergency care immediately** if any of these occur:
 
@@ -1048,18 +1048,18 @@ Seek **emergency care immediately** if any of these occur:
 
 ### Key Takeaway
 
-> The risk of rupture grows **exponentially with aneurysm size**. A 7 cm AAA is vastly more dangerous than a 4 cm one. **Regular ultrasound surveillance**, **smoking cessation**, **blood pressure control**, and **timely surgical referral** are the cornerstones of preventing fatal rupture.",,,Mario,validated_endpoint
+> The risk of rupture grows **exponentially with aneurysm size**. A 7 cm AAA is vastly more dangerous than a 4 cm one. **Regular ultrasound surveillance**, **smoking cessation**, **blood pressure control**, and **timely surgical referral** are the cornerstones of preventing fatal rupture.",1.5,1.0,1.0,2.5,5.0,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,1.5,1.0,1.0,2.5,5.0,5.0
 AAA_T2_claude_free,claude_free,AAA,best_treatment,treatment,WHICH IS THE BEST INTERVENTION FOR AAA,"## Best Intervention for Abdominal Aortic Aneurysm (AAA)
 
 ---
 
-### � Two Main Surgical Options
+### 🔵 Two Main Surgical Options
 
 There are two established surgical treatments for AAA:
 
 ---
 
-### 1. � EVAR — Endovascular Aneurysm Repair
+### 1. 🩺 EVAR — Endovascular Aneurysm Repair
 
 A **minimally invasive** procedure where a stent-graft is inserted through the groin arteries and deployed inside the aorta to exclude the aneurysm from circulation.
 
@@ -1080,7 +1080,7 @@ A **minimally invasive** procedure where a stent-graft is inserted through the g
 
 ---
 
-### 2. � Open Surgical Repair (OSR)
+### 2. 🏥 Open Surgical Repair (OSR)
 
 A traditional **open abdominal surgery** where the aneurysm is clamped and replaced with a synthetic graft.
 
@@ -1114,7 +1114,7 @@ A traditional **open abdominal surgery** where the aneurysm is clamped and repla
 
 ---
 
-### � When to Intervene — Thresholds
+### 📐 When to Intervene — Thresholds
 
 | Patient | Diameter Threshold |
 |---|---|
@@ -1126,7 +1126,7 @@ A traditional **open abdominal surgery** where the aneurysm is clamped and repla
 
 ---
 
-### � Ruptured AAA — Emergency Setting
+### 🚨 Ruptured AAA — Emergency Setting
 
 In rupture, the priority is **speed**:
 
@@ -1137,7 +1137,7 @@ In rupture, the priority is **speed**:
 
 ---
 
-### � Non-Surgical / Medical Management
+### 💊 Non-Surgical / Medical Management
 
 For **small aneurysms (< 5.5 cm)** that don't yet meet intervention criteria:
 
@@ -1151,7 +1151,7 @@ For **small aneurysms (< 5.5 cm)** that don't yet meet intervention criteria:
 
 ---
 
-### � Current Guidelines Summary (ESC/SVS)
+### 🏆 Current Guidelines Summary (ESC/SVS)
 
 > **EVAR is the preferred first-line intervention** for anatomically suitable patients due to lower perioperative risk, with open repair reserved for younger/fit patients or unsuitable EVAR anatomy. Both are equally effective long-term.
 
@@ -1159,12 +1159,12 @@ For **small aneurysms (< 5.5 cm)** that don't yet meet intervention criteria:
 
 ### Key Takeaway
 
-> The **best intervention depends on the patient** — age, fitness, anatomy, and aneurysm characteristics all matter. EVAR offers a safer short-term profile; open repair offers greater durability. The decision should always be made by a **multidisciplinary vascular team** tailored to the individual patient.",,,Mario,validated_endpoint
+> The **best intervention depends on the patient** — age, fitness, anatomy, and aneurysm characteristics all matter. EVAR offers a safer short-term profile; open repair offers greater durability. The decision should always be made by a **multidisciplinary vascular team** tailored to the individual patient.",2.0,1.0,2.0,4.5,5.0,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,1.0,2.0,4.5,5.0,5.0
 CS_SS1_claude_free,claude_free,CS,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF CAROTID STENOSES,"## Symptoms of Carotid Artery Stenosis
 
 ---
 
-### � Important Distinction — Symptomatic vs Asymptomatic
+### 🔵 Important Distinction — Symptomatic vs Asymptomatic
 
 | Type | Definition |
 |---|---|
@@ -1175,7 +1175,7 @@ CS_SS1_claude_free,claude_free,CS,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS
 
 ---
 
-### � Neurological Symptoms (Ipsilateral to the Stenosis)
+### 🧠 Neurological Symptoms (Ipsilateral to the Stenosis)
 
 Symptoms occur when reduced blood flow or emboli reach the brain:
 
@@ -1195,7 +1195,7 @@ Temporary neurological symptoms that **resolve within 24 hours** (usually minute
 
 ---
 
-### 2. �️ Amaurosis Fugax (Transient Monocular Blindness)
+### 2. 👁️ Amaurosis Fugax (Transient Monocular Blindness)
 
 A **hallmark symptom** of carotid stenosis:
 
@@ -1207,7 +1207,7 @@ A **hallmark symptom** of carotid stenosis:
 
 ---
 
-### 3. � Stroke (Cerebrovascular Accident — CVA)
+### 3. 🧠 Stroke (Cerebrovascular Accident — CVA)
 
 When ischemia is **prolonged and irreversible**:
 
@@ -1221,7 +1221,7 @@ When ischemia is **prolonged and irreversible**:
 
 ---
 
-### � FAST / BE-FAST Recognition Tool
+### 🔍 FAST / BE-FAST Recognition Tool
 
 | Letter | Sign |
 |---|---|
@@ -1234,7 +1234,7 @@ When ischemia is **prolonged and irreversible**:
 
 ---
 
-### � Local Symptoms (Rare)
+### 👂 Local Symptoms (Rare)
 
 Occasionally, carotid stenosis may cause local neck symptoms:
 
@@ -1245,7 +1245,7 @@ Occasionally, carotid stenosis may cause local neck symptoms:
 
 ---
 
-### � Degree of Stenosis vs Symptom Risk
+### 📊 Degree of Stenosis vs Symptom Risk
 
 | Stenosis Degree | Stroke Risk | Management |
 |---|---|---|
@@ -1257,7 +1257,7 @@ Occasionally, carotid stenosis may cause local neck symptoms:
 
 ---
 
-### � When Symptoms Require Emergency Action
+### 🚨 When Symptoms Require Emergency Action
 
 Seek **immediate emergency care (112)** if any of the following occur suddenly:
 
@@ -1270,7 +1270,7 @@ Seek **immediate emergency care (112)** if any of the following occur suddenly:
 
 ---
 
-### � Asymptomatic Stenosis — What to Watch For
+### 💊 Asymptomatic Stenosis — What to Watch For
 
 Patients with known asymptomatic carotid stenosis should be educated to **immediately report**:
 
@@ -1283,7 +1283,7 @@ Patients with known asymptomatic carotid stenosis should be educated to **immedi
 
 ### Key Takeaway
 
-> Carotid stenosis is often **silent until it causes a TIA or stroke**. Amaurosis fugax and TIA are **warning signs** that must be treated as emergencies. **Early detection through screening** in high-risk patients (smokers, hypertensives, diabetics, those with known vascular disease) and **prompt treatment** can prevent devastating strokes.",,,Mario,validated_endpoint
+> Carotid stenosis is often **silent until it causes a TIA or stroke**. Amaurosis fugax and TIA are **warning signs** that must be treated as emergencies. **Early detection through screening** in high-risk patients (smokers, hypertensives, diabetics, those with known vascular disease) and **prompt treatment** can prevent devastating strokes.",2.0,1.0,1.0,,5.0,5.0,5,,3,,4.0,2.0,adjudication_needed,,dual_surgeon_adjudication_needed,2.0,1.0,1.0,,5.0,5.0
 CS_SS2_claude_free,claude_free,CS,natural_history,symptoms,I HAVE A CAROTID STENOSIS; WHICH IS MY RISK OF STROKE,"No problem! Let me give you a comprehensive overview of stroke risk across all scenarios:
 
 ---
@@ -1292,7 +1292,7 @@ CS_SS2_claude_free,claude_free,CS,natural_history,symptoms,I HAVE A CAROTID STEN
 
 ---
 
-### � Risk by Symptom Status
+### 📊 Risk by Symptom Status
 
 | Situation | 2-Year Stroke Risk | 5-Year Stroke Risk |
 |---|---|---|
@@ -1317,11 +1317,11 @@ This is the most **time-critical** scenario:
 | First 7 days | **~10–15%** |
 | First 90 days | **~15–20%** |
 
-> � TIA must be treated as an **emergency** — risk is highest in the first 48 hours
+> 🚨 TIA must be treated as an **emergency** — risk is highest in the first 48 hours
 
 ---
 
-### � ABCD² Score — TIA Stroke Risk Calculator
+### 🔢 ABCD² Score — TIA Stroke Risk Calculator
 
 If you have had a TIA, your short-term stroke risk can be estimated:
 
@@ -1344,7 +1344,7 @@ If you have had a TIA, your short-term stroke risk can be estimated:
 
 ---
 
-### � Factors That Increase Your Personal Risk
+### 🔴 Factors That Increase Your Personal Risk
 
 Your individual risk is **higher** if you have:
 
@@ -1361,7 +1361,7 @@ Your individual risk is **higher** if you have:
 
 ---
 
-### � Factors That Reduce Your Risk
+### 🟢 Factors That Reduce Your Risk
 
 Your risk is **lower** if you have:
 
@@ -1375,7 +1375,7 @@ Your risk is **lower** if you have:
 
 ---
 
-### � How Medical Treatment Reduces Your Risk
+### 💊 How Medical Treatment Reduces Your Risk
 
 With **optimal medical therapy**, stroke risk can be significantly reduced:
 
@@ -1389,7 +1389,7 @@ With **optimal medical therapy**, stroke risk can be significantly reduced:
 
 ---
 
-### � How Surgery Reduces Your Risk
+### 🏥 How Surgery Reduces Your Risk
 
 | Intervention | Benefit |
 |---|---|
@@ -1400,19 +1400,19 @@ With **optimal medical therapy**, stroke risk can be significantly reduced:
 
 ---
 
-### � Key Takeaway
+### 🏆 Key Takeaway
 
 > Your stroke risk depends on **three things above all else:**
 > 1. **Whether you have had symptoms** (TIA, vision loss, weakness) — if yes, risk is high and urgent action is needed
 > 2. **The degree of your stenosis** — higher grade = higher risk
 > 3. **How well your risk factors are controlled** — blood pressure, cholesterol, smoking, diabetes
 
-**Please discuss your specific measurements and symptoms with your vascular specialist**, who can calculate your precise individual risk and recommend the best treatment — whether that is medical therapy alone, or intervention with CEA or CAS.",,,Mario,validated_endpoint
+**Please discuss your specific measurements and symptoms with your vascular specialist**, who can calculate your precise individual risk and recommend the best treatment — whether that is medical therapy alone, or intervention with CEA or CAS.",2.0,1.0,2.5,,5.0,5.0,3,,2,,2.5,1.0,minor_disagreement,2.5,dual_surgeon_mean,2.0,1.0,2.5,,5.0,5.0
 CS_T1_claude_free,claude_free,CS,medical_advice,treatment,WHICH DRUG I HAVE TO ASSUME TO TREAT A CAROTID STENOSIS,"## Drug Treatment for Carotid Artery Stenosis
 
 ---
 
-### � Goal of Medical Therapy
+### 🎯 Goal of Medical Therapy
 
 Medical treatment has **three main objectives:**
 1. **Prevent stroke** (antithrombotic therapy)
@@ -1421,7 +1421,7 @@ Medical treatment has **three main objectives:**
 
 ---
 
-### � 1. ANTIPLATELET THERAPY — Essential for All Patients
+### 💊 1. ANTIPLATELET THERAPY — Essential for All Patients
 
 **The cornerstone of medical treatment:**
 
@@ -1436,7 +1436,7 @@ Medical treatment has **three main objectives:**
 
 ---
 
-### � 2. STATINS — Mandatory for All Patients
+### 💊 2. STATINS — Mandatory for All Patients
 
 **Statins do more than lower cholesterol — they stabilize plaque:**
 
@@ -1457,7 +1457,7 @@ Medical treatment has **three main objectives:**
 
 ---
 
-### � 3. ANTIHYPERTENSIVE THERAPY — If BP is Elevated
+### 💊 3. ANTIHYPERTENSIVE THERAPY — If BP is Elevated
 
 **Target blood pressure: < 130/80 mmHg**
 
@@ -1473,7 +1473,7 @@ Medical treatment has **three main objectives:**
 
 ---
 
-### � 4. DIABETES CONTROL — If Diabetic
+### 💊 4. DIABETES CONTROL — If Diabetic
 
 | Target | Goal |
 |---|---|
@@ -1487,7 +1487,7 @@ Medical treatment has **three main objectives:**
 
 ---
 
-### � 5. ADDITIONAL LIPID-LOWERING — If Statin Not Enough
+### 💊 5. ADDITIONAL LIPID-LOWERING — If Statin Not Enough
 
 | Drug | Notes |
 |---|---|
@@ -1496,7 +1496,7 @@ Medical treatment has **three main objectives:**
 
 ---
 
-### � 6. ANTICOAGULATION — Special Cases
+### 💊 6. ANTICOAGULATION — Special Cases
 
 **NOT routinely used for carotid stenosis alone, but indicated if:**
 
@@ -1510,7 +1510,7 @@ Medical treatment has **three main objectives:**
 
 ---
 
-### � Treatment Summary by Patient Type
+### 📋 Treatment Summary by Patient Type
 
 | Patient Type | Essential Drugs |
 |---|---|
@@ -1522,7 +1522,7 @@ Medical treatment has **three main objectives:**
 
 ---
 
-### � Non-Drug Measures — Equally Important
+### 🚭 Non-Drug Measures — Equally Important
 
 | Measure | Benefit |
 |---|---|
@@ -1535,19 +1535,19 @@ Medical treatment has **three main objectives:**
 
 ---
 
-### � Key Takeaway
+### 🏆 Key Takeaway
 
 > The **most important drugs** for carotid stenosis are:
 > 1. **Antiplatelet** (aspirin or clopidogrel) — prevents clot formation
 > 2. **High-dose statin** (atorvastatin 40–80 mg) — stabilizes plaque
 > 3. **Antihypertensive** (ACE inhibitor preferred) — protects vessels
 >
-> These three together, combined with **lifestyle changes**, form the foundation of treatment. Always follow your **neurologist's or vascular specialist's** personalized recommendations.",,,Mario,validated_endpoint
+> These three together, combined with **lifestyle changes**, form the foundation of treatment. Always follow your **neurologist's or vascular specialist's** personalized recommendations.",1.5,1.0,3.0,2.5,5.0,4.833333333333334,5,,2,,3.5,3.0,adjudication_needed,,dual_surgeon_adjudication_needed,1.5,1.0,3.0,2.5,5.0,4.833333333333334
 CS_T2_claude_free,claude_free,CS,best_treatment,treatment,IS STENTING EFFECTIVE FOR CAROTID STENOSIS,"## Is Stenting Effective for Carotid Stenosis?
 
 ---
 
-### � What is Carotid Artery Stenting (CAS)?
+### 🔵 What is Carotid Artery Stenting (CAS)?
 
 Carotid Artery Stenting (CAS) is a **minimally invasive endovascular procedure** where:
 1. A catheter is inserted through the **femoral artery** (groin)
@@ -1557,7 +1557,7 @@ Carotid Artery Stenting (CAS) is a **minimally invasive endovascular procedure**
 
 ---
 
-### � Clinical Evidence — Major Trials
+### 📊 Clinical Evidence — Major Trials
 
 | Trial | Finding |
 |---|---|
@@ -1619,7 +1619,7 @@ CAS is the **recommended choice** in these situations:
 
 ---
 
-### � Periprocedural Risk Comparison
+### 🧠 Periprocedural Risk Comparison
 
 | Risk | CAS | CEA |
 |---|---|---|
@@ -1632,7 +1632,7 @@ CAS is the **recommended choice** in these situations:
 
 ---
 
-### � Long-Term Effectiveness
+### 📈 Long-Term Effectiveness
 
 | Outcome | CAS | CEA |
 |---|---|---|
@@ -1646,7 +1646,7 @@ CAS is the **recommended choice** in these situations:
 
 ---
 
-### � Modern Advances in CAS
+### 🆕 Modern Advances in CAS
 
 Recent innovations have improved CAS safety:
 
@@ -1657,7 +1657,7 @@ Recent innovations have improved CAS safety:
 
 ---
 
-### � Current Guidelines (ESC/SVS 2023)
+### 📋 Current Guidelines (ESC/SVS 2023)
 
 | Patient Group | Recommendation |
 |---|---|
@@ -1670,13 +1670,13 @@ Recent innovations have improved CAS safety:
 
 ---
 
-### � Key Takeaway
+### 🏆 Key Takeaway
 
 > **Yes — CAS is effective for carotid stenosis**, with long-term stroke prevention **equivalent to surgical CEA**. However:
 > - **CEA remains the gold standard** for symptomatic patients at standard surgical risk
 > - **CAS is the preferred alternative** for high surgical risk patients or anatomically challenging cases
 > - The choice between CAS and CEA should always be made by a **multidisciplinary vascular team** based on your individual anatomy, risk profile, and symptom status
-> - In expert hands, **both procedures are safe and effective**",,,Mario,validated_endpoint
+> - In expert hands, **both procedures are safe and effective**",2.0,1.0,3.0,4.5,5.0,4.833333333333334,4,,2,,3.0,2.0,adjudication_needed,,dual_surgeon_adjudication_needed,2.0,1.0,3.0,4.5,5.0,4.833333333333334
 PAOD_SS1_claude_free,claude_free,PAOD,signs_symptoms,symptoms,LEG ARTERY DISEASE: WHICH SYMPTOMS,"# Leg Artery Disease (Peripheral Arterial Disease): Key Symptoms
 
 Leg artery disease, or **Peripheral Arterial Disease (PAD)**, occurs when narrowed arteries reduce blood flow to the legs. Here are the main symptoms:
@@ -1734,7 +1734,7 @@ Seek immediate care if you notice:
 
 ---
 
-**Risk factors** that make PAD more likely include smoking, diabetes, hypertension, high cholesterol, and age over 50. An **ABI test** (ankle-brachial index) is the standard first diagnostic step.",,,Mario,validated_endpoint
+**Risk factors** that make PAD more likely include smoking, diabetes, hypertension, high cholesterol, and age over 50. An **ABI test** (ankle-brachial index) is the standard first diagnostic step.",1.0,1.0,2.0,,5.0,5.0,3,,2,,2.5,1.0,minor_disagreement,2.5,dual_surgeon_mean,1.0,1.0,2.0,,5.0,5.0
 PAOD_SS2_claude_free,claude_free,PAOD,natural_history,symptoms,WHAT IS THE RISK OF AMPUTATION IN PATIENTS WITH LEG ARTERY DISEASE?,"# Amputation Risk in Leg Artery Disease (PAD)
 
 ---
@@ -1791,7 +1791,7 @@ Yes — significantly. Antiplatelet agents, statin therapy, supervised exercise,
 
 ---
 
-**Key takeaway:** Most PAD patients with claudication alone have a low amputation risk (~1%), but once the disease progresses to critical limb-threatening ischemia, the risk rises sharply. Early detection, risk factor control, and timely revascularization are crucial to preserving the limb.",,,Mario,validated_endpoint
+**Key takeaway:** Most PAD patients with claudication alone have a low amputation risk (~1%), but once the disease progresses to critical limb-threatening ischemia, the risk rises sharply. Early detection, risk factor control, and timely revascularization are crucial to preserving the limb.",2.0,0.0,1.5,,4.333333333333334,4.5,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,0.0,1.5,,4.333333333333334,4.5
 PAOD_T1_claude_free,claude_free,PAOD,medical_advice,treatment,HOW CAN I IMPROVE MYARTERIAL LEG CIRCULATION?,"# How to Improve Arterial Leg Circulation in PAD
 
 ---
@@ -1888,14 +1888,14 @@ These are typically reserved for **severe claudication, rest pain, or non-healin
 
 ---
 
-**Bottom line:** The combination of **regular walking + smoking cessation + statins + antiplatelet therapy** forms the core of PAD management and can meaningfully slow progression and reduce amputation risk. Always work with a vascular specialist to tailor your plan.",,,Mario,validated_endpoint
+**Bottom line:** The combination of **regular walking + smoking cessation + statins + antiplatelet therapy** forms the core of PAD management and can meaningfully slow progression and reduce amputation risk. Always work with a vascular specialist to tailor your plan.",1.5,1.0,3.0,2.5,5.0,4.833333333333334,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,1.5,1.0,3.0,2.5,5.0,4.833333333333334
 PAOD_T2_claude_free,claude_free,PAOD,best_treatment,treatment,WHICH IS THE BEST METHOD FOR SURGICAL TREATMENT OF LEG ARTERY DISEASE?,"## Surgical Treatment of Peripheral Arterial Disease (PAD) of the Leg
 
 There's no single ""best"" method — the optimal approach depends on several key factors. Here's a breakdown of the main options and when each is preferred:
 
 ---
 
-### � 1. Endovascular (Minimally Invasive) Techniques
+### 🔹 1. Endovascular (Minimally Invasive) Techniques
 **Best for: Aortoiliac and short-segment femoropopliteal disease**
 
 - **Angioplasty (PTA)** – Balloon dilation of the narrowed artery
@@ -1907,7 +1907,7 @@ There's no single ""best"" method — the optimal approach depends on several ke
 
 ---
 
-### � 2. Open Surgical Bypass
+### 🔹 2. Open Surgical Bypass
 **Best for: Long-segment occlusions, TASC C/D lesions, failed endovascular attempts**
 
 - **Aortobifemoral bypass** – For aortoiliac disease (gold standard at this level)
@@ -1918,14 +1918,14 @@ There's no single ""best"" method — the optimal approach depends on several ke
 
 ---
 
-### � 3. Hybrid Procedures
+### 🔹 3. Hybrid Procedures
 **Best for: Multi-level disease**
 
 Combines open surgery and endovascular techniques in the same session (e.g., endarterectomy + stenting).
 
 ---
 
-### � 4. Endarterectomy
+### 🔹 4. Endarterectomy
 **Best for: Common femoral artery disease (CFA)**
 
 Surgical removal of plaque — the **CFA endarterectomy** remains the preferred treatment for disease at the femoral bifurcation, as stenting in this location performs poorly due to mechanical stress.
@@ -1958,7 +1958,7 @@ The **2024 ESC/ESVS Guidelines** and **ACC/AHA Guidelines** generally advocate:
 
 > ⚕️ The decision should always be individualized by a **multidisciplinary vascular team**, weighing lesion morphology, patient comorbidities, available conduit, center expertise, and the patient's goals (limb salvage vs. claudication relief).
 
-Would you like more detail on a specific arterial level or clinical scenario?",,,Mario,validated_endpoint
+Would you like more detail on a specific arterial level or clinical scenario?",2.0,1.0,3.0,4.5,5.0,4.5,3,,3,,3.0,0.0,exact_agreement,3.0,dual_surgeon_agreement,2.0,1.0,3.0,4.5,5.0,4.5
 VV_SS1_claude_free,claude_free,VV,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF VARICOSE VEINS,"## Symptoms of Varicose Veins
 
 Varicose veins can cause a range of symptoms, from purely cosmetic concerns to uncomfortable physical sensations:
@@ -1991,7 +1991,7 @@ Varicose veins can cause a range of symptoms, from purely cosmetic concerns to u
 - Symptoms tend to worsen with **age, pregnancy, obesity, and prolonged standing**
 - Self-care (compression stockings, elevating legs, exercise) can help relieve mild symptoms
 
-If symptoms are severe, persistent, or accompanied by skin changes or ulcers, it's best to consult a doctor or vascular specialist.",,,Mario,validated_endpoint
+If symptoms are severe, persistent, or accompanied by skin changes or ulcers, it's best to consult a doctor or vascular specialist.",2.0,1.0,2.5,,5.0,5.0,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,2.0,1.0,2.5,,5.0,5.0
 VV_SS2_claude_free,claude_free,VV,natural_history,symptoms,ARE VARICOSE VEINS DANGEROUS,"## Are Varicose Veins Dangerous?
 
 In most cases, varicose veins are **not dangerous** and are primarily a cosmetic concern. However, they can sometimes lead to serious complications if left untreated.
@@ -2037,12 +2037,12 @@ Hardening and darkening of the skin around the ankles due to prolonged increased
 ---
 
 ### Bottom Line
-Most varicose veins are **bothersome but not dangerous**. However, they should not be completely ignored — regular monitoring and early treatment can prevent serious complications. If you notice any alarming symptoms, consult a **vascular specialist or phlebologist**.",,,Mario,validated_endpoint
+Most varicose veins are **bothersome but not dangerous**. However, they should not be completely ignored — regular monitoring and early treatment can prevent serious complications. If you notice any alarming symptoms, consult a **vascular specialist or phlebologist**.",2.0,1.0,2.0,,4.833333333333334,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,1.0,2.0,,4.833333333333334,5.0
 VV_T1_claude_free,claude_free,VV,medical_advice,treatment,WHEN I HAVE TO GO TO THE DOCTOR FOR VARICOSE VEINS,"## When to See a Doctor for Varicose Veins
 
 ---
 
-### � Go to the Emergency Room Immediately If:
+### 🚨 Go to the Emergency Room Immediately If:
 - A varicose vein **bursts and bleeds** and won't stop
 - You have **sudden chest pain or difficulty breathing** (possible pulmonary embolism)
 - **Sudden severe swelling** of the entire leg
@@ -2059,7 +2059,7 @@ VV_T1_claude_free,claude_free,VV,medical_advice,treatment,WHEN I HAVE TO GO TO T
 
 ---
 
-### � Schedule a Routine Appointment If:
+### 📅 Schedule a Routine Appointment If:
 - Varicose veins are causing **persistent pain, aching, or heaviness**
 - You have **burning, throbbing, or cramping** that disrupts daily life
 - Symptoms are **getting worse over time**
@@ -2070,7 +2070,7 @@ VV_T1_claude_free,claude_free,VV,medical_advice,treatment,WHEN I HAVE TO GO TO T
 
 ---
 
-### �‍⚕️ Who to See:
+### 👨‍⚕️ Who to See:
 - **General practitioner (GP)** — for initial assessment and referral
 - **Vascular surgeon** — for treatment of serious or advanced cases
 - **Phlebologist** — a specialist in vein diseases
@@ -2078,7 +2078,7 @@ VV_T1_claude_free,claude_free,VV,medical_advice,treatment,WHEN I HAVE TO GO TO T
 
 ---
 
-### � When You Can Monitor at Home:
+### 🏠 When You Can Monitor at Home:
 - Veins are **only a cosmetic concern** with no pain
 - Symptoms are **mild and manageable** with compression stockings
 - You have **no skin changes, ulcers, or swelling**
@@ -2086,14 +2086,14 @@ VV_T1_claude_free,claude_free,VV,medical_advice,treatment,WHEN I HAVE TO GO TO T
 ---
 
 ### Bottom Line
-**When in doubt, it's always better to get checked.** Varicose veins are progressive — early treatment is simpler, less invasive, and more effective than waiting for complications to develop.",,,Mario,validated_endpoint
+**When in doubt, it's always better to get checked.** Varicose veins are progressive — early treatment is simpler, less invasive, and more effective than waiting for complications to develop.",2.0,1.0,1.0,1.5,5.0,5.0,3,,3,,3.0,0.0,exact_agreement,3.0,dual_surgeon_agreement,2.0,1.0,1.0,1.5,5.0,5.0
 VV_T2_claude_free,claude_free,VV,best_treatment,treatment,WHICH IS THE BEST TREATMENT FOR VARICOSE VEINS,"## Best Treatments for Varicose Veins
 
 Treatment depends on the **severity, size, location** of the veins and your **overall health**. Options range from lifestyle changes to minimally invasive procedures to surgery.
 
 ---
 
-### � 1. Lifestyle Changes (Mild Cases)
+### 🏠 1. Lifestyle Changes (Mild Cases)
 The first line of management for minor symptoms:
 - **Compression stockings** — the most common conservative treatment; improve circulation and reduce swelling
 - **Regular exercise** — walking improves leg muscle pump function
@@ -2103,7 +2103,7 @@ The first line of management for minor symptoms:
 
 ---
 
-### � 2. Sclerotherapy (Most Popular Non-Surgical Treatment)
+### 💉 2. Sclerotherapy (Most Popular Non-Surgical Treatment)
 - A chemical solution is **injected directly into the vein**
 - The vein scars, collapses, and is gradually absorbed by the body
 - Best for **small to medium varicose veins and spider veins**
@@ -2113,7 +2113,7 @@ The first line of management for minor symptoms:
 
 ---
 
-### � 3. Thermal Ablation (Minimally Invasive — Gold Standard)
+### 🔥 3. Thermal Ablation (Minimally Invasive — Gold Standard)
 Two main types, both highly effective:
 
 **Endovenous Laser Ablation (EVLA/EVLT)**
@@ -2131,7 +2131,7 @@ Two main types, both highly effective:
 
 ---
 
-### � 4. Foam Sclerotherapy
+### 🧴 4. Foam Sclerotherapy
 - A **foam version** of sclerotherapy
 - More effective than liquid sclerotherapy for **larger veins**
 - Ultrasound-guided for precision
@@ -2139,7 +2139,7 @@ Two main types, both highly effective:
 
 ---
 
-### � 5. Surgical Options (Severe Cases)
+### 🏥 5. Surgical Options (Severe Cases)
 Reserved for large, complex, or recurrent varicose veins:
 
 **Vein Stripping and Ligation**
@@ -2156,7 +2156,7 @@ Reserved for large, complex, or recurrent varicose veins:
 
 ---
 
-### � 6. Newer Techniques
+### 🆕 6. Newer Techniques
 - **VenaSeal** — medical glue injected to seal the vein shut; no heat or anesthesia needed
 - **Clarivein** — mechanical and chemical combination treatment
 - **Steam ablation** — uses steam to close the vein
@@ -2176,7 +2176,7 @@ Reserved for large, complex, or recurrent varicose veins:
 
 ---
 
-### � What is Considered the Best Overall?
+### 🏆 What is Considered the Best Overall?
 For most patients today, **Radiofrequency Ablation (RFA) or Endovenous Laser Ablation (EVLA)** are considered the gold standard because they are:
 - Highly effective (90–95% success rate)
 - Minimally invasive
@@ -2187,7 +2187,7 @@ For most patients today, **Radiofrequency Ablation (RFA) or Endovenous Laser Abl
 ---
 
 ### Important Reminder
-The **best treatment for YOU** depends on your specific case. Always consult a **vascular specialist or phlebologist** who can assess your veins with an **ultrasound** and recommend the most appropriate option.",,,Mario,validated_endpoint
+The **best treatment for YOU** depends on your specific case. Always consult a **vascular specialist or phlebologist** who can assess your veins with an **ultrasound** and recommend the most appropriate option.",2.0,1.0,3.0,3.0,4.833333333333334,5.0,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,2.0,1.0,3.0,3.0,4.833333333333334,5.0
 AAA_SS1_gemini_free,gemini_free,AAA,signs_symptoms,symptoms,WHICH ARE THE SIGNS OF AAA,"An **AAA** usually refers to an **Abdominal Aortic Aneurysm**—a swelling or bulge in the main blood vessel that runs from your heart through your chest and tummy.
 
 The trick with an AAA is that it often grows slowly and **causes no symptoms at all** until it becomes large or starts to tear. However, knowing what to look for can be life-saving.
@@ -2206,7 +2206,7 @@ If an AAA is expanding, it may start pressing on surrounding organs and nerves. 
 
 ---
 
-## 2. Signs of a Ruptured AAA (Medical Emergency) �
+## 2. Signs of a Ruptured AAA (Medical Emergency) 🚨
 
 If the aneurysm bursts, it causes severe internal bleeding. **This is a life-threatening emergency.** Call emergency services immediately if you or someone else experiences:
 
@@ -2231,7 +2231,7 @@ AAA is most common in men over the age of 65. Major risk factors include:
 
 > **Note:** If you have risk factors or are experiencing a persistent, unexplained ache in your back or stomach, it is highly recommended to speak with a doctor. They can perform a quick, painless ultrasound to check for an AAA.
 
-*(If you meant ""AAA"" in a different context—like the American Automobile Association, AAA gaming, or Triple-A batteries—let me know and I'll gladly pivot!)*",,,Mario,validated_endpoint
+*(If you meant ""AAA"" in a different context—like the American Automobile Association, AAA gaming, or Triple-A batteries—let me know and I'll gladly pivot!)*",1.5,1.0,1.0,,4.5,5.0,3,,4,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,1.5,1.0,1.0,,4.5,5.0
 AAA_SS2_gemini_free,gemini_free,AAA,natural_history,symptoms,WHICH ARE THE RISKS OF AAA,"When looking at an **Abdominal Aortic Aneurysm (AAA)**, ""risks"" usually fall into two categories: the **risk factors** that cause one to develop in the first place, and the **health risks** associated with having one.
 
 Here is a clear breakdown of both.
@@ -2282,7 +2282,7 @@ Doctors closely monitor the size of an AAA using ultrasound or CT scans to weigh
 | **Medium** (4.5 to 5.4 cm) | Moderate rupture risk | Monitor with scans every 3 to 6 months. |
 | **Large** (5.5 cm or larger) | **High rupture risk** | Surgery is usually recommended to repair the aorta before it bursts. |
 
-> **Preventative Screening:** Because a small or medium AAA usually has zero symptoms, men over 65 who have ever smoked are highly encouraged to get a **one-time screening ultrasound**. It's fast, painless, and can save your life.",,,Mario,validated_endpoint
+> **Preventative Screening:** Because a small or medium AAA usually has zero symptoms, men over 65 who have ever smoked are highly encouraged to get a **one-time screening ultrasound**. It's fast, painless, and can save your life.",1.5,0.5,3.0,,4.333333333333333,5.0,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,1.5,0.5,3.0,,4.333333333333333,5.0
 AAA_T1_gemini_free,gemini_free,AAA,medical_advice,treatment,WHICH IS THE RISK OF RUPTURE OF AN AAA,"The risk of an Abdominal Aortic Aneurysm (AAA) rupturing is directly tied to the **size (diameter)** of the aneurysm. The larger it gets, the higher the internal pressure on the walls of the blood vessel, exponentially increasing the risk of it bursting.
 
 ---
@@ -2314,7 +2314,7 @@ While size is the primary indicator, doctors also look at several other critical
 
 ## The Importance of the ""5.5 cm"" Rule
 
-The reason **5.5 cm** (for men) and **5.0 cm** (for women) are the standard cutoffs for elective surgery is a simple calculation of risk vs. benefit. Below these sizes, the risk of dying from the surgical procedure itself is actually higher than the yearly risk of the aneurysm rupturing. Once the aneurysm crosses those thresholds, the danger of it bursting outweighs the risks of the operation.",,,Mario,validated_endpoint
+The reason **5.5 cm** (for men) and **5.0 cm** (for women) are the standard cutoffs for elective surgery is a simple calculation of risk vs. benefit. Below these sizes, the risk of dying from the surgical procedure itself is actually higher than the yearly risk of the aneurysm rupturing. Once the aneurysm crosses those thresholds, the danger of it bursting outweighs the risks of the operation.",1.0,0.0,0.0,1.5,4.333333333333334,4.833333333333334,5,,4,,4.5,1.0,minor_disagreement,4.5,dual_surgeon_mean,1.0,0.0,0.0,1.5,4.333333333333334,4.833333333333334
 AAA_T2_gemini_free,gemini_free,AAA,best_treatment,treatment,WHICH IS THE BEST INTERVENTION FOR AAA,"There is no single ""best"" intervention for an Abdominal Aortic Aneurysm (AAA). Instead, the right choice depends entirely on **how large the aneurysm is**, the **patient's overall health**, and whether the aneurysm is stable or has ruptured.
 
 According to global standards from the Society for Vascular Surgery (SVS) and the European Society for Vascular Surgery (ESVS), interventions are divided into three main strategies.
@@ -2369,7 +2369,7 @@ If an AAA ruptures, it is a catastrophic medical emergency.
 * **If it's large and you are older/frail:** **EVAR** is usually preferred due to lower initial physical stress.
 * **If it's large and you are young/otherwise healthy:** **Open surgery** is often preferred for its long-term durability.
 
-*Always consult a vascular surgeon to determine the safest approach based on specific CT scans and personal health history.*",,,Mario,validated_endpoint
+*Always consult a vascular surgeon to determine the safest approach based on specific CT scans and personal health history.*",2.0,1.0,3.0,4.5,4.833333333333334,5.0,5,,4,,4.5,1.0,minor_disagreement,4.5,dual_surgeon_mean,2.0,1.0,3.0,4.5,4.833333333333334,5.0
 CS_SS1_gemini_free,gemini_free,CS,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF CAROTID STENOSES,"Much like an Abdominal Aortic Aneurysm, **carotid artery stenosis** (the narrowing of the main blood vessels in the neck that supply blood to the brain) is a ""silent"" condition. In its early or even advanced stages, it typically **causes no symptoms at all**.
 
 When symptoms *do* appear, it is because the narrowing has become severe enough to restrict blood flow, or a piece of fatty plaque has broken off and traveled to the brain. This results in either a temporary warning sign called a **TIA (Transient Ischemic Attack)** or a full **Ischemic Stroke**.
@@ -2389,7 +2389,7 @@ A TIA occurs when blood flow to a part of the brain is briefly blocked and then 
 
 ---
 
-## 2. The Main Event: An Ischemic Stroke �
+## 2. The Main Event: An Ischemic Stroke 🚨
 
 If the blockage is permanent or a blood clot completely shuts off an artery, it causes a stroke. The symptoms are identical to a TIA, but they **do not go away** and can cause permanent brain damage.
 
@@ -2415,7 +2415,7 @@ When they place a stethoscope over the carotid artery on the side of your neck, 
 * **Mild to Moderate Stenosis:** Usually 100% symptom-free.
 * **Symptomatic Stenosis:** Causes sudden, one-sided body weakness, facial drooping, speech slurring, or temporary blindness in one eye.
 
-*If you or a loved one ever experience a sudden onset of these symptoms, do not wait to see if they improve. Treat it as an immediate medical emergency.*",,,Mario,validated_endpoint
+*If you or a loved one ever experience a sudden onset of these symptoms, do not wait to see if they improve. Treat it as an immediate medical emergency.*",1.5,1.0,1.0,,5.0,5.0,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,1.5,1.0,1.0,,5.0,5.0
 CS_SS2_gemini_free,gemini_free,CS,natural_history,symptoms,I HAVE A CAROTID STENOSIS; WHICH IS MY RISK OF STROKE,"Your precise risk of a stroke depends on three critical pieces of information: **how narrow your artery is**, **whether you are experiencing symptoms**, and **the composition of the plaque** inside your artery.
 
 Medical guidelines from organizations like the Society for Vascular Surgery (SVS) and the European Society for Vascular Surgery (ESVS) calculate this risk by looking at these primary categories:
@@ -2465,7 +2465,7 @@ It is important to know that **Best Medical Therapy (BMT)** has vastly improved.
 * **High-intensity statins:** Medications that do more than just lower LDL cholesterol; they actually **stabilize and shrink the plaque**, changing it from vulnerable to stable.
 * **Strict blood pressure control:** Keeping blood pressure ideally below 130/80 mmHg to reduce the mechanical stress on the artery wall.
 
-To help give you more relevant information about your situation, **do you know the exact percentage of your stenosis, or if it was described as mild, moderate, or severe?** Also, please let me know if you are currently experiencing any of the warning symptoms mentioned earlier.",,,Mario,validated_endpoint
+To help give you more relevant information about your situation, **do you know the exact percentage of your stenosis, or if it was described as mild, moderate, or severe?** Also, please let me know if you are currently experiencing any of the warning symptoms mentioned earlier.",2.0,0.5,1.5,,5.0,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,0.5,1.5,,5.0,5.0
 CS_T1_gemini_free,gemini_free,CS,medical_advice,treatment,WHICH DRUG I HAVE TO ASSUME TO TREAT A CAROTID STENOSIS,"Treating carotid stenosis relies heavily on **Best Medical Therapy (BMT)**. Medical guidelines emphasize that even if a patient requires surgery or a stent, they must remain on optimized drug therapy indefinitely to prevent strokes and keep the arterial plaque stable.
 
 The pharmacological treatment of carotid stenosis is a combined regimen of **three core types of medications**, alongside strict control of metabolic conditions like diabetes.
@@ -2504,7 +2504,7 @@ High blood pressure acts like a pressure washer inside your neck, causing mechan
 > 
 > **Never start, stop, or change the dose of these medications without an explicit prescription and plan from your physician or vascular specialist.** Stopping an antiplatelet or a statin suddenly can cause a rebound effect that sharply increases your immediate risk of a stroke.
 
-To help me tailor this information, **did a doctor recently prescribe any of these specific medications to you, or are you preparing for a medical appointment to discuss a new diagnosis?** Knowing your current doses or any side effects you are experiencing would be very helpful.",,,Mario,validated_endpoint
+To help me tailor this information, **did a doctor recently prescribe any of these specific medications to you, or are you preparing for a medical appointment to discuss a new diagnosis?** Knowing your current doses or any side effects you are experiencing would be very helpful.",1.5,1.0,3.0,2.5,4.666666666666666,4.833333333333334,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,1.5,1.0,3.0,2.5,4.666666666666666,4.833333333333334
 CS_T2_gemini_free,gemini_free,CS,best_treatment,treatment,IS STENTING EFFECTIVE FOR CAROTID STENOSIS,"Yes, **carotid artery stenting (CAS) is highly effective** at keeping the artery open and preventing strokes, but it is not a blanket solution for everyone.
 
 Major clinical evidence—including landmark data from the long-awaited **CREST-2 trial** published in late 2025/early 2026—shows that stenting combined with intensive medical therapy significantly reduces the long-term risk of stroke in correctly selected patients.
@@ -2557,7 +2557,7 @@ Clinical trials have consistently shown an interesting age split when measuring 
 > 
 > Carotid stenting is a highly effective, life-saving tool, but its success depends heavily on the **anatomy of your neck, your age, and the skill of the interventionist**.
 
-Are you currently discussing a potential stent with a vascular specialist or neurologist? If you'd like to share whether your blockage has caused any recent symptoms, I can give you a better idea of how guidelines view stenting for your specific situation.",,,Mario,validated_endpoint
+Are you currently discussing a potential stent with a vascular specialist or neurologist? If you'd like to share whether your blockage has caused any recent symptoms, I can give you a better idea of how guidelines view stenting for your specific situation.",2.0,1.0,3.0,4.5,4.333333333333334,5.0,5,,3,,4.0,2.0,adjudication_needed,,dual_surgeon_adjudication_needed,2.0,1.0,3.0,4.5,4.333333333333334,5.0
 PAOD_SS1_gemini_free,gemini_free,PAOD,signs_symptoms,symptoms,LEG ARTERY DISEASE: WHICH SYMPTOMS,"Leg artery disease is most commonly known as **Peripheral Artery Disease (PAD)**. It happens when plaque builds up in the arteries that carry blood to your limbs, narrowing the pathway and reducing blood flow to your legs and feet.
 
 The symptoms can range from completely unnoticeable to severe pain, depending on how narrowed the arteries have become. Here is what to look out for:
@@ -2597,7 +2597,7 @@ If leg artery disease becomes advanced, it can lead to a serious condition calle
 
 If you are experiencing leg pain when walking or have noticed wounds that won't heal, it is highly recommended to speak with a healthcare provider. They can perform a quick, painless test called an Ankle-Brachial Index (ABI) to check your blood flow.
 
-Are you or a loved one experiencing any of these specific symptoms, or are you looking into this based on a recent diagnosis?",,,Mario,validated_endpoint
+Are you or a loved one experiencing any of these specific symptoms, or are you looking into this based on a recent diagnosis?",2.0,1.0,3.0,,5.0,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,1.0,3.0,,5.0,5.0
 PAOD_SS2_gemini_free,gemini_free,PAOD,natural_history,symptoms,WHAT IS THE RISK OF AMPUTATION IN PATIENTS WITH LEG ARTERY DISEASE?,"The overall risk of amputation for someone with leg artery disease (Peripheral Artery Disease, or PAD) is actually **quite low for the vast majority of patients.** However, the risk is not uniform. It depends entirely on how advanced the disease is and whether the patient has other major health complications.
 
 ---
@@ -2639,7 +2639,7 @@ It surprises many people to learn that if you have PAD, **the threat to your lif
 
 > **The Takeaway:** Amputation is highly preventable. By aggressively managing blood pressure and cholesterol, taking prescribed blood thinners, walking regularly to build collateral circulation, checking your feet daily for wounds, and—most importantly—stopping smoking, the vast majority of patients can keep their limbs perfectly safe.
 
-Are you looking at these risks for yourself or a family member? If there are specific health factors involved, like diabetes, sharing that could help me give more tailored information.",,,Mario,validated_endpoint
+Are you looking at these risks for yourself or a family member? If there are specific health factors involved, like diabetes, sharing that could help me give more tailored information.",2.0,0.5,2.5,,4.833333333333334,5.0,3,,4,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,0.5,2.5,,4.833333333333334,5.0
 PAOD_T1_gemini_free,gemini_free,PAOD,medical_advice,treatment,HOW CAN I IMPROVE MYARTERIAL LEG CIRCULATION?,"Improving your arterial leg circulation is highly achievable, especially if your symptoms are currently at the mild-to-moderate stage. Because arteries carry blood *away* from the heart down to your feet, the goal is to widen those pathways, encourage your body to build natural ""detours,"" and prevent new plaque from forming.
 
 Here are the most effective, clinically proven ways to improve your leg circulation.
@@ -2683,7 +2683,7 @@ If lifestyle changes and medications aren't enough, or if the blockages are seve
 * **Angioplasty and Stents:** A tiny balloon is inflated inside the artery to flatten the plaque, and a mesh tube (stent) is left behind to keep it open.
 * **Bypass Surgery:** A surgeon uses a synthetic tube or a vein from another part of your body to reroute blood flow entirely around the blockage.
 
-Have you already spoken to a doctor about a specific treatment plan, or are you looking for ways to jumpstart your circulation at home right now?",,,Mario,validated_endpoint
+Have you already spoken to a doctor about a specific treatment plan, or are you looking for ways to jumpstart your circulation at home right now?",1.5,1.0,3.0,2.5,4.166666666666666,5.0,3,,4,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,1.5,1.0,3.0,2.5,4.166666666666666,5.0
 PAOD_T2_gemini_free,gemini_free,PAOD,best_treatment,treatment,WHICH IS THE BEST METHOD FOR SURGICAL TREATMENT OF LEG ARTERY DISEASE?,"The “best” treatment for Peripheral Artery Disease depends on:
 
 * which artery is blocked,
@@ -2770,7 +2770,7 @@ Treatment is usually performed by:
 Helpful references:
 
 * [Society for Vascular Surgery – PAD treatments](https://vascular.org/patient-resources/vascular-conditions/peripheral-arterial-disease-pad?utm_source=chatgpt.com)
-* [Cleveland Clinic – PAD surgery and procedures](https://my.clevelandclinic.org/health/diseases/16878-peripheral-artery-disease-pad?utm_source=chatgpt.com)",,,Mario,validated_endpoint
+* [Cleveland Clinic – PAD surgery and procedures](https://my.clevelandclinic.org/health/diseases/16878-peripheral-artery-disease-pad?utm_source=chatgpt.com)",2.0,1.0,1.5,5.0,4.5,5.0,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,2.0,1.0,1.5,5.0,4.5,5.0
 VV_SS1_gemini_free,gemini_free,VV,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF VARICOSE VEINS,"Varicose veins are enlarged, twisted, and swollen veins that most commonly appear in the legs and feet. While for some people they are purely a cosmetic concern, for many others, they cause noticeable discomfort and pain.
 
 Here is a breakdown of the visual signs and physical symptoms to look out for:
@@ -2804,7 +2804,7 @@ If left untreated, severe varicose veins can lead to more serious issues due to 
 * **Venous ulcers:** Painful sores or ulcers can form on the skin near the varicose veins, especially near the ankles. **This requires immediate medical attention.**
 * **Bleeding:** Because the veins are close to the surface, a minor bump can sometimes cause them to bleed significantly.
 
-> **When to see a doctor:** If your legs are consistently painful, swollen, or if you notice skin changes or ulcers, it’s a good idea to consult a healthcare provider or a vascular specialist. They can help you explore management options, ranging from compression stockings to minimally invasive procedures.",,,Mario,validated_endpoint
+> **When to see a doctor:** If your legs are consistently painful, swollen, or if you notice skin changes or ulcers, it’s a good idea to consult a healthcare provider or a vascular specialist. They can help you explore management options, ranging from compression stockings to minimally invasive procedures.",1.5,1.0,2.5,,5.0,5.0,4,,4,,4.0,0.0,exact_agreement,4.0,dual_surgeon_agreement,1.5,1.0,2.5,,5.0,5.0
 VV_SS2_gemini_free,gemini_free,VV,natural_history,symptoms,ARE VARICOSE VEINS DANGEROUS,"For the vast majority of people, varicose veins are **not immediately dangerous**; they are primarily a cosmetic concern or a source of mild discomfort.
 
 However, they should not be entirely ignored. Because varicose veins are caused by malfunctioning valves that allow blood to pool in the legs (a condition called chronic venous insufficiency), they can progressively worsen over several years. If left untreated, severe cases can lead to serious and potentially dangerous medical complications.
@@ -2831,12 +2831,12 @@ You should seek prompt medical evaluation if you experience any of the following
 3. **Open sores or ulcers** develop near your ankle.
 4. **The vein bursts and bleeds** (if this happens, elevate your leg above your heart, apply firm, direct pressure, and seek emergency care if it doesn't stop quickly).
 
-Are you asking for yourself or someone else? If you are experiencing any specific symptoms like swelling or skin changes, sharing that can help me provide more tailored information.",,,Mario,validated_endpoint
+Are you asking for yourself or someone else? If you are experiencing any specific symptoms like swelling or skin changes, sharing that can help me provide more tailored information.",2.0,1.0,2.0,,4.833333333333334,5.0,4,,3,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,1.0,2.0,,4.833333333333334,5.0
 VV_T1_gemini_free,gemini_free,VV,medical_advice,treatment,WHEN I HAVE TO GO TO THE DOCTOR FOR VARICOSE VEINS,"You should make an appointment to see a doctor for varicose veins if they are causing you physical discomfort, if you don't like how they look, or if you notice changes in the skin on your legs.
 
 While varicose veins are usually not an emergency, you should navigate your care based on the urgency of your symptoms. Here is a guide on when to schedule a regular visit versus when to seek immediate medical attention.
 
-### � Schedule a Doctor's Appointment If:
+### 📅 Schedule a Doctor's Appointment If:
 
 You don't need to rush to the ER, but you should schedule a visit with a primary care doctor or a vascular specialist if you experience:
 
@@ -2848,7 +2848,7 @@ You don't need to rush to the ER, but you should schedule a visit with a primary
 
 ---
 
-### � Seek Immediate Medical Attention If:
+### 🚨 Seek Immediate Medical Attention If:
 
 Some symptoms indicate a dangerous complication, such as a severe infection or a deep blood clot. Go to urgent care or the emergency room if you experience:
 
@@ -2857,7 +2857,7 @@ Some symptoms indicate a dangerous complication, such as a severe infection or a
 * **Open Sores:** You develop an ulcer or open sore near your ankle that isn't healing.
 * **Bleeding:** A varicose vein bursts and starts bleeding.
 
-> **Emergency Tip for a Bleeding Vein:** If a vein ruptures, lie down immediately, elevate your leg above the level of your heart, and apply firm, direct pressure to the bleeding site with a clean cloth. If the bleeding does not stop within a few minutes, call emergency services.",,,Mario,validated_endpoint
+> **Emergency Tip for a Bleeding Vein:** If a vein ruptures, lie down immediately, elevate your leg above the level of your heart, and apply firm, direct pressure to the bleeding site with a clean cloth. If the bleeding does not stop within a few minutes, call emergency services.",1.5,1.0,1.5,1.0,4.166666666666666,5.0,3,,3,,3.0,0.0,exact_agreement,3.0,dual_surgeon_agreement,1.5,1.0,1.5,1.0,4.166666666666666,5.0
 VV_T2_gemini_free,gemini_free,VV,best_treatment,treatment,WHICH IS THE BEST TREATMENT FOR VARICOSE VEINS,"There is no single ""best"" treatment for varicose veins because the right choice depends entirely on the size of the veins, your symptoms, and your overall health. Today, traditional surgery (like vein stripping) is rarely used. Instead, treatments have shifted toward highly effective, minimally invasive procedures performed right in a doctor's office.
 
 Here is a breakdown of the top treatments, categorized by when and why they are used:
@@ -2907,4 +2907,4 @@ Before insurance covers medical procedures, or if your symptoms are very mild, d
 * If you have **large, bulging, painful veins**, a combination of **Thermal Ablation** (to fix the root source) and **Microphlebectomy** (to remove the surface bulges) is generally considered the best approach.
 * If your veins are **mostly a cosmetic issue or very small**, **Sclerotherapy** is the top choice.
 
-To help narrow this down, are your veins mostly large and bulging, or are they smaller spider veins? Knowing if you are experiencing pain or swelling can also help pinpoint the best option.",,,Mario,validated_endpoint
+To help narrow this down, are your veins mostly large and bulging, or are they smaller spider veins? Knowing if you are experiencing pain or swelling can also help pinpoint the best option.",2.0,1.0,1.5,3.5,4.5,5.0,3,,4,,3.5,1.0,minor_disagreement,3.5,dual_surgeon_mean,2.0,1.0,1.5,3.5,4.5,5.0

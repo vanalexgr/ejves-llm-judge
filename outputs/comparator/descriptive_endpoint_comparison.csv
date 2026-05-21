@@ -1,0 +1,3 @@
+Endpoint,Direction,Original GPT-3.5 study benchmark,GPT-5.5,GPT-5.5 vs original,Gemini 3.5 Flash,Gemini 3.5 Flash vs original,Claude Sonnet 4.6,Claude Sonnet 4.6 vs original
+Comprehensiveness,Higher is better,3.9166666666666665,4.458333333333334,0.5416666666666674,4.625,0.7083333333333335,4.90625,0.9895833333333335
+Clarity,Higher is better,3.7708333333333335,5.0,1.2291666666666665,4.979166666666667,1.2083333333333335,4.90625,1.1354166666666665

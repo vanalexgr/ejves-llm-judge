@@ -1,0 +1,862 @@
+response_id,source_model,disease,domain,question_group,question_text,response_text,tone,complementarity,gilbert_urgency,discern_q7,comprehensiveness,clarity,mario_accuracy_original,mario_requested_revised_accuracy,mario_accuracy_final,mario_accuracy_notes,mario_rationale,vga_accuracy_final,vga_accuracy_notes,vga_rationale,third_reviewer_accuracy,third_reviewer_notes,third_reviewer_used,adjudication_case_id,human_accuracy_mean,human_accuracy_abs_diff,human_accuracy_resolution_status,final_validated_accuracy,final_accuracy_resolution_status,final_accuracy_source,validated_accuracy,accuracy_source,validated_tone,validated_complementarity,validated_gilbert_urgency,validated_discern_q7,descriptive_comprehensiveness,descriptive_clarity
+AAA_SS1_chatgpt_free,chatgpt_free,AAA,signs_symptoms,symptoms,WHICH ARE THE SIGNS OF AAA,"“AAA” most commonly refers to Abdominal Aortic Aneurysm.
+
+Many people with an AAA have **no symptoms at first**, and it may be found during a scan for something else. When symptoms do occur, common signs can include:
+
+* Deep, constant pain in the abdomen or side
+* Back pain that doesn’t go away
+* A pulsating feeling near the navel (“heartbeat” in the belly)
+
+Signs that an AAA may be **rupturing** — which is a medical emergency — include:
+
+* Sudden severe abdominal or back pain
+* Dizziness or fainting
+* Rapid heartbeat
+* Low blood pressure
+* Cold, clammy skin
+* Shortness of breath or shock
+
+Risk factors include smoking, older age, high blood pressure, and family history.
+
+If you meant a different “AAA” (for example in sports, gaming, or another medical term), tell me which one and I’ll explain that instead.",1.5,0.0,0.5,,4.0,5.0,3,,3,,,3,,,,,False,,3.0,0.0,exact_agreement,3.0,exact_agreement,dual_surgeon_agreement,3.0,dual_surgeon_agreement,1.5,0.0,0.5,,4.0,5.0
+AAA_SS2_chatgpt_free,chatgpt_free,AAA,natural_history,symptoms,WHICH ARE THE RISKS OF AAA,"The main risks of Abdominal Aortic Aneurysm are related to the aneurysm getting larger and eventually tearing or bursting.
+
+## Major risks and complications
+
+* **Rupture (burst aneurysm)**
+  This is the most serious risk. A ruptured AAA can cause massive internal bleeding and is life-threatening.
+
+* **Aortic dissection**
+  A tear can develop in the inner wall of the aorta, causing severe pain and dangerous blood flow problems.
+
+* **Blood clots**
+  Clots can form inside the aneurysm and travel to the legs or other organs, potentially blocking blood flow.
+
+* **Reduced circulation**
+  Large aneurysms may affect blood supply to nearby organs or limbs.
+
+## Factors that increase the risk of rupture
+
+The chance of complications rises when the aneurysm:
+
+* Is **larger** (especially over about 5–5.5 cm)
+* Is growing quickly
+* Causes symptoms such as pain
+* Occurs in someone who smokes or has uncontrolled high blood pressure
+
+## Risk factors for developing AAA
+
+People are more likely to develop an AAA if they:
+
+* Smoke or used to smoke
+* Are older (especially men over 65)
+* Have high blood pressure
+* Have high cholesterol or atherosclerosis
+* Have a family history of AAA
+* Have cardiovascular disease
+
+## Emergency warning signs
+
+Seek urgent medical help if someone with a known or possible AAA develops:
+
+* Sudden severe abdominal, back, or groin pain
+* Fainting or collapse
+* Dizziness
+* Rapid heartbeat
+* Signs of shock
+
+Doctors usually monitor small AAAs with regular imaging and may recommend surgery when the aneurysm becomes large or high-risk.",1.0,1.0,1.5,,4.333333333333334,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,1.0,1.0,1.5,,4.333333333333334,5.0
+AAA_T1_chatgpt_free,chatgpt_free,AAA,medical_advice,treatment,WHICH IS THE RISK OF RUPTURE OF AN AAA,"The risk of rupture for an Abdominal Aortic Aneurysm depends mainly on its **size**, how fast it is growing, and whether it is causing symptoms.
+
+Approximate annual rupture risk by aneurysm diameter:
+
+| AAA size       | Estimated yearly rupture risk |
+| -------------- | ----------------------------- |
+| Less than 4 cm | Very low (usually <1%)        |
+| 4–4.9 cm       | About 1% per year             |
+| 5–5.9 cm       | About 5–10% per year          |
+| 6–6.9 cm       | About 10–20% per year         |
+| 7 cm or larger | 20–40% or higher per year     |
+
+Other factors that increase rupture risk:
+
+* Smoking
+* High blood pressure
+* Female sex
+* Rapid enlargement (more than ~0.5 cm in 6 months)
+* Pain or tenderness from the aneurysm
+* Irregular aneurysm shape
+
+Because rupture can be fatal, doctors often consider repair when:
+
+* The AAA reaches about **5.5 cm** in men
+* Slightly smaller sizes in some women
+* The aneurysm grows quickly
+* Symptoms develop
+
+If you know the exact size of the AAA, I can give a more specific estimate of rupture risk and the usual treatment approach.",1.5,1.0,1.5,2.5,4.333333333333334,5.0,5,4,4,,"I want to rate again as 4, let me know if I still need to comment",3,,Giving risks of rupture for small aneurysm is completely wrong since we always suggested monitoring,2," misalign with current ESVS guidelines on diagnosis or management,using medical terminology,could mislead a patient about clinical priorities.",True,ADJ_01,3.5,1.0,minor_disagreement,3.0,triple_surgeon_resolved,triple_surgeon_median,3.0,triple_surgeon_median,1.5,1.0,1.5,2.5,4.333333333333334,5.0
+AAA_T2_chatgpt_free,chatgpt_free,AAA,best_treatment,treatment,WHICH IS THE BEST INTERVENTION FOR AAA,"The best treatment for an Abdominal Aortic Aneurysm depends on:
+
+* The aneurysm’s size and shape
+* Whether it is causing symptoms
+* How fast it is growing
+* The patient’s age and overall health
+
+## Main treatment options
+
+### 1. Monitoring (“watchful waiting”)
+
+Small AAAs are often monitored with ultrasound or CT scans rather than treated immediately.
+
+Typical approach:
+
+* Small aneurysm → regular imaging
+* Control blood pressure and cholesterol
+* Stop smoking
+* Exercise and heart-healthy lifestyle
+
+This is usually preferred for low-risk, small AAAs.
+
+---
+
+## 2. Endovascular aneurysm repair (EVAR)
+
+This is a minimally invasive procedure.
+
+A surgeon places a stent graft through arteries in the groin to reinforce the aorta from inside.
+
+### Advantages
+
+* Smaller incisions
+* Faster recovery
+* Shorter hospital stay
+* Lower short-term surgical risk
+
+### Disadvantages
+
+* Requires lifelong imaging follow-up
+* Possible leaks around the graft (“endoleaks”)
+* May need additional procedures later
+
+EVAR is often preferred in:
+
+* Older adults
+* Higher-risk surgical patients
+* People with suitable aneurysm anatomy
+
+---
+
+## 3. Open surgical repair
+
+The damaged part of the aorta is replaced with a synthetic graft through abdominal surgery.
+
+### Advantages
+
+* Very durable long-term result
+* Fewer late reinterventions than EVAR
+
+### Disadvantages
+
+* Larger operation
+* Longer recovery
+* Higher early complication risk
+
+Open repair is often preferred in:
+
+* Younger, healthier patients
+* People with anatomy unsuitable for EVAR
+* Some complex aneurysms
+
+---
+
+## Which is “best”?
+
+There is no single best procedure for everyone.
+
+In many modern cases, **EVAR** is preferred because recovery is easier and early survival is better. However, **open repair** may provide better durability over many years in selected patients.
+
+A vascular surgeon usually decides based on CT imaging and overall risk profile.",2.0,1.0,1.5,5.0,4.5,5.0,4,,4,,,4,,,,,False,,4.0,0.0,exact_agreement,4.0,exact_agreement,dual_surgeon_agreement,4.0,dual_surgeon_agreement,2.0,1.0,1.5,5.0,4.5,5.0
+CS_SS1_chatgpt_free,chatgpt_free,CS,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF CAROTID STENOSES,"Carotid artery stenosis often causes **no symptoms** until blood flow to the brain becomes reduced or a small clot travels to the brain.
+
+When symptoms occur, they are usually warning signs of a Transient ischemic attack or Stroke.
+
+## Common symptoms
+
+Symptoms usually happen suddenly and may affect one side of the body:
+
+* Weakness or numbness of the face, arm, or leg
+* Drooping of one side of the face
+* Trouble speaking or understanding speech
+* Sudden loss of vision in one eye (often described as a curtain coming down)
+* Blurred or double vision
+* Dizziness or loss of balance
+* Sudden severe headache
+* Confusion
+
+## Important warning sign
+
+A temporary episode that resolves within minutes or hours can still be serious. A TIA may be an early warning before a major stroke.
+
+## Risk factors
+
+Common risk factors include:
+
+* Smoking
+* High blood pressure
+* High cholesterol
+* Diabetes
+* Older age
+* Heart disease
+* Atherosclerosis
+
+## When to seek urgent help
+
+Seek emergency care immediately if stroke symptoms appear, even if they improve quickly. Early treatment can reduce brain damage and disability.",1.5,0.5,1.0,,4.0,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,1.5,0.5,1.0,,4.0,5.0
+CS_SS2_chatgpt_free,chatgpt_free,CS,natural_history,symptoms,I HAVE A CAROTID STENOSIS; WHICH IS MY RISK OF STROKE,"The risk of stroke from Carotid artery stenosis depends mainly on:
+
+* **How severe the narrowing is**
+* Whether you have had symptoms (TIA, vision loss, or stroke)
+* Your age and other vascular risk factors
+* Whether you are receiving modern medical treatment
+
+## Typical stroke risk estimates
+
+### If you have **no symptoms** (“asymptomatic” stenosis)
+
+With modern treatment (statins, blood pressure control, antiplatelet therapy, smoking cessation), the average stroke risk is often:
+
+| Degree of narrowing | Approximate annual stroke risk |
+| ------------------- | ------------------------------ |
+| <50%                | Low                            |
+| 50–69%              | About 1% per year or less      |
+| ≥70%                | About 1–2% per year            |
+
+---
+
+### If you have had symptoms
+
+Symptoms include:
+
+* TIA (“mini-stroke”)
+* Temporary vision loss in one eye
+* Prior stroke related to that carotid artery
+
+Then the risk is higher:
+
+| Symptomatic stenosis | Stroke risk                                         |
+| -------------------- | --------------------------------------------------- |
+| 50–69% narrowing     | Moderate increased risk                             |
+| 70–99% narrowing     | High risk, especially in first weeks after symptoms |
+
+For severe symptomatic stenosis, stroke risk may be around:
+
+* 10–20% in the first few months without treatment
+
+---
+
+## Factors that increase stroke risk
+
+* Smoking
+* High blood pressure
+* Diabetes
+* High cholesterol
+* Irregular heart rhythm such as atrial fibrillation
+* Ulcerated or unstable plaque
+* Progression of the stenosis
+
+---
+
+## How risk is reduced
+
+Modern treatment can greatly lower stroke risk:
+
+* Statins
+* Antiplatelet medicines (such as aspirin)
+* Blood pressure control
+* Diabetes control
+* Smoking cessation
+* Exercise and Mediterranean-style diet
+
+Some patients benefit from procedures such as:
+
+* Carotid endarterectomy
+* Carotid artery stenting
+
+These are usually considered for severe narrowing, especially if symptoms are present.
+
+If you know:
+
+* the percentage of stenosis,
+* whether you had symptoms,
+* and whether it is on one or both sides,
+
+I can explain the usual stroke risk range and treatment recommendations more specifically.",2.0,0.5,1.5,,4.833333333333334,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,2.0,0.5,1.5,,4.833333333333334,5.0
+CS_T1_chatgpt_free,chatgpt_free,CS,medical_advice,treatment,WHICH DRUG I HAVE TO ASSUME TO TREAT A CAROTID STENOSIS,"Treatment for Carotid artery stenosis usually focuses on reducing the risk of Stroke and slowing plaque buildup. The exact medicines depend on your symptoms, degree of narrowing, age, bleeding risk, and other conditions.
+
+Commonly used medications include:
+
+* **Antiplatelet drugs** to reduce clot formation
+  Examples:
+
+  * Aspirin
+  * Clopidogrel
+
+* **Statins** to lower cholesterol and stabilize plaque
+  Examples:
+
+  * Atorvastatin
+  * Rosuvastatin
+
+* **Blood pressure medicines** if hypertension is present
+  Examples may include ACE inhibitors, ARBs, beta blockers, or calcium-channel blockers.
+
+* **Diabetes medications** if diabetes is present.
+
+## Important
+
+The “best” medication plan is individualized. Some people need:
+
+* one antiplatelet drug,
+* others may temporarily need two,
+* and some may need a procedure instead of medication alone.
+
+You should not start or stop these medicines without guidance from your doctor, because bleeding risk, blood pressure targets, and other conditions matter.
+
+If you tell me:
+
+* your stenosis percentage,
+* whether you had symptoms (TIA/stroke),
+* your age,
+* and your current medications,
+
+I can explain the treatment approach that is commonly recommended in situations similar to yours.",2.0,1.0,3.0,4.5,3.833333333333333,5.0,5,,5,,,4,,,,,False,,4.5,1.0,minor_disagreement,4.5,minor_disagreement,dual_surgeon_mean,4.5,dual_surgeon_mean,2.0,1.0,3.0,4.5,3.833333333333333,5.0
+CS_T2_chatgpt_free,chatgpt_free,CS,best_treatment,treatment,IS STENTING EFFECTIVE FOR CAROTID STENOSIS,"Yes — Carotid artery stenting can be effective for treating Carotid artery stenosis in selected patients.
+
+The goal is to reduce the risk of Stroke by widening the narrowed artery and improving blood flow to the brain.
+
+## How it works
+
+A catheter is inserted through an artery (usually in the groin or wrist), and a metal mesh stent is placed inside the carotid artery to keep it open.
+
+---
+
+## When stenting is commonly considered
+
+Stenting may be recommended for people who:
+
+* Have significant narrowing (often ≥70%)
+* Have had symptoms such as TIA or minor stroke
+* Are considered high risk for surgery
+* Have prior neck surgery or radiation
+* Have anatomy that makes surgery difficult
+
+---
+
+## Effectiveness
+
+Carotid stenting can:
+
+* Lower stroke risk in appropriate patients
+* Improve blood flow
+* Be less invasive than surgery
+* Allow faster recovery
+
+However, effectiveness depends heavily on:
+
+* Patient selection
+* Surgeon/interventionalist experience
+* Age and anatomy
+
+---
+
+## Comparison with surgery
+
+The standard surgical treatment is:
+Carotid endarterectomy
+
+### General comparison
+
+| Stenting                                            | Endarterectomy                                  |
+| --------------------------------------------------- | ----------------------------------------------- |
+| Less invasive                                       | Open surgery                                    |
+| Faster recovery                                     | More durable long-term data                     |
+| Slightly higher early stroke risk in older patients | Slightly higher heart attack risk after surgery |
+| Useful for high surgical risk patients              | Often preferred for many symptomatic patients   |
+
+For many older patients, carotid endarterectomy still has slightly better stroke outcomes. In younger or high-surgical-risk patients, stenting can be an excellent option.
+
+---
+
+## Risks of carotid stenting
+
+Possible complications include:
+
+* Stroke during the procedure
+* Small clots or emboli
+* Bleeding
+* Re-narrowing of the artery
+* Rarely, artery injury
+
+Doctors often prescribe:
+
+* Aspirin
+* Clopidogrel
+
+before and after stenting to reduce clot risk.
+
+The best treatment depends on:
+
+* Degree of stenosis
+* Symptoms
+* Age
+* General health
+* Brain imaging and artery anatomy
+
+A vascular surgeon or stroke specialist usually decides whether stenting or surgery is safer in a specific case.",2.0,1.0,3.0,4.5,4.833333333333334,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,2.0,1.0,3.0,4.5,4.833333333333334,5.0
+PAOD_SS1_chatgpt_free,chatgpt_free,PAOD,signs_symptoms,symptoms,LEG ARTERY DISEASE: WHICH SYMPTOMS,"Peripheral Artery Disease (often called PAD) happens when narrowed arteries reduce blood flow to the legs, usually because of a buildup of fatty deposits in the arteries.
+
+Common symptoms include:
+
+* **Leg pain when walking (claudication)** — aching, cramping, tightness, or fatigue in the calf, thigh, or buttock that improves with rest.
+* **Coldness in one lower leg or foot** compared with the other.
+* **Numbness or weakness** in the legs.
+* **Shiny skin or slower hair/nail growth** on the legs or feet.
+* **Weak or absent pulse** in the feet.
+* **Sores or wounds on toes, feet, or legs that heal slowly**.
+* **Color changes** in the skin of the legs or feet (pale, bluish, or reddish).
+* **Pain in the feet or toes at rest**, especially at night in more severe disease.
+* **Erectile dysfunction** can occur in some men with PAD.
+
+Some people have PAD with **no noticeable symptoms**.
+
+Risk factors include smoking, diabetes, high blood pressure, high cholesterol, older age, obesity, and a history of cardiovascular disease.
+
+Seek urgent medical attention if you develop:
+
+* sudden severe leg pain,
+* a cold/pale leg,
+* inability to walk,
+* or a foot wound turning black or infected.
+
+Diagnosis is often made with a simple test called the **ankle-brachial index (ABI)**, along with ultrasound or vascular imaging when needed.
+
+Treatment may involve:
+
+* stopping smoking,
+* regular walking exercise,
+* controlling cholesterol, blood pressure, and diabetes,
+* medications,
+* and sometimes procedures to reopen blocked arteries.
+
+For more information:
+
+* [American Heart Association PAD overview](https://www.heart.org/en/health-topics/peripheral-artery-disease?utm_source=chatgpt.com)
+* [Mayo Clinic PAD symptoms and causes](https://www.mayoclinic.org/diseases-conditions/peripheral-artery-disease/symptoms-causes/syc-20350557?utm_source=chatgpt.com)",1.5,1.0,2.0,,5.0,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,1.5,1.0,2.0,,5.0,5.0
+PAOD_SS2_chatgpt_free,chatgpt_free,PAOD,natural_history,symptoms,WHAT IS THE RISK OF AMPUTATION IN PATIENTS WITH LEG ARTERY DISEASE?,"In Peripheral Artery Disease, the risk of amputation depends greatly on how severe the disease is and whether it is treated.
+
+### General risk
+
+* Most people with **mild or moderate PAD** do **not** lose a limb.
+* The risk becomes much higher when PAD progresses to **critical limb ischemia** (also called chronic limb-threatening ischemia), where blood flow is severely reduced.
+
+### Higher-risk warning signs
+
+The chance of amputation increases if a person has:
+
+* pain in the foot or toes even at rest,
+* nonhealing ulcers or wounds,
+* gangrene (black tissue),
+* infection,
+* diabetes,
+* smoking,
+* kidney disease,
+* or delayed treatment.
+
+### Approximate risk estimates
+
+* In stable PAD without ulcers or rest pain, major amputation risk is generally **low** over several years.
+* In severe PAD with chronic limb-threatening ischemia, studies suggest:
+
+  * about **10–40%** of patients may require some form of amputation within 6–12 months if blood flow cannot be restored.
+* Diabetes plus PAD substantially raises risk.
+
+### What lowers the risk
+
+Early diagnosis and treatment can dramatically reduce amputation risk:
+
+* quitting smoking,
+* supervised walking exercise,
+* cholesterol-lowering therapy (often statins),
+* diabetes and blood pressure control,
+* antiplatelet medications,
+* proper foot care,
+* and vascular procedures such as angioplasty, stenting, or bypass surgery when needed.
+
+Seek urgent vascular evaluation if there is:
+
+* a foot wound that will not heal,
+* black/discolored toes,
+* severe rest pain,
+* or signs of infection.
+
+Helpful references:
+
+* [Society for Vascular Surgery – PAD information](https://vascular.org/patients-and-referring-physicians/conditions/peripheral-arterial-disease?utm_source=chatgpt.com)
+* [Cleveland Clinic – Peripheral Artery Disease](https://my.clevelandclinic.org/health/diseases/16878-peripheral-artery-disease-pad?utm_source=chatgpt.com)",2.0,1.0,2.0,,4.5,5.0,5,,5,,,4,,,,,False,,4.5,1.0,minor_disagreement,4.5,minor_disagreement,dual_surgeon_mean,4.5,dual_surgeon_mean,2.0,1.0,2.0,,4.5,5.0
+PAOD_T1_chatgpt_free,chatgpt_free,PAOD,medical_advice,treatment,HOW CAN I IMPROVE MYARTERIAL LEG CIRCULATION?,"Improving circulation in Peripheral Artery Disease usually involves a combination of lifestyle changes, medical treatment, and sometimes vascular procedures.
+
+## Most effective ways to improve leg circulation
+
+### 1. Stop smoking
+
+Smoking is one of the biggest causes of worsening PAD. Quitting can significantly slow disease progression and reduce the risk of heart attack, stroke, and amputation.
+
+### 2. Walk regularly
+
+A structured walking program is one of the best treatments for PAD.
+
+Typical approach:
+
+* Walk until moderate leg discomfort begins.
+* Rest briefly.
+* Start walking again.
+* Aim for 30–45 minutes total, at least 3–5 days per week.
+
+Over time, this can improve walking distance and help the body develop better collateral blood flow.
+
+### 3. Control cholesterol
+
+High cholesterol contributes to artery narrowing. Doctors often prescribe statins even when cholesterol is only moderately elevated.
+
+### 4. Control blood pressure and diabetes
+
+Keeping blood pressure and blood sugar under good control protects blood vessels and lowers the risk of severe complications.
+
+### 5. Maintain healthy foot care
+
+Poor circulation increases the risk of ulcers and infection.
+
+* Inspect feet daily.
+* Wear well-fitting shoes.
+* Treat cuts or blisters early.
+* Seek medical care for nonhealing wounds.
+
+### 6. Eat a heart-healthy diet
+
+Helpful eating patterns include:
+
+* vegetables and fruits,
+* whole grains,
+* fish,
+* olive oil,
+* nuts,
+* less processed food and saturated fat.
+
+The Mediterranean diet is commonly recommended for vascular health.
+
+### 7. Maintain a healthy weight
+
+Weight reduction can improve walking ability and cardiovascular health.
+
+### 8. Medications
+
+Doctors may prescribe:
+
+* antiplatelet drugs (such as aspirin),
+* statins,
+* blood pressure medications,
+* or medications that improve walking distance in some patients.
+
+### 9. Vascular procedures
+
+If symptoms are severe or wounds are not healing, specialists may recommend:
+
+* angioplasty,
+* stenting,
+* atherectomy,
+* or bypass surgery.
+
+These procedures can restore blood flow and help prevent limb loss.
+
+## Seek urgent care if you notice
+
+* sudden worsening leg pain,
+* cold or pale foot,
+* blackened toes,
+* or nonhealing/infected wounds.
+
+More information:
+
+* [American Heart Association – PAD treatment and prevention](https://www.heart.org/en/health-topics/peripheral-artery-disease/prevention-and-treatment-of-pad?utm_source=chatgpt.com)
+* [NHLBI – Peripheral Artery Disease overview](https://www.nhlbi.nih.gov/health/peripheral-artery-disease?utm_source=chatgpt.com)",1.5,1.0,2.0,2.0,4.833333333333334,5.0,5,,5,,,4,,,,,False,,4.5,1.0,minor_disagreement,4.5,minor_disagreement,dual_surgeon_mean,4.5,dual_surgeon_mean,1.5,1.0,2.0,2.0,4.833333333333334,5.0
+PAOD_T2_chatgpt_free,chatgpt_free,PAOD,best_treatment,treatment,WHICH IS THE BEST METHOD FOR SURGICAL TREATMENT OF LEG ARTERY DISEASE?,"The “best” treatment for Peripheral Artery Disease depends on:
+
+* which artery is blocked,
+* how long and severe the blockage is,
+* whether there are ulcers or gangrene,
+* your age and overall health,
+* and whether the goal is symptom relief or limb salvage.
+
+The two main approaches are:
+
+## 1. Endovascular treatment (minimally invasive)
+
+Common methods:
+
+* balloon angioplasty,
+* stenting,
+* atherectomy (plaque removal),
+* drug-coated balloons or stents.
+
+### Advantages
+
+* smaller incisions,
+* shorter recovery,
+* less pain,
+* lower immediate surgical risk,
+* often preferred first for many patients.
+
+### Best suited for
+
+* shorter or less complex blockages,
+* older or higher-risk patients,
+* many iliac and some femoropopliteal lesions.
+
+## 2. Surgical bypass
+
+A surgeon creates a new path around the blocked artery using:
+
+* a vein graft (often the patient’s own vein),
+* or a synthetic graft.
+
+### Advantages
+
+* often more durable for extensive disease,
+* especially effective for long blockages below the knee,
+* can provide better long-term blood flow in severe disease.
+
+### Best suited for
+
+* long or complex blockages,
+* failed prior endovascular procedures,
+* chronic limb-threatening ischemia with tissue loss.
+
+## Which is considered “best”?
+
+There is no single best method for everyone.
+
+In many modern vascular centers:
+
+* **Endovascular therapy** is often tried first because it is less invasive.
+* **Bypass surgery** may provide better long-term results in selected severe cases, especially when a good vein conduit is available.
+
+For advanced disease threatening the limb, treatment decisions are often individualized by a vascular specialist.
+
+## Important factors affecting success
+
+The outcome depends heavily on:
+
+* stopping smoking,
+* diabetes control,
+* cholesterol treatment,
+* wound care,
+* and long-term follow-up.
+
+Without risk-factor control, arteries can narrow again even after successful surgery.
+
+## Specialists involved
+
+Treatment is usually performed by:
+
+* vascular surgeons,
+* interventional cardiologists,
+* or interventional radiologists.
+
+Helpful references:
+
+* [Society for Vascular Surgery – PAD treatments](https://vascular.org/patient-resources/vascular-conditions/peripheral-arterial-disease-pad?utm_source=chatgpt.com)
+* [Cleveland Clinic – PAD surgery and procedures](https://my.clevelandclinic.org/health/diseases/16878-peripheral-artery-disease-pad?utm_source=chatgpt.com)",2.0,1.0,1.5,5.0,4.333333333333334,5.0,4,,4,,,4,,,,,False,,4.0,0.0,exact_agreement,4.0,exact_agreement,dual_surgeon_agreement,4.0,dual_surgeon_agreement,2.0,1.0,1.5,5.0,4.333333333333334,5.0
+VV_SS1_chatgpt_free,chatgpt_free,VV,signs_symptoms,symptoms,WHICH ARE THE SYMPTOMS OF VARICOSE VEINS,"Varicose Veins commonly affect the legs and feet. Symptoms can range from mild cosmetic changes to significant discomfort.
+
+Common symptoms include:
+
+* Bulging, twisted, or dark purple/blue veins visible under the skin
+* Aching, heavy, or tired legs, especially after standing a long time
+* Burning, throbbing, cramping, or muscle spasms in the legs
+* Swelling in the lower legs or ankles
+* Itching around one or more veins
+* Pain that worsens after prolonged sitting or standing
+* A feeling of pressure or fullness in the legs
+* Restless legs, especially at night
+
+More advanced symptoms can include:
+
+* Skin discoloration around the ankles
+* Dry, thin, or irritated skin
+* Hardening of the skin
+* Venous ulcers (slow-healing sores), usually near the ankles
+* Bleeding from a vein after minor injury
+
+Seek medical attention promptly if you notice:
+
+* Sudden swelling in one leg
+* Redness, warmth, or severe pain
+* Skin ulcers
+* Bleeding veins
+
+These can sometimes signal complications such as blood clots or chronic venous insufficiency.
+
+Risk factors include aging, pregnancy, obesity, long periods of standing, family history, and lack of physical activity.
+
+Helpful self-care measures:
+
+* Walking and regular exercise
+* Elevating the legs
+* Avoiding long periods of standing or sitting
+* Compression stockings
+* Maintaining a healthy weight
+
+For diagnosis and treatment, a vascular specialist or vein clinic may use ultrasound and offer treatments such as compression therapy, sclerotherapy, laser treatment, or minimally invasive vein procedures.",1.0,1.0,2.0,,5.0,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,1.0,1.0,2.0,,5.0,5.0
+VV_SS2_chatgpt_free,chatgpt_free,VV,natural_history,symptoms,ARE VARICOSE VEINS DANGEROUS,"Varicose Veins are often more uncomfortable than dangerous, but in some cases they can lead to complications that need medical attention.
+
+Most people experience symptoms such as:
+
+* Aching or heavy legs
+* Swelling
+* Visible bulging veins
+* Itching or cramping
+
+However, untreated varicose veins can sometimes cause:
+
+* Chronic swelling and pain
+* Skin discoloration or eczema-like irritation
+* Venous ulcers (open sores, usually near the ankle)
+* Bleeding from damaged veins
+* Superficial thrombophlebitis (inflamed vein with a clot)
+* Rarely, deeper blood clots such as Deep Vein Thrombosis
+
+You should seek medical evaluation if you have:
+
+* One leg suddenly becoming swollen, red, warm, or painful
+* Skin sores or ulcers
+* Bleeding veins
+* Severe or worsening pain
+* Significant swelling that does not improve
+
+Many cases can be managed effectively with:
+
+* Compression stockings
+* Exercise and walking
+* Weight management
+* Elevating the legs
+* Medical procedures if needed
+
+Modern treatments are usually minimally invasive and quite effective. A vascular specialist can determine whether your veins are mainly cosmetic or medically significant.",2.0,1.0,2.5,,4.666666666666666,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,2.0,1.0,2.5,,4.666666666666666,5.0
+VV_T1_chatgpt_free,chatgpt_free,VV,medical_advice,treatment,WHEN I HAVE TO GO TO THE DOCTOR FOR VARICOSE VEINS,"You should see a doctor about Varicose Veins if you have symptoms that are persistent, worsening, or causing complications.
+
+Make an appointment if you notice:
+
+* Leg pain, heaviness, or swelling that keeps returning
+* Night cramps or burning sensations
+* Skin color changes around the ankles
+* Itching or irritation over the veins
+* Veins becoming increasingly large or painful
+* Symptoms interfering with walking, sleep, or daily activities
+
+Seek prompt medical care if you develop:
+
+* Sudden swelling in one leg
+* Redness, warmth, or severe tenderness
+* A hard, painful vein
+* Bleeding from a vein
+* Open sores or ulcers near the ankle
+* Shortness of breath or chest pain (possible clot complication)
+
+Doctors who commonly treat vein problems include:
+
+* A vascular surgeon
+* A phlebologist (vein specialist)
+* Sometimes a dermatologist or general surgeon with vein expertise
+
+They may perform a Doppler ultrasound to check blood flow and look for valve problems or clots.
+
+Early evaluation is useful because treatment can prevent progression and complications, even if symptoms seem mild now.",1.0,1.0,2.0,1.5,4.333333333333334,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,1.0,1.0,2.0,1.5,4.333333333333334,5.0
+VV_T2_chatgpt_free,chatgpt_free,VV,best_treatment,treatment,WHICH IS THE BEST TREATMENT FOR VARICOSE VEINS,"The best treatment for Varicose Veins depends on:
+
+* How severe the veins are
+* Your symptoms
+* Whether there are complications
+* Your overall health
+
+Treatment usually starts conservatively and progresses to minimally invasive procedures if needed.
+
+### Common and effective treatments
+
+#### Compression stockings
+
+Often the first step.
+They help improve blood flow and reduce:
+
+* Swelling
+* Aching
+* Leg heaviness
+
+They do not remove varicose veins but can relieve symptoms.
+
+#### Exercise and lifestyle changes
+
+Helpful for mild cases:
+
+* Walking regularly
+* Elevating the legs
+* Avoiding prolonged standing/sitting
+* Weight management
+
+### Minimally invasive treatments
+
+These are now considered among the most effective options.
+
+#### Endovenous laser treatment (EVLT) or radiofrequency ablation (RFA)
+
+These are commonly considered the preferred modern treatments for larger symptomatic veins.
+
+A small catheter is inserted into the vein and heat seals it closed.
+
+Benefits:
+
+* High success rates
+* Minimal scarring
+* Quick recovery
+* Usually done under local anesthesia
+
+#### Sclerotherapy
+
+A chemical solution is injected into the vein to close it.
+
+Best for:
+
+* Smaller varicose veins
+* Spider veins
+
+#### Foam sclerotherapy
+
+Useful for somewhat larger veins.
+
+### Surgical treatment
+
+Less common today, but sometimes necessary.
+
+#### Vein stripping / phlebectomy
+
+Used for severe or complex cases when minimally invasive options are not suitable.
+
+### Which treatment is often “best”?
+
+For many people with significant symptomatic varicose veins:
+
+* EVLT or RFA are frequently considered the gold-standard modern treatments.
+* Sclerotherapy is excellent for smaller veins and cosmetic concerns.
+
+A vascular specialist usually performs an ultrasound first to decide which option fits best.
+
+Treatment choice depends heavily on the vein anatomy and whether deeper veins are involved.",2.0,1.0,3.0,3.0,4.0,5.0,4,,4,,,3,,,,,False,,3.5,1.0,minor_disagreement,3.5,minor_disagreement,dual_surgeon_mean,3.5,dual_surgeon_mean,2.0,1.0,3.0,3.0,4.0,5.0

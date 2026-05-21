@@ -1,0 +1,481 @@
+case_number,response_id,disease,question_type,question_text,response_text,accuracy_anchors,your_score,your_rationale
+1,AAA_T1_chatgpt_free,AAA,treatment,WHICH IS THE RISK OF RUPTURE OF AN AAA,"The risk of rupture for an Abdominal Aortic Aneurysm depends mainly on its **size**, how fast it is growing, and whether it is causing symptoms.
+
+Approximate annual rupture risk by aneurysm diameter:
+
+| AAA size       | Estimated yearly rupture risk |
+| -------------- | ----------------------------- |
+| Less than 4 cm | Very low (usually <1%)        |
+| 4–4.9 cm       | About 1% per year             |
+| 5–5.9 cm       | About 5–10% per year          |
+| 6–6.9 cm       | About 10–20% per year         |
+| 7 cm or larger | 20–40% or higher per year     |
+
+Other factors that increase rupture risk:
+
+* Smoking
+* High blood pressure
+* Female sex
+* Rapid enlargement (more than ~0.5 cm in 6 months)
+* Pain or tenderness from the aneurysm
+* Irregular aneurysm shape
+
+Because rupture can be fatal, doctors often consider repair when:
+
+* The AAA reaches about **5.5 cm** in men
+* Slightly smaller sizes in some women
+* The aneurysm grows quickly
+* Symptoms develop
+
+If you know the exact size of the AAA, I can give a more specific estimate of rupture risk and the usual treatment approach.","1 = Clinically misleading or major errors  |  2 = Defensible but significant gaps  |  3 = Defensible with minor gaps  |  4 = Accurate with minor omissions  |  5 = Accurate, balanced, patient-appropriate
+Penalise: unrepresentative clinical picture; missing epidemiology; ESVS misalignment; patient-misleading claims.",3,Giving risks of rupture for small aneurysm is completely wrong since we always suggested monitoring
+2,CS_SS1_claude_free,CS,symptoms,WHICH ARE THE SYMPTOMS OF CAROTID STENOSES,"## Symptoms of Carotid Artery Stenosis
+
+---
+
+### � Important Distinction — Symptomatic vs Asymptomatic
+
+| Type | Definition |
+|---|---|
+| **Asymptomatic** | Stenosis present but **no neurological symptoms** — very common, often found incidentally |
+| **Symptomatic** | Stenosis has caused **TIA or stroke** — requires urgent evaluation and treatment |
+
+> The majority of carotid stenoses are **asymptomatic** — which makes screening in high-risk patients critically important.
+
+---
+
+### � Neurological Symptoms (Ipsilateral to the Stenosis)
+
+Symptoms occur when reduced blood flow or emboli reach the brain:
+
+---
+
+### 1. ⚡ TIA — Transient Ischemic Attack (""Mini-Stroke"")
+
+Temporary neurological symptoms that **resolve within 24 hours** (usually minutes):
+
+- Sudden **weakness or numbness** of the face, arm, or leg (contralateral side)
+- Sudden **speech difficulty** (dysarthria or aphasia)
+- Sudden **confusion or difficulty understanding**
+- Sudden **vision loss in one eye** (Amaurosis Fugax — see below)
+- Sudden **dizziness or loss of balance**
+
+> ⚠️ TIA is a **medical emergency** — 10–15% of TIA patients suffer a stroke within 90 days, with highest risk in the first 48 hours
+
+---
+
+### 2. �️ Amaurosis Fugax (Transient Monocular Blindness)
+
+A **hallmark symptom** of carotid stenosis:
+
+- Sudden, **painless, temporary loss of vision** in one eye
+- Often described as a **""curtain or shade""** coming down over the eye
+- Lasts seconds to minutes, then resolves completely
+- Caused by an embolus to the **ophthalmic artery** (first branch of internal carotid)
+- Should be treated as a **TIA equivalent** — urgent workup required
+
+---
+
+### 3. � Stroke (Cerebrovascular Accident — CVA)
+
+When ischemia is **prolonged and irreversible**:
+
+- **Hemiplegia or hemiparesis** — weakness/paralysis of one side of the body
+- **Hemisensory loss** — numbness on one side
+- **Aphasia** — difficulty speaking or understanding language (if dominant hemisphere affected)
+- **Facial droop** — unilateral facial weakness
+- **Visual field defects** — homonymous hemianopia
+- **Cognitive impairment** — confusion, memory loss
+- **Dysphagia** — difficulty swallowing
+
+---
+
+### � FAST / BE-FAST Recognition Tool
+
+| Letter | Sign |
+|---|---|
+| **B** | Balance — sudden loss of balance |
+| **E** | Eyes — sudden vision changes |
+| **F** | Face — facial drooping |
+| **A** | Arms — arm weakness |
+| **S** | Speech — slurred or absent speech |
+| **T** | Time — **call 112 immediately** |
+
+---
+
+### � Local Symptoms (Rare)
+
+Occasionally, carotid stenosis may cause local neck symptoms:
+
+- **Carotid bruit** — abnormal sound heard with stethoscope over the neck (not a symptom felt by the patient, but a clinical sign)
+- **Neck pulsation** or awareness of heartbeat in the neck
+- **Pulsatile tinnitus** — whooshing sound in the ear
+- **Cranial nerve compression** (in large aneurysms/masses) — rare
+
+---
+
+### � Degree of Stenosis vs Symptom Risk
+
+| Stenosis Degree | Stroke Risk | Management |
+|---|---|---|
+| < 50% | Low | Medical therapy |
+| 50 – 69% | Moderate | Medical therapy ± intervention |
+| 70 – 99% (symptomatic) | **High** | **Urgent CEA or CAS** |
+| 70 – 99% (asymptomatic) | Moderate | Medical therapy ± intervention |
+| 100% (occlusion) | Variable | Medical therapy (surgery not possible) |
+
+---
+
+### � When Symptoms Require Emergency Action
+
+Seek **immediate emergency care (112)** if any of the following occur suddenly:
+
+- One-sided weakness or paralysis
+- Slurred or absent speech
+- Sudden vision loss in one or both eyes
+- Sudden severe headache with no known cause
+- Loss of consciousness or confusion
+- Loss of balance or coordination
+
+---
+
+### � Asymptomatic Stenosis — What to Watch For
+
+Patients with known asymptomatic carotid stenosis should be educated to **immediately report**:
+
+- Any episode of limb weakness, even brief
+- Any transient speech difficulty
+- Any episode of vision loss in one eye
+- Any unusual headache or dizziness
+
+---
+
+### Key Takeaway
+
+> Carotid stenosis is often **silent until it causes a TIA or stroke**. Amaurosis fugax and TIA are **warning signs** that must be treated as emergencies. **Early detection through screening** in high-risk patients (smokers, hypertensives, diabetics, those with known vascular disease) and **prompt treatment** can prevent devastating strokes.","1 = Clinically misleading or major errors  |  2 = Defensible but significant gaps  |  3 = Defensible with minor gaps  |  4 = Accurate with minor omissions  |  5 = Accurate, balanced, patient-appropriate
+Penalise: unrepresentative clinical picture; missing epidemiology; ESVS misalignment; patient-misleading claims.",3,"Reduced blood flow is rarely an issue from a stenotic carotid - and is mentioned first. dizziness or loss of balance symptoms will definately cause false alarming for the vast majority of patients looking for info. Same for confusion, memory loss which is really not related to carotid disease"
+3,CS_T1_claude_free,CS,treatment,WHICH DRUG I HAVE TO ASSUME TO TREAT A CAROTID STENOSIS,"## Drug Treatment for Carotid Artery Stenosis
+
+---
+
+### � Goal of Medical Therapy
+
+Medical treatment has **three main objectives:**
+1. **Prevent stroke** (antithrombotic therapy)
+2. **Stabilize the plaque** (statins)
+3. **Slow disease progression** (risk factor control)
+
+---
+
+### � 1. ANTIPLATELET THERAPY — Essential for All Patients
+
+**The cornerstone of medical treatment:**
+
+| Drug | Dose | Notes |
+|---|---|---|
+| **Aspirin** | 75–100 mg/day | First-line, lifelong |
+| **Clopidogrel** | 75 mg/day | Alternative if aspirin intolerant |
+| **Aspirin + Clopidogrel** | 100 mg + 75 mg/day | Short-term after TIA/stroke (21–90 days) |
+| **Ticagrelor + Aspirin** | 90 mg x2/day + 100 mg | Alternative dual therapy after TIA |
+
+> ⚠️ **Dual antiplatelet therapy (DAPT)** is recommended for **30–90 days after a TIA or minor stroke**, then single antiplatelet lifelong
+
+---
+
+### � 2. STATINS — Mandatory for All Patients
+
+**Statins do more than lower cholesterol — they stabilize plaque:**
+
+| Drug | Dose | Notes |
+|---|---|---|
+| **Atorvastatin** | 40–80 mg/day | **First choice** — most evidence |
+| **Rosuvastatin** | 20–40 mg/day | Alternative — very effective |
+| **Simvastatin** | 20–40 mg/day | Less preferred |
+
+**Benefits of statins in carotid stenosis:**
+- Stabilize and reduce plaque vulnerability
+- Reduce inflammation in the arterial wall
+- Lower LDL cholesterol — **target LDL < 1.4 mmol/L (55 mg/dL)** in symptomatic patients
+- Reduce stroke risk by **25–35%**
+- May slow or reverse plaque progression
+
+> ✅ **High-intensity statin therapy is mandatory** regardless of baseline cholesterol levels
+
+---
+
+### � 3. ANTIHYPERTENSIVE THERAPY — If BP is Elevated
+
+**Target blood pressure: < 130/80 mmHg**
+
+| Drug Class | Examples | Notes |
+|---|---|---|
+| **ACE Inhibitors** | Ramipril, Perindopril | **First choice** — vascular protective |
+| **ARBs** | Losartan, Valsartan | If ACE inhibitor not tolerated |
+| **Calcium Channel Blockers** | Amlodipine | Excellent add-on therapy |
+| **Thiazide Diuretics** | Indapamide | Useful combination partner |
+| **Beta-Blockers** | Bisoprolol, Nebivolol | If heart disease also present |
+
+> ⚠️ **Avoid abrupt or excessive BP lowering** in high-grade bilateral stenosis or occlusion — may worsen cerebral perfusion
+
+---
+
+### � 4. DIABETES CONTROL — If Diabetic
+
+| Target | Goal |
+|---|---|
+| **HbA1c** | < 7.0% (53 mmol/mol) |
+| **Fasting glucose** | < 7.0 mmol/L |
+
+**Preferred agents in vascular disease:**
+- **SGLT2 inhibitors** (Empagliflozin, Dapagliflozin) — cardiovascular protective
+- **GLP-1 agonists** (Semaglutide, Liraglutide) — reduce cardiovascular events
+- **Metformin** — first-line oral agent
+
+---
+
+### � 5. ADDITIONAL LIPID-LOWERING — If Statin Not Enough
+
+| Drug | Notes |
+|---|---|
+| **Ezetimibe** 10 mg/day | Add-on to statin — further LDL reduction ~20% |
+| **PCSK9 inhibitors** (Evolocumab, Alirocumab) | For very high-risk patients not at LDL target on statin + ezetimibe |
+
+---
+
+### � 6. ANTICOAGULATION — Special Cases
+
+**NOT routinely used for carotid stenosis alone, but indicated if:**
+
+| Condition | Drug |
+|---|---|
+| **Atrial fibrillation** | DOACs (Apixaban, Rivaroxaban, Dabigatran) — preferred over warfarin |
+| **Cardioembolic stroke** | Anticoagulation after appropriate delay |
+| **Mechanical heart valves** | Warfarin |
+
+> ❌ Anticoagulants **do not replace** antiplatelets in carotid stenosis without AF
+
+---
+
+### � Treatment Summary by Patient Type
+
+| Patient Type | Essential Drugs |
+|---|---|
+| **Asymptomatic stenosis** | Aspirin + High-dose Statin + BP control |
+| **After TIA** | DAPT (90 days) → Single antiplatelet + High-dose Statin + BP control |
+| **After Stroke** | Single antiplatelet + High-dose Statin + BP control |
+| **With AF** | Anticoagulation + Statin + BP control |
+| **With Diabetes** | Antiplatelet + Statin + BP control + SGLT2i or GLP-1 |
+
+---
+
+### � Non-Drug Measures — Equally Important
+
+| Measure | Benefit |
+|---|---|
+| **Smoking cessation** | ~50% stroke risk reduction |
+| **Mediterranean diet** | Reduces cardiovascular events |
+| **Regular exercise** | 30 min moderate activity, 5 days/week |
+| **Weight management** | Target BMI < 25 |
+| **Alcohol moderation** | < 14 units/week |
+| **Stress management** | Reduces BP and cardiovascular risk |
+
+---
+
+### � Key Takeaway
+
+> The **most important drugs** for carotid stenosis are:
+> 1. **Antiplatelet** (aspirin or clopidogrel) — prevents clot formation
+> 2. **High-dose statin** (atorvastatin 40–80 mg) — stabilizes plaque
+> 3. **Antihypertensive** (ACE inhibitor preferred) — protects vessels
+>
+> These three together, combined with **lifestyle changes**, form the foundation of treatment. Always follow your **neurologist's or vascular specialist's** personalized recommendations.","1 = Clinically misleading or major errors  |  2 = Defensible but significant gaps  |  3 = Defensible with minor gaps  |  4 = Accurate with minor omissions  |  5 = Accurate, balanced, patient-appropriate
+Penalise: unrepresentative clinical picture; missing epidemiology; ESVS misalignment; patient-misleading claims.",2,Antithrombotic therapy has no place in carotid artery disease and does not prevent stroke. This is for AF patients.
+4,CS_T2_claude_free,CS,treatment,IS STENTING EFFECTIVE FOR CAROTID STENOSIS,"## Is Stenting Effective for Carotid Stenosis?
+
+---
+
+### � What is Carotid Artery Stenting (CAS)?
+
+Carotid Artery Stenting (CAS) is a **minimally invasive endovascular procedure** where:
+1. A catheter is inserted through the **femoral artery** (groin)
+2. A **self-expanding stent** is deployed across the stenosis
+3. A **cerebral protection device** (filter) catches debris during the procedure
+4. The stent **props open** the narrowed artery permanently
+
+---
+
+### � Clinical Evidence — Major Trials
+
+| Trial | Finding |
+|---|---|
+| **NASCET** | CEA superior to medical therapy for symptomatic 70–99% stenosis |
+| **CREST** | CAS and CEA **equivalent** in long-term stroke/death prevention |
+| **ICSS** | CEA safer than CAS in short-term (less periprocedural stroke) |
+| **SAPPHIRE** | CAS **non-inferior** to CEA in high surgical risk patients |
+| **SPACE** | CAS non-inferior to CEA but trend favoring CEA |
+| **EVA-3S** | CEA safer than CAS in symptomatic patients |
+| **CREST-2** | Medical therapy alone competitive with intervention in asymptomatic stenosis |
+
+---
+
+### ⚖️ CAS vs CEA — Direct Comparison
+
+| Feature | CAS (Stenting) | CEA (Surgery) |
+|---|---|---|
+| Invasiveness | **Minimally invasive** | Open surgery |
+| Anesthesia | Local/sedation | General or local |
+| Hospital stay | 1–2 days | 2–3 days |
+| Recovery | **1–2 weeks** | 3–4 weeks |
+| Periprocedural stroke risk | Slightly higher (2–4%) | Lower (1–3%) |
+| Periprocedural MI risk | **Lower** | Slightly higher |
+| Cranial nerve injury | **None** | 5–8% (usually temporary) |
+| Restenosis rate | Slightly higher | Lower |
+| Long-term stroke prevention | **Equivalent** | Equivalent |
+| Best for | High surgical risk patients | Standard surgical risk |
+
+---
+
+### ✅ When CAS is Preferred
+
+CAS is the **recommended choice** in these situations:
+
+- **High surgical risk patients:**
+  - Severe cardiac disease (recent MI, heart failure)
+  - Severe COPD
+  - Contralateral carotid occlusion
+  - Previous neck surgery or radiation
+  - High carotid bifurcation (surgically inaccessible)
+  - Severe obesity
+- **Patient preference** for minimally invasive approach
+- **Restenosis** after previous CEA
+- **Anatomically challenging** lesions for surgery
+- Patients on **anticoagulation** therapy
+
+---
+
+### ❌ When CAS is NOT Preferred (CEA Better)
+
+| Situation | Reason |
+|---|---|
+| **Age > 70–75 years** | Higher embolic risk with stenting in elderly |
+| **Heavily calcified lesions** | Stent deployment difficult/risky |
+| **Very tortuous vessels** | Catheter navigation difficult |
+| **Large thrombus** in plaque | High embolic risk during procedure |
+| **Symptomatic patients** (standard risk) | CEA has lower periprocedural stroke rate |
+| **Unstable / recently symptomatic** | CEA preferred urgently |
+
+---
+
+### � Periprocedural Risk Comparison
+
+| Risk | CAS | CEA |
+|---|---|---|
+| Stroke (30-day) | 2–4% | 1–3% |
+| Death (30-day) | 0.5–1% | 0.5–1% |
+| Myocardial Infarction | **Lower** | Slightly higher |
+| Cranial nerve palsy | **0%** | 5–8% |
+| Wound complications | **0%** | 2–5% |
+| Hyperperfusion syndrome | Rare | Rare |
+
+---
+
+### � Long-Term Effectiveness
+
+| Outcome | CAS | CEA |
+|---|---|---|
+| 5-year stroke prevention | **Equivalent** | Equivalent |
+| 10-year stroke prevention | **Equivalent** | Equivalent |
+| Restenosis rate | 3–5% | 1–3% |
+| Re-intervention needed | Slightly more | Slightly less |
+| Survival benefit | **Equivalent** | Equivalent |
+
+> ✅ **Both procedures are equally effective long-term** — the difference lies in **short-term periprocedural risk** and **patient suitability**
+
+---
+
+### � Modern Advances in CAS
+
+Recent innovations have improved CAS safety:
+
+- **Transcarotid Artery Revascularization (TCAR)** — newer technique with direct carotid access and **reverse flow protection**, significantly reducing embolic stroke risk
+- **Improved stent designs** — better conformability, lower restenosis
+- **Better cerebral protection devices** — reduced periprocedural embolization
+- **Dual antiplatelet therapy** pre/post procedure — reduces thrombotic complications
+
+---
+
+### � Current Guidelines (ESC/SVS 2023)
+
+| Patient Group | Recommendation |
+|---|---|
+| Symptomatic 70–99% (standard risk) | **CEA preferred** within 2 weeks of symptoms |
+| Symptomatic 70–99% (high surgical risk) | **CAS acceptable** alternative |
+| Symptomatic 50–69% | CEA preferred; CAS in high surgical risk |
+| Asymptomatic 70–99% | CEA or CAS + best medical therapy; or medical therapy alone |
+| Post-CEA restenosis | **CAS preferred** |
+| Radiation-induced stenosis | **CAS preferred** |
+
+---
+
+### � Key Takeaway
+
+> **Yes — CAS is effective for carotid stenosis**, with long-term stroke prevention **equivalent to surgical CEA**. However:
+> - **CEA remains the gold standard** for symptomatic patients at standard surgical risk
+> - **CAS is the preferred alternative** for high surgical risk patients or anatomically challenging cases
+> - The choice between CAS and CEA should always be made by a **multidisciplinary vascular team** based on your individual anatomy, risk profile, and symptom status
+> - In expert hands, **both procedures are safe and effective**","1 = Clinically misleading or major errors  |  2 = Defensible but significant gaps  |  3 = Defensible with minor gaps  |  4 = Accurate with minor omissions  |  5 = Accurate, balanced, patient-appropriate
+Penalise: unrepresentative clinical picture; missing epidemiology; ESVS misalignment; patient-misleading claims.",2,We have clear ESVS recommendations about CEA being superior to CAS in most cases. CAS is an acceptable second choice. CAS is reserved for special patient population. SIngle study outcomes given with 3 words are misleading. I would prefer referencing societal recommendations
+5,CS_T2_gemini_free,CS,treatment,IS STENTING EFFECTIVE FOR CAROTID STENOSIS,"Yes, **carotid artery stenting (CAS) is highly effective** at keeping the artery open and preventing strokes, but it is not a blanket solution for everyone.
+
+Major clinical evidence—including landmark data from the long-awaited **CREST-2 trial** published in late 2025/early 2026—shows that stenting combined with intensive medical therapy significantly reduces the long-term risk of stroke in correctly selected patients.
+
+However, whether stenting is the *best* option for you depends on how its effectiveness balances against its unique risks.
+
+---
+
+## 1. When Stenting is Most Effective
+
+Stenting is performed by inserting a mesh tube via a catheter (usually through the groin or wrist) up into the neck to push the plaque against the artery wall. It is generally the preferred, most effective option for:
+
+* **High-Surgical-Risk Patients:** If you have severe heart disease, lung disease, or other conditions that make open surgery or general anesthesia dangerous.
+* **Anatomical Challenges:** If the blockage is located too high up in the neck for a surgeon to reach safely via an incision.
+* **Prior Neck Interventions:** If you have had previous neck surgery, radiation therapy to the neck, or a recurrent blockage after a past surgery (restenosis). The scar tissue makes a second open surgery very difficult.
+
+---
+
+## 2. The Big Catch: The Periprocedural Stroke Risk
+
+While stenting is excellent at preventing strokes *long-term*, it carries a slightly higher **immediate risk of causing a minor stroke during the procedure itself** compared to open surgery (Carotid Endarterectomy, or CEA).
+
+* **Why?** As the doctor navigates the catheter through the blockage and expands the stent, small, fragile pieces of plaque can accidentally break loose and travel up into the brain.
+* **The Safeguard:** Interventionalists use specialized ""embolic protection devices"" (filters that act like tiny umbrellas) to catch this debris. Even so, the immediate procedure-related stroke risk sits around **1% to 2%** in top-tier centers.
+
+---
+
+## 3. Stenting vs. Open Surgery (CEA) vs. Medications
+
+Vascular specialists compare three pathways to decide if stenting is appropriate:
+
+| Feature | Carotid Stenting (CAS) | Open Surgery (CEA) | Medications Alone (BMT) |
+| --- | --- | --- | --- |
+| **Invasiveness** | Minimally invasive (groin/wrist puncture) | Open surgery (neck incision) | Non-invasive (pills) |
+| **Recovery Time** | Fast (usually 1–2 days) | Several weeks | N/A |
+| **Short-Term Risk** | Slightly higher risk of procedural minor stroke | Higher risk of temporary nerve injury or local hematoma | Zero procedural risk |
+| **Long-Term Protection** | **Excellent** (especially if blockage is >70%) | **Excellent** (historically the gold standard) | Good for low-grade blockages, but less effective for severe blockages |
+
+---
+
+## 4. Age Matters
+
+Clinical trials have consistently shown an interesting age split when measuring effectiveness:
+
+* **Under Age 70:** Stenting is exceptionally effective and highly comparable to surgery, as younger blood vessels are more flexible and easier to navigate with catheters.
+* **Over Age 75/80:** Open surgery or aggressive medication alone is often preferred. Older patients tend to have harder, more calcified, and twisting arteries, which makes navigating the stenting equipment riskier.
+
+> ### The Takeaway
+> 
+> 
+> Carotid stenting is a highly effective, life-saving tool, but its success depends heavily on the **anatomy of your neck, your age, and the skill of the interventionist**.
+
+Are you currently discussing a potential stent with a vascular specialist or neurologist? If you'd like to share whether your blockage has caused any recent symptoms, I can give you a better idea of how guidelines view stenting for your specific situation.","1 = Clinically misleading or major errors  |  2 = Defensible but significant gaps  |  3 = Defensible with minor gaps  |  4 = Accurate with minor omissions  |  5 = Accurate, balanced, patient-appropriate
+Penalise: unrepresentative clinical picture; missing epidemiology; ESVS misalignment; patient-misleading claims.",3,CAS can be effective but is reserved for special cases. CEA is the first option as per ESVS guidelines. This is not made clear

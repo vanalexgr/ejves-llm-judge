@@ -1,0 +1,4 @@
+source_model,model_label,response_count,treatment_response_count,validated_accuracy,validated_tone,validated_complementarity,validated_gilbert_urgency,validated_discern_q7,descriptive_comprehensiveness,descriptive_clarity
+chatgpt_free,GPT-5.5,16,8,3.6875,1.65625,0.875,1.90625,3.5,4.458333333333334,5.0
+gemini_free,Gemini 3.5 Flash,16,8,3.71875,1.71875,0.84375,2.0625,3.125,4.625,4.979166666666667
+claude_free,Claude Sonnet 4.6,16,8,3.3125,1.78125,0.875,2.0625,3.1875,4.90625,4.90625

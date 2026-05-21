@@ -1,0 +1,8 @@
+endpoint,direction,group,original_mean,response_count
+Accuracy,higher,validated,3.270833333333333,16
+Tone,higher,validated,1.3125,16
+Complementarity,higher,validated,0.7916666666666666,16
+Urgency,lower,validated,2.1041666666666665,16
+DISCERN Q7,higher,validated,3.0416666666666665,8
+Comprehensiveness,higher,descriptive,3.9166666666666665,16
+Clarity,higher,descriptive,3.7708333333333335,16
